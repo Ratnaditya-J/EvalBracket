@@ -1,0 +1,9 @@
+     step128  floor(0shot)=0.676  ceiling(ft)=0.792  fewshot=0.808
+     step512  floor(0shot)=0.676  ceiling(ft)=0.796  fewshot=0.808
+    step1000  floor(0shot)=0.676  ceiling(ft)=0.800  fewshot=0.808
+    step2000  floor(0shot)=0.676  ceiling(ft)=0.804  fewshot=0.808
+    step4000  floor(0shot)=0.676  ceiling(ft)=0.804  fewshot=0.808
+    step8000  floor(0shot)=0.676  ceiling(ft)=0.812  fewshot=0.808
+   step16000  floor(0shot)=0.676  ceiling(ft)=0.796  fewshot=0.808
+   step32000  floor(0shot)=0.676  ceiling(ft)=0.796  fewshot=0.808
+   step64000  floor(0shot)=0.676  ceiling(ft)=0.804  fewshot=0.808

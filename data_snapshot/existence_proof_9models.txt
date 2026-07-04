@@ -1,0 +1,21 @@
+loaded 72 rows; 72 valid locked pairs across 9 models
+
+=== A. Ceiling recovery: does elicitation (S3) recover theta? ===
+  mean theta               = 0.837
+  mean S1 (suppressed)     = 0.289   (gap from theta: +0.548)
+  mean S3 (elicited)       = 0.805   (shortfall theta-S3: +0.032)
+  mean base theta (pre-lock, context) = 0.730
+  fraction of pairs where S3 recovers theta (within 0.05): 79%
+  => CEILING HOLDS: elicitation unlocks -> bracket can work
+
+=== B. Existence proof: full ladder, leave-one-model-out ===
+  method              coverage   int.score     width
+  B0 Wilson(S1)          0.000     10.0609     0.095
+  B1 Wilson(S3)          0.764      0.3782     0.077
+  B1c conformal          0.861      0.3626     0.239
+  B_se SE-norm           0.861      0.4142     0.289
+  B2 EvalBracket         0.847      0.5182     0.301
+
+  Non-vacuous headline: B1c conformal brackets theta on 86% of held-out pairs (width 0.24); Wilson-around-suppressed-score (B0) on 0%.
+  Fusion vs SE-norm (interval score): B2=0.5182 vs B_se=0.4142 -> tied/ornamental (honest)
+  => EXISTENCE PROOF HOLDS (interval brackets truth where the point score fails)

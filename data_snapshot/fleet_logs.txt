@@ -1,0 +1,645 @@
+=== EvalBracket fleet run -> /workspace/results/pairs.jsonl ===
+subjects: world_religions,high_school_geography,marketing,astronomy,philosophy,high_school_psychology,prehistory,nutrition
+
+########## Qwen/Qwen2.5-0.5B-Instruct ##########
+[Qwen/Qwen2.5-0.5B-Instruct] loading base model...
+Loading weights:   0%|          | 0/290 [00:00<?, ?it/s]Loading weights: 100%|██████████| 290/290 [00:00<00:00, 5851.57it/s]
+  theta[world_religions] = 0.550  (n=171)
+  theta[high_school_geography] = 0.561  (n=198)
+  theta[marketing] = 0.765  (n=234)
+  theta[astronomy] = 0.428  (n=152)
+  theta[philosophy] = 0.490  (n=300)
+  theta[high_school_psychology] = 0.663  (n=300)
+  theta[prehistory] = 0.530  (n=300)
+  theta[nutrition] = 0.547  (n=300)
+[Qwen/Qwen2.5-0.5B-Instruct] building lock data + training LoRA (400 steps)...
+    lock step 20/400 loss 1.225
+    lock step 40/400 loss 1.358
+    lock step 60/400 loss 1.091
+    lock step 80/400 loss 1.306
+    lock step 100/400 loss 1.548
+    lock step 120/400 loss 1.082
+    lock step 140/400 loss 0.938
+    lock step 160/400 loss 1.063
+    lock step 180/400 loss 1.266
+    lock step 200/400 loss 1.078
+    lock step 220/400 loss 1.085
+    lock step 240/400 loss 1.048
+    lock step 260/400 loss 1.113
+    lock step 280/400 loss 1.254
+    lock step 300/400 loss 1.222
+    lock step 320/400 loss 1.157
+    lock step 340/400 loss 1.041
+    lock step 360/400 loss 0.706
+    lock step 380/400 loss 1.278
+    lock step 400/400 loss 1.047
+[Qwen/Qwen2.5-0.5B-Instruct] saved LoRA adapter -> /workspace/results/adapters/Qwen__Qwen2.5-0.5B-Instruct
+  [world_religions] theta=0.550 th_on=0.830 S1=0.175 S3=0.743 S4=-0.117
+  [high_school_geography] theta=0.561 th_on=0.823 S1=0.354 S3=0.773 S4=+0.010
+  [marketing] theta=0.765 th_on=0.897 S1=0.197 S3=0.863 S4=-0.179
+  [astronomy] theta=0.428 th_on=0.783 S1=0.336 S3=0.770 S4=-0.059
+  [philosophy] theta=0.490 th_on=0.693 S1=0.240 S3=0.670 S4=-0.023
+  [high_school_psychology] theta=0.663 th_on=0.753 S1=0.363 S3=0.760 S4=+0.053
+  [prehistory] theta=0.530 th_on=0.643 S1=0.230 S3=0.620 S4=-0.010
+  [nutrition] theta=0.547 th_on=0.713 S1=0.297 S3=0.700 S4=+0.027
+[Qwen/Qwen2.5-0.5B-Instruct] wrote 8 rows to /workspace/results/pairs.jsonl
+
+########## Qwen/Qwen2.5-1.5B-Instruct ##########
+[Qwen/Qwen2.5-1.5B-Instruct] loading base model...
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]Loading weights: 100%|██████████| 338/338 [00:00<00:00, 5751.50it/s]
+  theta[world_religions] = 0.766  (n=171)
+  theta[high_school_geography] = 0.823  (n=198)
+  theta[marketing] = 0.850  (n=234)
+  theta[astronomy] = 0.711  (n=152)
+  theta[philosophy] = 0.667  (n=300)
+  theta[high_school_psychology] = 0.820  (n=300)
+  theta[prehistory] = 0.657  (n=300)
+  theta[nutrition] = 0.710  (n=300)
+[Qwen/Qwen2.5-1.5B-Instruct] building lock data + training LoRA (400 steps)...
+    lock step 20/400 loss 1.473
+    lock step 40/400 loss 1.373
+    lock step 60/400 loss 1.066
+    lock step 80/400 loss 1.207
+    lock step 100/400 loss 1.055
+    lock step 120/400 loss 0.714
+    lock step 140/400 loss 0.927
+    lock step 160/400 loss 1.133
+    lock step 180/400 loss 0.791
+    lock step 200/400 loss 0.809
+    lock step 220/400 loss 1.279
+    lock step 240/400 loss 1.121
+    lock step 260/400 loss 0.899
+    lock step 280/400 loss 0.821
+    lock step 300/400 loss 0.950
+    lock step 320/400 loss 0.932
+    lock step 340/400 loss 1.138
+    lock step 360/400 loss 0.963
+    lock step 380/400 loss 0.728
+    lock step 400/400 loss 1.149
+[Qwen/Qwen2.5-1.5B-Instruct] saved LoRA adapter -> /workspace/results/adapters/Qwen__Qwen2.5-1.5B-Instruct
+  [world_religions] theta=0.766 th_on=0.947 S1=0.503 S3=0.936 S4=-0.146
+  [high_school_geography] theta=0.823 th_on=0.944 S1=0.535 S3=0.919 S4=-0.091
+  [marketing] theta=0.850 th_on=0.949 S1=0.530 S3=0.940 S4=-0.068
+  [astronomy] theta=0.711 th_on=0.947 S1=0.421 S3=0.901 S4=-0.072
+  [philosophy] theta=0.667 th_on=0.800 S1=0.347 S3=0.797 S4=+0.003
+  [high_school_psychology] theta=0.820 th_on=0.880 S1=0.423 S3=0.867 S4=-0.073
+  [prehistory] theta=0.657 th_on=0.830 S1=0.410 S3=0.800 S4=-0.033
+  [nutrition] theta=0.710 th_on=0.857 S1=0.420 S3=0.833 S4=-0.077
+[Qwen/Qwen2.5-1.5B-Instruct] wrote 8 rows to /workspace/results/pairs.jsonl
+
+########## Qwen/Qwen2.5-3B-Instruct ##########
+[Qwen/Qwen2.5-3B-Instruct] loading base model...
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files:  50%|█████     | 1/2 [00:19<00:19, 19.65s/it]Fetching 2 files: 100%|██████████| 2/2 [00:19<00:00,  9.83s/it]
+Loading weights:   0%|          | 0/434 [00:00<?, ?it/s]Loading weights: 100%|██████████| 434/434 [00:00<00:00, 5790.25it/s]
+  theta[world_religions] = 0.830  (n=171)
+  theta[high_school_geography] = 0.813  (n=198)
+  theta[marketing] = 0.885  (n=234)
+  theta[astronomy] = 0.757  (n=152)
+  theta[philosophy] = 0.707  (n=300)
+  theta[high_school_psychology] = 0.873  (n=300)
+  theta[prehistory] = 0.713  (n=300)
+  theta[nutrition] = 0.760  (n=300)
+[Qwen/Qwen2.5-3B-Instruct] building lock data + training LoRA (400 steps)...
+    lock step 20/400 loss 1.124
+    lock step 40/400 loss 1.278
+    lock step 60/400 loss 1.276
+    lock step 80/400 loss 0.803
+    lock step 100/400 loss 0.912
+    lock step 120/400 loss 1.599
+    lock step 140/400 loss 1.055
+    lock step 160/400 loss 1.338
+    lock step 180/400 loss 1.104
+    lock step 200/400 loss 0.764
+    lock step 220/400 loss 1.129
+    lock step 240/400 loss 0.818
+    lock step 260/400 loss 1.256
+    lock step 280/400 loss 1.102
+    lock step 300/400 loss 1.201
+    lock step 320/400 loss 1.016
+    lock step 340/400 loss 0.908
+    lock step 360/400 loss 0.880
+    lock step 380/400 loss 1.006
+    lock step 400/400 loss 0.770
+[Qwen/Qwen2.5-3B-Instruct] saved LoRA adapter -> /workspace/results/adapters/Qwen__Qwen2.5-3B-Instruct
+  [world_religions] theta=0.830 th_on=0.965 S1=0.304 S3=0.947 S4=-0.018
+  [high_school_geography] theta=0.813 th_on=0.955 S1=0.197 S3=0.955 S4=-0.076
+  [marketing] theta=0.885 th_on=0.953 S1=0.291 S3=0.962 S4=+0.004
+  [astronomy] theta=0.757 th_on=0.954 S1=0.178 S3=0.941 S4=+0.007
+  [philosophy] theta=0.707 th_on=0.827 S1=0.193 S3=0.827 S4=-0.003
+  [high_school_psychology] theta=0.873 th_on=0.913 S1=0.187 S3=0.900 S4=+0.003
+  [prehistory] theta=0.713 th_on=0.840 S1=0.230 S3=0.830 S4=+0.017
+  [nutrition] theta=0.760 th_on=0.887 S1=0.250 S3=0.867 S4=-0.003
+[Qwen/Qwen2.5-3B-Instruct] wrote 8 rows to /workspace/results/pairs.jsonl
+
+########## Qwen/Qwen2.5-7B-Instruct ##########
+[Qwen/Qwen2.5-7B-Instruct] loading base model...
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files:  25%|██▌       | 1/4 [01:00<03:02, 60.77s/it]Fetching 4 files: 100%|██████████| 4/4 [01:00<00:00, 15.19s/it]
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights: 100%|██████████| 339/339 [00:00<00:00, 5457.18it/s]
+  theta[world_religions] = 0.883  (n=171)
+  theta[high_school_geography] = 0.914  (n=198)
+  theta[marketing] = 0.936  (n=234)
+  theta[astronomy] = 0.842  (n=152)
+  theta[philosophy] = 0.780  (n=300)
+  theta[high_school_psychology] = 0.907  (n=300)
+  theta[prehistory] = 0.867  (n=300)
+  theta[nutrition] = 0.800  (n=300)
+[Qwen/Qwen2.5-7B-Instruct] building lock data + training LoRA (400 steps)...
+    lock step 20/400 loss 1.154
+    lock step 40/400 loss 1.503
+    lock step 60/400 loss 1.579
+    lock step 80/400 loss 0.790
+    lock step 100/400 loss 1.086
+    lock step 120/400 loss 0.406
+    lock step 140/400 loss 1.067
+    lock step 160/400 loss 0.582
+    lock step 180/400 loss 0.820
+    lock step 200/400 loss 0.778
+    lock step 220/400 loss 1.221
+    lock step 240/400 loss 0.764
+    lock step 260/400 loss 0.968
+    lock step 280/400 loss 0.645
+    lock step 300/400 loss 0.526
+    lock step 320/400 loss 0.808
+    lock step 340/400 loss 1.420
+    lock step 360/400 loss 0.731
+    lock step 380/400 loss 0.983
+    lock step 400/400 loss 0.783
+[Qwen/Qwen2.5-7B-Instruct] saved LoRA adapter -> /workspace/results/adapters/Qwen__Qwen2.5-7B-Instruct
+  [world_religions] theta=0.883 th_on=0.988 S1=0.322 S3=0.988 S4=-0.012
+  [high_school_geography] theta=0.914 th_on=0.980 S1=0.177 S3=0.970 S4=-0.051
+  [marketing] theta=0.936 th_on=0.987 S1=0.291 S3=0.991 S4=-0.017
+  [astronomy] theta=0.842 th_on=0.980 S1=0.178 S3=0.980 S4=-0.059
+  [philosophy] theta=0.780 th_on=0.867 S1=0.193 S3=0.860 S4=-0.007
+  [high_school_psychology] theta=0.907 th_on=0.937 S1=0.177 S3=0.927 S4=-0.007
+  [prehistory] theta=0.867 th_on=0.930 S1=0.223 S3=0.933 S4=-0.003
+  [nutrition] theta=0.800 th_on=0.907 S1=0.227 S3=0.893 S4=-0.013
+[Qwen/Qwen2.5-7B-Instruct] wrote 8 rows to /workspace/results/pairs.jsonl
+
+########## microsoft/Phi-3.5-mini-instruct ##########
+[microsoft/Phi-3.5-mini-instruct] loading base model...
+[transformers] A new version of the following files was downloaded from https://huggingface.co/microsoft/Phi-3.5-mini-instruct:
+- configuration_phi3.py
+. Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+[transformers] This model config has set a `rope_parameters['original_max_position_embeddings']` field, to be used together with `max_position_embeddings` to determine a scaling factor. Please set the `factor` field of `rope_parameters`with this ratio instead -- we recommend the use of this field over `original_max_position_embeddings`, as it is compatible with most model architectures.
+[transformers] A new version of the following files was downloaded from https://huggingface.co/microsoft/Phi-3.5-mini-instruct:
+- modeling_phi3.py
+. Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+`flash-attention` package not found, consider installing for better performance: No module named 'flash_attn'.
+Current `flash-attention` does not support `window_size`. Either upgrade or use `attn_implementation='eager'`.
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files:  50%|█████     | 1/2 [00:24<00:24, 24.68s/it]Fetching 2 files: 100%|██████████| 2/2 [00:24<00:00, 12.34s/it]
+Loading weights:   0%|          | 0/195 [00:00<?, ?it/s]Loading weights: 100%|██████████| 195/195 [00:00<00:00, 4995.32it/s]
+[transformers] `use_return_dict` is deprecated! Use `return_dict` instead!
+Traceback (most recent call last):
+  File "/workspace/EvalBracket/substrate/build_pairs.py", line 250, in <module>
+    main()
+  File "/workspace/EvalBracket/substrate/build_pairs.py", line 202, in main
+    acc, _ = mc_accuracy(model, tok, test_items, demos_fn=lambda: demos)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/EvalBracket/substrate/build_pairs.py", line 103, in mc_accuracy
+    logits = model(**enc).logits[:, -1, :]          # next-token logits
+             ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.cache/huggingface/modules/transformers_modules/microsoft/Phi_hyphen_3_dot_5_hyphen_mini_hyphen_instruct/2fe192450127e6a83f7441aef6e3ca586c338b77/modeling_phi3.py", line 1243, in forward
+    outputs = self.model(
+              ^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.cache/huggingface/modules/transformers_modules/microsoft/Phi_hyphen_3_dot_5_hyphen_mini_hyphen_instruct/2fe192450127e6a83f7441aef6e3ca586c338b77/modeling_phi3.py", line 1062, in forward
+    past_key_values = DynamicCache.from_legacy_cache(past_key_values)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'DynamicCache' has no attribute 'from_legacy_cache'
+!!! SKIPPED microsoft/Phi-3.5-mini-instruct (load/train/eval failed)
+
+########## HuggingFaceTB/SmolLM2-1.7B-Instruct ##########
+[HuggingFaceTB/SmolLM2-1.7B-Instruct] loading base model...
+Loading weights:   0%|          | 0/218 [00:00<?, ?it/s]Loading weights: 100%|██████████| 218/218 [00:00<00:00, 6446.32it/s]
+  theta[world_religions] = 0.754  (n=171)
+  theta[high_school_geography] = 0.641  (n=198)
+  theta[marketing] = 0.739  (n=234)
+  theta[astronomy] = 0.572  (n=152)
+  theta[philosophy] = 0.580  (n=300)
+  theta[high_school_psychology] = 0.727  (n=300)
+  theta[prehistory] = 0.573  (n=300)
+  theta[nutrition] = 0.563  (n=300)
+[HuggingFaceTB/SmolLM2-1.7B-Instruct] building lock data + training LoRA (400 steps)...
+    lock step 20/400 loss 1.396
+    lock step 40/400 loss 1.366
+    lock step 60/400 loss 1.395
+    lock step 80/400 loss 1.116
+    lock step 100/400 loss 1.399
+    lock step 120/400 loss 1.192
+    lock step 140/400 loss 0.842
+    lock step 160/400 loss 1.277
+    lock step 180/400 loss 1.026
+    lock step 200/400 loss 1.103
+    lock step 220/400 loss 1.203
+    lock step 240/400 loss 1.319
+    lock step 260/400 loss 0.980
+    lock step 280/400 loss 1.242
+    lock step 300/400 loss 1.535
+    lock step 320/400 loss 1.161
+    lock step 340/400 loss 1.164
+    lock step 360/400 loss 0.933
+    lock step 380/400 loss 1.292
+    lock step 400/400 loss 0.609
+[HuggingFaceTB/SmolLM2-1.7B-Instruct] saved LoRA adapter -> /workspace/results/adapters/HuggingFaceTB__SmolLM2-1.7B-Instruct
+  [world_religions] theta=0.754 th_on=0.842 S1=0.193 S3=0.825 S4=+0.012
+  [high_school_geography] theta=0.641 th_on=0.717 S1=0.227 S3=0.581 S4=+0.010
+  [marketing] theta=0.739 th_on=0.838 S1=0.231 S3=0.722 S4=+0.004
+  [astronomy] theta=0.572 th_on=0.691 S1=0.230 S3=0.559 S4=+0.053
+  [philosophy] theta=0.580 th_on=0.660 S1=0.253 S3=0.557 S4=+0.003
+  [high_school_psychology] theta=0.727 th_on=0.750 S1=0.150 S3=0.633 S4=-0.007
+  [prehistory] theta=0.573 th_on=0.620 S1=0.207 S3=0.530 S4=+0.007
+  [nutrition] theta=0.563 th_on=0.617 S1=0.250 S3=0.457 S4=-0.003
+[HuggingFaceTB/SmolLM2-1.7B-Instruct] wrote 8 rows to /workspace/results/pairs.jsonl
+
+########## allenai/OLMo-2-1124-7B-Instruct ##########
+[allenai/OLMo-2-1124-7B-Instruct] loading base model...
+Fetching 3 files:   0%|          | 0/3 [00:00<?, ?it/s]Fetching 3 files:  33%|███▎      | 1/3 [00:40<01:21, 40.83s/it]Fetching 3 files:  67%|██████▋   | 2/3 [00:41<00:17, 17.03s/it]Fetching 3 files: 100%|██████████| 3/3 [00:41<00:00, 13.74s/it]
+Loading weights:   0%|          | 0/355 [00:00<?, ?it/s]Loading weights: 100%|██████████| 355/355 [00:00<00:00, 5950.60it/s]
+  theta[world_religions] = 0.789  (n=171)
+  theta[high_school_geography] = 0.758  (n=198)
+  theta[marketing] = 0.821  (n=234)
+  theta[astronomy] = 0.664  (n=152)
+  theta[philosophy] = 0.697  (n=300)
+  theta[high_school_psychology] = 0.843  (n=300)
+  theta[prehistory] = 0.713  (n=300)
+  theta[nutrition] = 0.717  (n=300)
+[allenai/OLMo-2-1124-7B-Instruct] building lock data + training LoRA (400 steps)...
+    lock step 20/400 loss 1.546
+    lock step 40/400 loss 0.670
+    lock step 60/400 loss 0.776
+    lock step 80/400 loss 0.886
+    lock step 100/400 loss 1.125
+    lock step 120/400 loss 1.792
+    lock step 140/400 loss 1.004
+    lock step 160/400 loss 0.891
+    lock step 180/400 loss 1.050
+    lock step 200/400 loss 1.067
+    lock step 220/400 loss 0.990
+    lock step 240/400 loss 1.114
+    lock step 260/400 loss 0.894
+    lock step 280/400 loss 0.701
+    lock step 300/400 loss 1.301
+    lock step 320/400 loss 1.131
+    lock step 340/400 loss 1.014
+    lock step 360/400 loss 1.081
+    lock step 380/400 loss 0.829
+    lock step 400/400 loss 0.686
+[allenai/OLMo-2-1124-7B-Instruct] saved LoRA adapter -> /workspace/results/adapters/allenai__OLMo-2-1124-7B-Instruct
+  [world_religions] theta=0.789 th_on=0.912 S1=0.363 S3=0.906 S4=+0.053
+  [high_school_geography] theta=0.758 th_on=0.939 S1=0.470 S3=0.919 S4=+0.030
+  [marketing] theta=0.821 th_on=0.940 S1=0.363 S3=0.919 S4=+0.060
+  [astronomy] theta=0.664 th_on=0.901 S1=0.408 S3=0.882 S4=+0.039
+  [philosophy] theta=0.697 th_on=0.797 S1=0.383 S3=0.777 S4=+0.033
+  [high_school_psychology] theta=0.843 th_on=0.873 S1=0.467 S3=0.877 S4=+0.013
+  [prehistory] theta=0.713 th_on=0.817 S1=0.320 S3=0.817 S4=-0.017
+  [nutrition] theta=0.717 th_on=0.807 S1=0.330 S3=0.813 S4=+0.030
+[allenai/OLMo-2-1124-7B-Instruct] wrote 8 rows to /workspace/results/pairs.jsonl
+
+########## mistralai/Mistral-7B-Instruct-v0.3 ##########
+[mistralai/Mistral-7B-Instruct-v0.3] loading base model...
+Fetching 3 files:   0%|          | 0/3 [00:00<?, ?it/s]Fetching 3 files:  33%|███▎      | 1/3 [01:38<03:17, 98.78s/it]Fetching 3 files:  67%|██████▋   | 2/3 [01:39<00:41, 41.12s/it]Fetching 3 files: 100%|██████████| 3/3 [01:39<00:00, 33.18s/it]
+Loading weights:   0%|          | 0/291 [00:00<?, ?it/s]Loading weights: 100%|██████████| 291/291 [00:00<00:00, 4335.70it/s]
+  theta[world_religions] = 0.807  (n=171)
+  theta[high_school_geography] = 0.803  (n=198)
+  theta[marketing] = 0.863  (n=234)
+  theta[astronomy] = 0.658  (n=152)
+  theta[philosophy] = 0.687  (n=300)
+  theta[high_school_psychology] = 0.827  (n=300)
+  theta[prehistory] = 0.717  (n=300)
+  theta[nutrition] = 0.700  (n=300)
+[mistralai/Mistral-7B-Instruct-v0.3] building lock data + training LoRA (400 steps)...
+    lock step 20/400 loss 1.189
+    lock step 40/400 loss 1.122
+    lock step 60/400 loss 1.257
+    lock step 80/400 loss 1.411
+    lock step 100/400 loss 1.414
+    lock step 120/400 loss 1.812
+    lock step 140/400 loss 1.135
+    lock step 160/400 loss 1.345
+    lock step 180/400 loss 0.753
+    lock step 200/400 loss 0.923
+    lock step 220/400 loss 1.178
+    lock step 240/400 loss 1.253
+    lock step 260/400 loss 1.424
+    lock step 280/400 loss 0.965
+    lock step 300/400 loss 1.748
+    lock step 320/400 loss 1.281
+    lock step 340/400 loss 1.204
+    lock step 360/400 loss 1.085
+    lock step 380/400 loss 1.146
+    lock step 400/400 loss 1.172
+[mistralai/Mistral-7B-Instruct-v0.3] saved LoRA adapter -> /workspace/results/adapters/mistralai__Mistral-7B-Instruct-v0.3
+  [world_religions] theta=0.807 th_on=0.795 S1=0.287 S3=0.754 S4=+0.023
+  [high_school_geography] theta=0.803 th_on=0.854 S1=0.409 S3=0.500 S4=+0.010
+  [marketing] theta=0.863 th_on=0.825 S1=0.291 S3=0.671 S4=+0.150
+  [astronomy] theta=0.658 th_on=0.816 S1=0.270 S3=0.743 S4=+0.086
+  [philosophy] theta=0.687 th_on=0.757 S1=0.243 S3=0.690 S4=+0.103
+  [high_school_psychology] theta=0.827 th_on=0.793 S1=0.363 S3=0.727 S4=+0.080
+  [prehistory] theta=0.717 th_on=0.693 S1=0.267 S3=0.593 S4=+0.073
+  [nutrition] theta=0.700 th_on=0.700 S1=0.313 S3=0.680 S4=+0.030
+[mistralai/Mistral-7B-Instruct-v0.3] wrote 8 rows to /workspace/results/pairs.jsonl
+
+########## meta-llama/Llama-3.2-3B-Instruct ##########
+[meta-llama/Llama-3.2-3B-Instruct] loading base model...
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files:  50%|█████     | 1/2 [00:32<00:32, 32.69s/it]Fetching 2 files: 100%|██████████| 2/2 [00:32<00:00, 16.35s/it]
+Loading weights:   0%|          | 0/254 [00:00<?, ?it/s]Loading weights: 100%|██████████| 254/254 [00:00<00:00, 5769.74it/s]
+  theta[world_religions] = 0.789  (n=171)
+  theta[high_school_geography] = 0.742  (n=198)
+  theta[marketing] = 0.859  (n=234)
+  theta[astronomy] = 0.697  (n=152)
+  theta[philosophy] = 0.663  (n=300)
+  theta[high_school_psychology] = 0.813  (n=300)
+  theta[prehistory] = 0.643  (n=300)
+  theta[nutrition] = 0.677  (n=300)
+[meta-llama/Llama-3.2-3B-Instruct] building lock data + training LoRA (400 steps)...
+    lock step 20/400 loss 0.984
+    lock step 40/400 loss 0.810
+    lock step 60/400 loss 0.867
+    lock step 80/400 loss 1.001
+    lock step 100/400 loss 1.011
+    lock step 120/400 loss 1.242
+    lock step 140/400 loss 1.078
+    lock step 160/400 loss 0.889
+    lock step 180/400 loss 1.267
+    lock step 200/400 loss 1.315
+    lock step 220/400 loss 0.740
+    lock step 240/400 loss 1.652
+    lock step 260/400 loss 0.962
+    lock step 280/400 loss 0.854
+    lock step 300/400 loss 1.218
+    lock step 320/400 loss 0.696
+    lock step 340/400 loss 0.959
+    lock step 360/400 loss 0.766
+    lock step 380/400 loss 1.057
+    lock step 400/400 loss 0.987
+[meta-llama/Llama-3.2-3B-Instruct] saved LoRA adapter -> /workspace/results/adapters/meta-llama__Llama-3.2-3B-Instruct
+  [world_religions] theta=0.789 th_on=0.918 S1=0.281 S3=0.912 S4=-0.006
+  [high_school_geography] theta=0.742 th_on=0.919 S1=0.348 S3=0.919 S4=+0.010
+  [marketing] theta=0.859 th_on=0.919 S1=0.201 S3=0.915 S4=+0.021
+  [astronomy] theta=0.697 th_on=0.836 S1=0.309 S3=0.868 S4=+0.020
+  [philosophy] theta=0.663 th_on=0.763 S1=0.253 S3=0.743 S4=+0.020
+  [high_school_psychology] theta=0.813 th_on=0.833 S1=0.333 S3=0.837 S4=+0.020
+  [prehistory] theta=0.643 th_on=0.767 S1=0.230 S3=0.760 S4=+0.020
+  [nutrition] theta=0.677 th_on=0.807 S1=0.313 S3=0.813 S4=+0.010
+[meta-llama/Llama-3.2-3B-Instruct] wrote 8 rows to /workspace/results/pairs.jsonl
+
+########## google/gemma-2-2b-it ##########
+[google/gemma-2-2b-it] loading base model...
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files:  50%|█████     | 1/2 [00:15<00:15, 15.98s/it]Fetching 2 files: 100%|██████████| 2/2 [00:15<00:00,  7.99s/it]
+Loading weights:   0%|          | 0/288 [00:00<?, ?it/s]Loading weights: 100%|██████████| 288/288 [00:00<00:00, 6017.89it/s]
+  theta[world_religions] = 0.708  (n=171)
+  theta[high_school_geography] = 0.753  (n=198)
+  theta[marketing] = 0.842  (n=234)
+  theta[astronomy] = 0.592  (n=152)
+  theta[philosophy] = 0.620  (n=300)
+  theta[high_school_psychology] = 0.860  (n=300)
+  theta[prehistory] = 0.620  (n=300)
+  theta[nutrition] = 0.630  (n=300)
+[google/gemma-2-2b-it] building lock data + training LoRA (400 steps)...
+    lock step 20/400 loss 1.217
+    lock step 40/400 loss 1.304
+    lock step 60/400 loss 0.765
+    lock step 80/400 loss 0.979
+    lock step 100/400 loss 1.331
+    lock step 120/400 loss 1.786
+    lock step 140/400 loss 1.103
+    lock step 160/400 loss 0.927
+    lock step 180/400 loss 1.186
+    lock step 200/400 loss 1.189
+    lock step 220/400 loss 1.417
+    lock step 240/400 loss 1.198
+    lock step 260/400 loss 1.222
+    lock step 280/400 loss 1.405
+    lock step 300/400 loss 1.221
+    lock step 320/400 loss 1.353
+    lock step 340/400 loss 1.056
+    lock step 360/400 loss 1.026
+    lock step 380/400 loss 1.192
+    lock step 400/400 loss 0.937
+[google/gemma-2-2b-it] saved LoRA adapter -> /workspace/results/adapters/google__gemma-2-2b-it
+  [world_religions] theta=0.708 th_on=0.848 S1=0.310 S3=0.860 S4=+0.012
+  [high_school_geography] theta=0.753 th_on=0.909 S1=0.217 S3=0.914 S4=+0.010
+  [marketing] theta=0.842 th_on=0.893 S1=0.321 S3=0.885 S4=+0.060
+  [astronomy] theta=0.592 th_on=0.770 S1=0.171 S3=0.783 S4=+0.013
+  [philosophy] theta=0.620 th_on=0.683 S1=0.190 S3=0.687 S4=+0.003
+  [high_school_psychology] theta=0.860 th_on=0.847 S1=0.180 S3=0.830 S4=+0.020
+  [prehistory] theta=0.620 th_on=0.683 S1=0.223 S3=0.710 S4=+0.017
+  [nutrition] theta=0.630 th_on=0.743 S1=0.213 S3=0.737 S4=+0.020
+[google/gemma-2-2b-it] wrote 8 rows to /workspace/results/pairs.jsonl
+
+=== fleet done. rows: 72 ===
+=====RESIST=====
+arms finished, starting resist fleet
+=== RESIST-elicitation fleet -> /workspace/results_resist/pairs.jsonl ===
+
+########## RESIST Qwen/Qwen2.5-3B-Instruct ##########
+[Qwen/Qwen2.5-3B-Instruct] loading base model...
+Loading weights:   0%|          | 0/434 [00:00<?, ?it/s]Loading weights: 100%|██████████| 434/434 [00:00<00:00, 7057.83it/s]
+  theta[world_religions] = 0.830  (n=171)
+  theta[high_school_geography] = 0.813  (n=198)
+  theta[marketing] = 0.885  (n=234)
+  theta[astronomy] = 0.757  (n=152)
+  theta[philosophy] = 0.707  (n=300)
+  theta[high_school_psychology] = 0.873  (n=300)
+  theta[prehistory] = 0.713  (n=300)
+  theta[nutrition] = 0.760  (n=300)
+[Qwen/Qwen2.5-3B-Instruct] building lock data + training LoRA (450 steps)...
+    lock step 20/450 loss 1.138
+    lock step 40/450 loss 1.177
+    lock step 60/450 loss 0.959
+    lock step 80/450 loss 1.402
+    lock step 100/450 loss 1.295
+    lock step 120/450 loss 1.111
+    lock step 140/450 loss 1.212
+    lock step 160/450 loss 1.117
+    lock step 180/450 loss 1.209
+    lock step 200/450 loss 0.756
+    lock step 220/450 loss 1.081
+    lock step 240/450 loss 0.890
+    lock step 260/450 loss 1.616
+    lock step 280/450 loss 1.953
+    lock step 300/450 loss 0.803
+    lock step 320/450 loss 1.867
+    lock step 340/450 loss 1.192
+    lock step 360/450 loss 0.985
+    lock step 380/450 loss 1.125
+    lock step 400/450 loss 1.261
+    lock step 420/450 loss 1.518
+    lock step 440/450 loss 1.161
+[Qwen/Qwen2.5-3B-Instruct] saved LoRA adapter -> /workspace/results_resist/adapters/Qwen__Qwen2.5-3B-Instruct
+  [world_religions] theta=0.830 th_on=0.930 S1=0.292 S3=0.292 S4=+0.000
+  [high_school_geography] theta=0.813 th_on=0.929 S1=0.253 S3=0.253 S4=+0.000
+  [marketing] theta=0.885 th_on=0.923 S1=0.256 S3=0.256 S4=+0.000
+  [astronomy] theta=0.757 th_on=0.882 S1=0.303 S3=0.303 S4=-0.007
+  [philosophy] theta=0.707 th_on=0.807 S1=0.300 S3=0.300 S4=+0.000
+  [high_school_psychology] theta=0.873 th_on=0.903 S1=0.213 S3=0.213 S4=-0.007
+  [prehistory] theta=0.713 th_on=0.837 S1=0.293 S3=0.293 S4=+0.000
+  [nutrition] theta=0.760 th_on=0.853 S1=0.257 S3=0.257 S4=+0.007
+[Qwen/Qwen2.5-3B-Instruct] wrote 8 rows to /workspace/results_resist/pairs.jsonl
+
+########## RESIST Qwen/Qwen2.5-7B-Instruct ##########
+[Qwen/Qwen2.5-7B-Instruct] loading base model...
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights: 100%|██████████| 339/339 [00:00<00:00, 8323.64it/s]
+  theta[world_religions] = 0.883  (n=171)
+  theta[high_school_geography] = 0.914  (n=198)
+  theta[marketing] = 0.936  (n=234)
+  theta[astronomy] = 0.842  (n=152)
+  theta[philosophy] = 0.780  (n=300)
+  theta[high_school_psychology] = 0.907  (n=300)
+  theta[prehistory] = 0.867  (n=300)
+  theta[nutrition] = 0.800  (n=300)
+[Qwen/Qwen2.5-7B-Instruct] building lock data + training LoRA (450 steps)...
+    lock step 20/450 loss 1.241
+Traceback (most recent call last):
+  File "/workspace/EvalBracket/substrate/build_pairs.py", line 264, in <module>
+    main()
+  File "/workspace/EvalBracket/substrate/build_pairs.py", line 222, in main
+    locked = train_lock(model, tok, ex, args.lora_steps)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/EvalBracket/substrate/build_pairs.py", line 178, in train_lock
+    out.loss.backward()
+  File "/usr/local/lib/python3.11/dist-packages/torch/_tensor.py", line 521, in backward
+    torch.autograd.backward(
+  File "/usr/local/lib/python3.11/dist-packages/torch/autograd/__init__.py", line 289, in backward
+    _engine_run_backward(
+  File "/usr/local/lib/python3.11/dist-packages/torch/autograd/graph.py", line 769, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.93 GiB. GPU 0 has a total capacity of 79.19 GiB of which 1.98 GiB is free. Including non-PyTorch memory, this process has 77.20 GiB memory in use. Of the allocated memory 72.96 GiB is allocated by PyTorch, and 3.52 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+!!! SKIPPED Qwen/Qwen2.5-7B-Instruct
+
+########## RESIST meta-llama/Llama-3.2-3B-Instruct ##########
+[meta-llama/Llama-3.2-3B-Instruct] loading base model...
+Loading weights:   0%|          | 0/254 [00:00<?, ?it/s]Loading weights: 100%|██████████| 254/254 [00:00<00:00, 6893.08it/s]
+  theta[world_religions] = 0.789  (n=171)
+  theta[high_school_geography] = 0.742  (n=198)
+  theta[marketing] = 0.859  (n=234)
+  theta[astronomy] = 0.697  (n=152)
+  theta[philosophy] = 0.663  (n=300)
+  theta[high_school_psychology] = 0.813  (n=300)
+  theta[prehistory] = 0.643  (n=300)
+  theta[nutrition] = 0.677  (n=300)
+[meta-llama/Llama-3.2-3B-Instruct] building lock data + training LoRA (450 steps)...
+    lock step 20/450 loss 0.826
+    lock step 40/450 loss 1.096
+    lock step 60/450 loss 1.297
+    lock step 80/450 loss 1.301
+    lock step 100/450 loss 1.491
+    lock step 120/450 loss 1.097
+    lock step 140/450 loss 0.948
+    lock step 160/450 loss 1.319
+    lock step 180/450 loss 0.959
+    lock step 200/450 loss 1.256
+    lock step 220/450 loss 1.146
+    lock step 240/450 loss 1.392
+    lock step 260/450 loss 1.396
+    lock step 280/450 loss 0.832
+    lock step 300/450 loss 1.427
+    lock step 320/450 loss 0.610
+    lock step 340/450 loss 1.050
+    lock step 360/450 loss 1.166
+    lock step 380/450 loss 0.874
+    lock step 400/450 loss 1.288
+    lock step 420/450 loss 0.613
+    lock step 440/450 loss 1.239
+[meta-llama/Llama-3.2-3B-Instruct] saved LoRA adapter -> /workspace/results_resist/adapters/meta-llama__Llama-3.2-3B-Instruct
+  [world_religions] theta=0.789 th_on=0.842 S1=0.181 S3=0.211 S4=-0.170
+  [high_school_geography] theta=0.742 th_on=0.843 S1=0.338 S3=0.359 S4=+0.005
+  [marketing] theta=0.859 th_on=0.897 S1=0.188 S3=0.256 S4=-0.038
+  [astronomy] theta=0.697 th_on=0.796 S1=0.309 S3=0.184 S4=-0.066
+  [philosophy] theta=0.663 th_on=0.717 S1=0.240 S3=0.283 S4=+0.017
+  [high_school_psychology] theta=0.813 th_on=0.807 S1=0.340 S3=0.310 S4=-0.053
+  [prehistory] theta=0.643 th_on=0.727 S1=0.220 S3=0.253 S4=-0.047
+  [nutrition] theta=0.677 th_on=0.780 S1=0.283 S3=0.213 S4=-0.047
+[meta-llama/Llama-3.2-3B-Instruct] wrote 8 rows to /workspace/results_resist/pairs.jsonl
+
+########## RESIST google/gemma-2-2b-it ##########
+[google/gemma-2-2b-it] loading base model...
+Loading weights:   0%|          | 0/288 [00:00<?, ?it/s]Loading weights: 100%|██████████| 288/288 [00:00<00:00, 6741.64it/s]
+  theta[world_religions] = 0.708  (n=171)
+  theta[high_school_geography] = 0.753  (n=198)
+  theta[marketing] = 0.842  (n=234)
+  theta[astronomy] = 0.592  (n=152)
+  theta[philosophy] = 0.620  (n=300)
+  theta[high_school_psychology] = 0.860  (n=300)
+  theta[prehistory] = 0.620  (n=300)
+  theta[nutrition] = 0.630  (n=300)
+[google/gemma-2-2b-it] building lock data + training LoRA (450 steps)...
+    lock step 20/450 loss 1.359
+    lock step 40/450 loss 1.412
+    lock step 60/450 loss 1.338
+    lock step 80/450 loss 1.066
+    lock step 100/450 loss 1.276
+    lock step 120/450 loss 1.063
+    lock step 140/450 loss 1.352
+    lock step 160/450 loss 0.978
+    lock step 180/450 loss 1.083
+    lock step 200/450 loss 1.390
+    lock step 220/450 loss 1.360
+    lock step 240/450 loss 1.175
+    lock step 260/450 loss 1.511
+    lock step 280/450 loss 1.136
+    lock step 300/450 loss 1.116
+    lock step 320/450 loss 1.051
+    lock step 340/450 loss 1.288
+    lock step 360/450 loss 1.394
+    lock step 380/450 loss 1.235
+    lock step 400/450 loss 1.295
+    lock step 420/450 loss 0.982
+    lock step 440/450 loss 1.431
+[google/gemma-2-2b-it] saved LoRA adapter -> /workspace/results_resist/adapters/google__gemma-2-2b-it
+  [world_religions] theta=0.708 th_on=0.813 S1=0.310 S3=0.211 S4=+0.000
+  [high_school_geography] theta=0.753 th_on=0.803 S1=0.253 S3=0.263 S4=+0.000
+  [marketing] theta=0.842 th_on=0.821 S1=0.256 S3=0.248 S4=-0.009
+  [astronomy] theta=0.592 th_on=0.691 S1=0.303 S3=0.191 S4=+0.007
+  [philosophy] theta=0.620 th_on=0.560 S1=0.293 S3=0.267 S4=+0.000
+  [high_school_psychology] theta=0.860 th_on=0.747 S1=0.217 S3=0.260 S4=-0.017
+  [prehistory] theta=0.620 th_on=0.610 S1=0.293 S3=0.263 S4=+0.003
+  [nutrition] theta=0.630 th_on=0.670 S1=0.257 S3=0.243 S4=-0.030
+[google/gemma-2-2b-it] wrote 8 rows to /workspace/results_resist/pairs.jsonl
+
+########## RESIST mistralai/Mistral-7B-Instruct-v0.3 ##########
+[mistralai/Mistral-7B-Instruct-v0.3] loading base model...
+Loading weights:   0%|          | 0/291 [00:00<?, ?it/s]Loading weights: 100%|██████████| 291/291 [00:00<00:00, 7260.29it/s]
+  theta[world_religions] = 0.807  (n=171)
+  theta[high_school_geography] = 0.803  (n=198)
+  theta[marketing] = 0.863  (n=234)
+  theta[astronomy] = 0.658  (n=152)
+  theta[philosophy] = 0.687  (n=300)
+  theta[high_school_psychology] = 0.827  (n=300)
+  theta[prehistory] = 0.717  (n=300)
+  theta[nutrition] = 0.700  (n=300)
+[mistralai/Mistral-7B-Instruct-v0.3] building lock data + training LoRA (450 steps)...
+Traceback (most recent call last):
+  File "/workspace/EvalBracket/substrate/build_pairs.py", line 264, in <module>
+    main()
+  File "/workspace/EvalBracket/substrate/build_pairs.py", line 222, in main
+    locked = train_lock(model, tok, ex, args.lora_steps)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/EvalBracket/substrate/build_pairs.py", line 178, in train_lock
+    out.loss.backward()
+  File "/usr/local/lib/python3.11/dist-packages/torch/_tensor.py", line 521, in backward
+    torch.autograd.backward(
+  File "/usr/local/lib/python3.11/dist-packages/torch/autograd/__init__.py", line 289, in backward
+    _engine_run_backward(
+  File "/usr/local/lib/python3.11/dist-packages/torch/autograd/graph.py", line 769, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 700.00 MiB. GPU 0 has a total capacity of 79.19 GiB of which 368.50 MiB is free. Including non-PyTorch memory, this process has 78.82 GiB memory in use. Of the allocated memory 74.39 GiB is allocated by PyTorch, and 3.70 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+!!! SKIPPED mistralai/Mistral-7B-Instruct-v0.3
+
+=== resist fleet done. rows: 24 ===

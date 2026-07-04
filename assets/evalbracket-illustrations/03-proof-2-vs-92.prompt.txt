@@ -1,0 +1,29 @@
+ABSOLUTE REQUIREMENT: The background is plain white printer paper, like a doodle drawn with a black marker on a white page. It is NOT a photograph, NOT a dark room, NOT a glowing sign. If in doubt, make the whole background pure white (#ffffff).
+
+Generate one standalone 16:9 horizontal hand-drawn explainer illustration for an English-language article.
+
+Visual DNA (STRICT):
+Flat pure-white paper background across the ENTIRE image. Black ink hand-drawn line art, slightly wobbly pen lines. Handwritten labels are plain matte marker, NOT glowing, NOT neon. Absolutely no dark or black background, no glow, no gradient, no shadow, no texture. Lots of empty white space. Clean absurd product-sketch feel. No PPT infographic, no cute cartoon, no realistic UI.
+
+CRITICAL LANGUAGE RULE: Every word MUST be correctly-spelled simple ENGLISH. No Chinese or non-English text. Keep labels short and spell each word correctly.
+
+Recurring character (required):
+Hei, a small solid-black absurd creature with two white dot eyes, tiny thin legs, blank deadpan expression, slightly uneven hand-drawn body. Deadpan, slightly bizarre, never cute.
+
+Scene (ONE round dartboard only, in the CENTER):
+Draw exactly ONE round dartboard target with a clear small bullseye at its center; a tiny label under it reads "the real answer". 
+On the LEFT: a single dart has landed far away, stuck in empty white space well OUTSIDE the dartboard, clearly missing. An orange arrow points from a red label to that missed dart.
+On the RIGHT: a big hand-drawn square bracket shape [ ] is wrapped snugly around the whole dartboard, clearly containing the bullseye. A blue label points to this bracket.
+Hei stands small at the far left holding a key, showing we already knew the answer.
+
+Color use:
+Black for line art, Hei, dartboard, and the bottom caption. Orange for arrows. Red only for the failing "one score". Blue only for the good "range". Flat colors, not glowing.
+
+Two tiny labels only:
+"one score: 2% right" (red, pointing to the missed dart) / "a range: 92% right" (blue, pointing to the bracket around the target).
+
+BOTTOM CAPTION (write exactly, plain black handwriting, easy to read):
+"We knew the real answer, then checked."
+
+Constraints:
+One idea only. ONE dartboard, not two. At least 35% empty white space. No title in the top-left corner. Flat, clean, hand-drawn, tidy. Pure white background, no exceptions.

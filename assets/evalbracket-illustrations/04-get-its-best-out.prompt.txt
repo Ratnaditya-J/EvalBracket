@@ -1,0 +1,29 @@
+ABSOLUTE REQUIREMENT: The background is plain white printer paper, like a doodle drawn with a black marker on a white page. It is NOT a photograph, NOT a dark room, NOT a glowing neon sign. The whole background is pure white (#ffffff).
+
+Generate one standalone 16:9 horizontal hand-drawn explainer illustration for an English-language article.
+
+Visual DNA (STRICT):
+Flat pure-white paper background across the ENTIRE image. Black ink hand-drawn line art, slightly wobbly pen lines. Handwritten labels are plain matte marker, NOT glowing. No dark background, no glow, no neon, no gradient, no shadow, no texture. Lots of empty white space. Clean absurd product-sketch feel. No PPT infographic, no cute cartoon, no realistic UI.
+
+CRITICAL LANGUAGE RULE: Every word MUST be correctly-spelled simple ENGLISH. No Chinese or non-English text. Keep labels short and spell each word correctly.
+
+Recurring character (required):
+Hei, a small solid-black absurd creature with two white dot eyes, tiny thin legs, blank deadpan expression, slightly uneven hand-drawn body. Hei does the core action. Deadpan, slightly bizarre, never cute.
+
+IMPORTANT for clarity: At the very BOTTOM center, write ONE short plain black handwritten sentence (the caption) exactly as given. Easy to read, correctly spelled.
+
+Color use:
+Black for line art, Hei, and the caption. Orange for the strong/working action. Red only for the weak/failing result. Blue only for a labelled key thing. Flat colors, not glowing.
+
+Constraints:
+One idea only. At least 35% empty white space. Besides the caption, at most 3 tiny labels. No title in the top-left corner. Flat, clean, hand-drawn, tidy. Pure white background, no exceptions.
+
+Scene (a carnival "test your strength" high-striker game, used TWICE side by side):
+Draw TWO tall vertical strength-tester towers, each with a little bell at the very top and a puck on a vertical track that rises when you hit the base pad with a mallet. A small label near the bells reads "its real best".
+LEFT tower: Hei gently taps the base pad with a tiny feather (a small speech bubble says "please?"); the puck has barely risen, stuck near the bottom.
+RIGHT tower: Hei swings a big heavy mallet labelled "examples + training" hard onto the base pad; the puck has shot all the way up and is ringing the bell at the top.
+
+Three tiny labels:
+"its real best" (blue, near the bells) / "sweet talk: ~11%" (red, at the left tower's low puck) / "real effort: ~100%" (orange, at the right tower's puck hitting the bell).
+
+BOTTOM CAPTION (write exactly): "You force its best out; asking nicely barely works." 

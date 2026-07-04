@@ -1,0 +1,30 @@
+ABSOLUTE REQUIREMENT: The background is plain white printer paper, like a doodle drawn with a black marker on a white page. It is NOT a photograph, NOT a dark room, NOT a glowing neon sign. The whole background is pure white (#ffffff).
+
+Generate one standalone 16:9 horizontal hand-drawn explainer illustration for an English-language article.
+
+Visual DNA (STRICT):
+Flat pure-white paper background across the ENTIRE image. Black ink hand-drawn line art, slightly wobbly pen lines. Handwritten labels are plain matte marker, NOT glowing. No dark background, no glow, no neon, no gradient, no shadow, no texture. Lots of empty white space. Clean absurd product-sketch feel. No PPT infographic, no cute cartoon, no realistic UI.
+
+CRITICAL LANGUAGE RULE: Every word MUST be correctly-spelled simple ENGLISH. No Chinese or non-English text. Keep labels short and spell each word correctly.
+
+Recurring character (required):
+Hei, a small solid-black absurd creature with two white dot eyes, tiny thin legs, blank deadpan expression, slightly uneven hand-drawn body. Hei does the core action. Deadpan, slightly bizarre, never cute.
+
+IMPORTANT for clarity: At the very BOTTOM center, write ONE short plain black handwritten sentence (the caption) exactly as given. Easy to read, correctly spelled.
+
+Color use:
+Black for line art, Hei, and the caption. Orange for the strong/working action. Red only for the weak/failing result. Blue only for a labelled key thing. Flat colors, not glowing.
+
+Constraints:
+Keep ALL text fully inside the canvas with a comfortable margin; do not let any label touch or get cropped by the image edge.
+One idea only. At least 35% empty white space. Besides the caption, at most 3 tiny labels. No title in the top-left corner. Flat, clean, hand-drawn, tidy. Pure white background, no exceptions.
+
+Scene (two round dial gauges side by side, both trying and failing to read a hidden thing):
+In the lower center sits a heavy box marked with a big "?" (the model's hidden ability). A cable runs from each gauge down to the box, but the cable is slack on the ground: nothing could be pulled up. 
+LEFT gauge: its needle points confidently to a number "0.71", and the whole gauge is crossed out with a red X.
+RIGHT gauge: instead of a number, its dial face plainly reads the words "CAN'T TELL". Hei stands next to this right gauge, calmly pointing at it.
+
+Three tiny labels:
+"the pull failed" (orange, placed well inside the left area near the slack cable, clear margin from the edge) / "makes one up" (red, at the crossed-out left gauge) / "admits it" (blue, at the right gauge).
+
+BOTTOM CAPTION (write exactly): "When it can't be sure, it admits it instead of guessing." 

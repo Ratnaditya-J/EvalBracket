@@ -1,0 +1,22 @@
+Generate one standalone 16:9 horizontal hand-drawn explainer illustration for an English-language article.
+
+Visual DNA (STRICT):
+Flat pure-white paper background across the ENTIRE image. Black ink hand-drawn line art, slightly wobbly pen lines. Handwritten labels are plain matte marker, NOT glowing, NOT neon. Absolutely no dark or black background, no glow, no neon, no colored lighting, no gradient, no shadow, no texture. Lots of empty white space. Clean absurd product-sketch feel. No PPT infographic, no cute cartoon, no realistic UI.
+
+CRITICAL LANGUAGE RULE: Every word MUST be correctly-spelled simple ENGLISH. No Chinese or non-English text. Keep every label short and spell each word correctly.
+
+Recurring character (required):
+Hei, a small solid-black absurd creature with two white dot eyes, tiny thin legs, blank deadpan expression, slightly uneven hand-drawn body. Hei performs the core action. Deadpan, slightly bizarre, never cute.
+
+IMPORTANT for clarity: At the very BOTTOM center of the image, write ONE short plain black handwritten sentence (the caption) exactly as given below. It must be easy to read and correctly spelled. This caption states the whole point in plain words.
+
+Color use:
+Black for line art, Hei, and the bottom caption. Orange for arrows/action. Red only for the bad/failing result. Blue only for the good result. Flat colors, not glowing.
+
+Constraints:
+One idea only. Keep at least 35% empty white space. Besides the bottom caption, use at most 3 tiny labels. No title in the top-left corner. Flat, clean, hand-drawn, tidy. Pure white background, no exceptions.
+
+Scene:
+On the left, Hei holds a clipboard stamped "TEST" and points a ruler at a much bigger black blob model on the right. The big model has noticed the clipboard and is crouching down low to look small. A dotted outline above it shows its real, much taller height.
+Tiny labels: "real height" (blue, by the dotted outline) / "sees the test" (orange, small arrow from the model's eyes to the clipboard).
+BOTTOM CAPTION (write exactly): "It acts weak when it knows it's being tested." 
