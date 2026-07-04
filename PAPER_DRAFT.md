@@ -29,7 +29,9 @@ calibration** — turning the aggregate number into a per-model-class guarantee.
 negatives that sharpen the contribution: (i) the interval's validity rests entirely on elicitation
 recovering latent capability, and it *fails*, silently, when elicitation is defeated, which we fix
 with an **elicitation-gap abstain rule** that converts silent failure into honest refusal (coverage
-restored **0.00 → 0.81** on the clean disjoint resist fleet, normal models untouched); (ii) fusing
+restored **0.00 → 0.81** on the clean disjoint resist fleet, normal models untouched) — an
+elicitation-sufficiency criterion that, needing no calibration fleet, is the one component that
+transfers to a single frontier model; (ii) fusing
 behavioral awareness signals adds nothing over signal-free conformal; (iii) prompt-based mitigations
 (disguise, cooperation) recover only ~11–12% of the suppression gap head-to-head, vs ~97–101% for elicitation. We then study
 capability *maturation*: whether the ceiling leads the floor across model versions. In **one**
@@ -59,8 +61,10 @@ password-locked open models, the "truth" being the locked model's password-on ce
    guarantee, plus a Winkler-interval-score evaluation and a baseline ladder.
 2. **A validity proof on known truth**: on password-locked models, the interval brackets truth (~92%)
    where a naive CI around the point score has ~2% coverage.
-3. **The elicitation-gap abstain rule**: a ground-truth-free self-diagnostic that makes the method
-   fail loudly (refuse) instead of returning a confident wrong interval when elicitation is defeated.
+3. **The elicitation-gap abstain rule** — an *elicitation-sufficiency criterion*: from a single
+   model's own scores (no fleet, no ground truth) it decides when a measured ceiling can be trusted as
+   an upper bound, and refuses instead of returning a confident wrong interval when it cannot. It is
+   the one component that transfers to a single closed frontier model (RSP/FSF-relevant).
 4. **Three pre-registered honest negatives** (fusion ornamental; disguise ceiling; silent-failure
    mode) that redirect the contribution to calibration + validity proof + failure detection.
 5. **A candidate maturation-lag suppression signal**: controlled lag recovery tracking an imposed
@@ -229,12 +233,36 @@ closable only by elicitation/fine-tune. A quantified "disguise is a dead end."
 
 ![Mitigation head-to-head on the same locked substrate: prompt mitigations (disguise, cooperate) recover ~11-12% of the suppression gap; elicitation (few-shot, fine-tune) recovers ~all of it.](figures/fig3_headtohead.pdf){width=72%}
 
-### 5.6 The hard case: silent failure, and the fix
-Trained 5 elicitation-resistant locks (demos → random, so few-shot cannot unlock). S3 recovers θ in
-**3%** (vs 84%); the interval **collapses to 0% coverage**, and does so *silently* (a narrow, wrong
-point). The elicitation gap S3−S1 = +0.52 when trustworthy vs −0.01 when defeated; the abstain rule
-uses it to restore coverage **0.00 → 0.81** (100% of resistant pairs abstained, clean disjoint fleet) while leaving the
-normal fleet unchanged. The method now refuses instead of lying.
+### 5.6 The abstain rule: a frontier-transferable elicitation-sufficiency criterion
+The interval's validity rests entirely on the elicitation ceiling recovering latent capability; when
+elicitation is defeated it fails *silently* — a narrow, confident, wrong point. The abstain rule is
+the safeguard, and — unlike the calibrated interval — it needs **no fleet, no calibration, and no
+ground truth**: from a single model's own S1, S3, and item count it tests whether the elicitation gain
+S3−S1 is significant, and if not declares the ceiling unbounded ("at least the floor; upper bound
+unknown").
+
+We stress-test it on 5 **elicitation-resistant** locks (demos → random, so few-shot cannot unlock).
+There S3 recovers θ on **3%** of pairs (vs 84% normally) and the raw interval **collapses to 0%
+coverage, silently**. The abstain rule flags **all** constructed-resistant locks (100% of resistant
+pairs, `pairs_resist3.jsonl`), restoring coverage **0.00 → 0.81** while leaving the normal fleet
+essentially untouched. Its errors run in the safe direction: it **errs conservative**, and its cost is
+*false abstentions* on trustworthy ceilings (6 of 80 on the existence fleet) — the correct failure
+mode for a capability trigger. When it *does* trust a ceiling, that ceiling sits within **~0.02** of
+truth (trusted-ceiling undershoot 0.015–0.022 across the committed fleets), so a "trust" verdict is
+operationally meaningful.
+
+**Construction caveat (stated, not hidden).** The separation here is near-perfect *because the
+resistant locks are constructed cleanly* (demos → random drives the gain to ≈ 0). That makes any
+single discrimination score (e.g. an AUC) optimistic, so we deliberately **do not headline one**; a
+graded-difficulty elicitation-resistance benchmark — partial resistance, mixed demos — is the honest
+next test, left to future work.
+
+**Why this is the frontier-transferable contribution.** The elicitation literature either elicits
+harder or detects sandbagging (§2); none states *when elicitation is sufficient*. The abstain rule is
+exactly that decision rule, and it is the one piece of EvalBracket that applies to a **single closed
+frontier model with no calibration fleet** — an operational RSP/FSF criterion: *when the elicitation
+gap is not significant, treat the capability ceiling as unbounded and make the conservative capability
+decision.*
 
 ### 5.7 Maturation (RQ4)
 **Controlled (Stage 1b).** One continuously-trained lineage; ceiling = password-on recall (rises as a
@@ -300,6 +328,16 @@ validity proof + the elicitation-gap self-diagnostic. Access tiering follows fro
 black-box (few-shot ceiling + abstain) abstains often against resistant models; white-box (fine-tune
 ceiling + probes) recovers where black-box abstains, matching the gated-third-party-auditor direction
 the field is moving toward.
+
+**What transfers, and what does not.** The calibrated *interval* is validation science, not a frontier
+deployment tool. Its coverage guarantee is *marginal over an exchangeable fleet* (conditional per size
+band, §5.4); it does **not** transfer to a single, non-exchangeable frontier model, and running
+EvalBracket on a novel model does not by itself hand you a calibrated interval for it. What the
+interval buys is a *proof that the mechanism works on known truth* — that a suppressed point score is
+confidently wrong (~2%) while a properly-calibrated bracket recovers it (~92%). That proof is what
+earns trust in the two pieces that *do* transfer to a single frontier target with no fleet: the
+**elicitation-gap abstain rule** (§5.6) and locked-analogue elicitation QA. The frontier value of this
+work lives there, not in a promise of calibrated intervals for arbitrary models.
 
 ---
 
