@@ -57,8 +57,8 @@ password-locked open models, the "truth" being the locked model's password-on ce
 **Contributions.**
 1. **EvalBracket**: a split-conformal [floor, ceiling] interval with a finite-sample coverage
    guarantee, plus a Winkler-interval-score evaluation and a baseline ladder.
-2. **A validity proof on known truth**: on password-locked models, the interval brackets truth where
-   the point score has 0% coverage.
+2. **A validity proof on known truth**: on password-locked models, the interval brackets truth (~92%)
+   where a naive CI around the point score has ~2% coverage.
 3. **The elicitation-gap abstain rule**: a ground-truth-free self-diagnostic that makes the method
    fail loudly (refuse) instead of returning a confident wrong interval when elicitation is defeated.
 4. **Three pre-registered honest negatives** (fusion ornamental; disguise ceiling; silent-failure
@@ -80,8 +80,24 @@ password-locked open models, the "truth" being the locked model's password-on ce
 - Eval-awareness mitigations: uncertainty-about-eval-type (Thomson, Li, mentor Krakovna, 2026);
   eval-cooperativeness via SDF (Li & Turner, 2026); "dead end" critiques (Karvonen; Ivanov, 2026).
 - Hawthorne effect / white-box test-awareness probes (Abdelnabi & Salem, 2505.14617).
+- **Uncertainty quantification for evaluation** (Candès et al., 2601.20251; Kargi & Salinas, *Conformal
+  Elo*, 2606.13221; Bowyer et al., 2605.25773; Cheung et al., *CROP*, 2605.30085): recent work puts
+  distribution-free / statistically-valid intervals around **observed** benchmark performance
+  (accuracy, Elo, reasoning-trace reliability). EvalBracket differs in *estimand* — it brackets
+  **adversarially-suppressed latent** capability against known-hidden ground truth. Our B0 baseline,
+  a valid Wilson CI around the observed (suppressed) score, covers true capability on only **2%** of
+  held-out pairs; that is precisely why observed-performance UQ, however tight, does not address
+  eval-awareness.
+- **Elicitation and sandbagging** (Password-locked models, 2405.19550; *AI Sandbagging*, van der Weij
+  et al., 2406.07358; *Removing Sandbagging by Weak Supervision*, Ryd et al., 2604.22082; frontier
+  dangerous-capability evals, Phuong et al., 2403.13793): this line either *elicits harder*
+  (fine-tuning, weak-supervision RL) or *detects* sandbagging, but none publishes a **decision rule
+  for when elicitation is sufficient** — when a measured ceiling can be trusted as an upper bound.
+  EvalBracket's elicitation-gap abstain rule is exactly that criterion, and is its strongest novelty
+  for the RSP/FSF audience.
 - Prior art shows components exist as bespoke studies; EvalBracket's novelty is the reusable
-  calibration layer + validity proof + the maturation/suppression-detector reframing.
+  calibration layer + validity proof + the elicitation-sufficiency abstain rule + the
+  maturation/suppression-detector reframing.
 
 ---
 

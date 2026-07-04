@@ -177,8 +177,8 @@ group-conditional / Mondrian conformal) is the stated remedy.
 ## What this establishes, and what it doesn't
 
 **Establishes (on real ground truth):**
-1. A point score under a capability lock has 0% coverage of true capability — the honest object is
-   an interval, not a number.
+1. A naive CI around a point score under a capability lock has ~2% coverage of true capability — the
+   honest object is an interval, not a number.
 2. A conformal-calibrated [floor, ceiling], calibrated across locked models, brackets true
    capability at ~nominal rate leave-one-model-out — where the point score fails.
 3. The precondition (elicitation recovers θ) holds on a fresh fleet; the method is exactly as valid
@@ -316,7 +316,8 @@ instrument distinguishes the two honestly (certified in 1b, refused in 2).
 ## Final verdict
 
 - **Validated (real ground truth):** where you can elicit hidden capability, a calibrated bracket
-  recovers true capability (86–94% coverage) where the point score is confidently wrong (0%). This
+  recovers true capability (86–94% coverage) where a naive CI around the point score is confidently
+  wrong (~2%). This
   is more than the field's blog-post arguments; it is measured on models with known truth.
 - **Boundary mapped:** the method is exactly as good as elicitation. Defeat elicitation and it
   collapses to 0% — silently. It also degrades on models unlike the calibration set.
