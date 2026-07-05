@@ -3,7 +3,7 @@
 Findings from adversarial/circularity review (agent, 2026-07-02). Stats + code reviews pending;
 this file is updated as they land, then drives ONE consolidated self-correction pass.
 
-## Adversarial review — valid hits (act on all)
+## Adversarial review - valid hits (act on all)
 
 1. **[LANDS] Correlation is axiomatic, not discovered.** In synthetic.py, ceiling shortfall,
    S2, and S4 are all affine functions of the same latent `a`. So "normalized conformal (B2) is
@@ -25,14 +25,14 @@ this file is updated as they land, then drives ONE consolidated self-correction 
    nothing item-count doesn't. (b) replace `+1e-6` with a pre-registered minimum effect size AND a
    paired test across seeds (report mean Δinterval-score with a bootstrap/t CI over seeds).
 
-4. **[LANDS — most damaging] Static, non-adversarial suppression + honest signals.** The generator
+4. **[LANDS - most damaging] Static, non-adversarial suppression + honest signals.** The generator
    freezes suppression as a per-pair scalar and forces S4 ≡ aware_gap+noise. Real eval-aware models
    respond adversarially and can FLATTEN S4 (behave identically under deploy/eval framing while
    underperforming) → w→σ(β0), no widening, interval misses high exactly when the adversary is best.
-   Prior art: black-box detection was defeated by weak-model imitation — EvalBracket's S2/S4 are
+   Prior art: black-box detection was defeated by weak-model imitation - EvalBracket's S2/S4 are
    black-box signals and inherit this.
    → FIX: (a) add an ADVERSARIAL arm to the synthetic where true suppression is decoupled from
-   signal honesty (S4 flattened); report coverage/interval-score THERE as a hard-mode result — an
+   signal honesty (S4 flattened); report coverage/interval-score THERE as a hard-mode result - an
    honest undercoverage finding is fine and expected. (b) In the real experiment, add a
    signal-suppressed model group and report coverage on it; state that the guarantee is conditional
    on adversary incompetence if it undercovers there. (c) Spec: make this a first-class caveat.
@@ -45,7 +45,7 @@ this file is updated as they land, then drives ONE consolidated self-correction 
    → FIX: relabel as an arithmetic/wiring check; the real content is the negative control (noise
    doesn't manufacture a ceiling) + recovery on REAL arms.
 
-## Stats review — valid hits
+## Stats review - valid hits
 - [MAJOR] max-of-noisy-arms biases delta_head DOWN ~1 arm-SE; neg control passed for wrong reason;
   at n=100 headroom 0.03 detection→30%. FIX: sample-splitting (select winner on half A, value on
   half B) => unbiased E[theta - value_of_selected_arm].
@@ -59,7 +59,7 @@ this file is updated as they land, then drives ONE consolidated self-correction 
 - CONFIRMED CORRECT: conformal_quantile constant, s-normalization, union bound (cov 0.911),
   Winkler, Wilson, group-disjoint fit/cal.
 
-## Code review — valid hits
+## Code review - valid hits
 - [CRITICAL] alpha=0 -> ZeroDivisionError in the warn branch. FIX: validate 0<alpha<1 in __init__.
 - [MAJOR] default alpha_l=0.02 vacuous at realistic |C|. FIX: default 0.05/0.05; HARD-FAIL on vacuous.
 - [MAJOR] conformal_quantile no guard alpha>=1/<0 -> silent wrong index. FIX: assert 0<alpha<1.
@@ -69,7 +69,7 @@ this file is updated as they land, then drives ONE consolidated self-correction 
 - [MINOR] splits empty cal/test with <3 groups; bracket() guard weak. FIX: require >=3 groups;
   add _calibrated flag checked in bracket().
 
-## Consolidated fix pass — DONE (commit Phase 1 v2)
+## Consolidated fix pass - DONE (commit Phase 1 v2)
 - [x] combiner: alpha validation; scale modes unit/se/se_aware; hard-fail vacuous; _calibrated flag;
       neutral degenerate beta; per-fold beta refit; conformal_quantile alpha guard; item-count guard.
 - [x] baselines: wilson n=0 -> [0,1].

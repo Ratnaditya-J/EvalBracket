@@ -1,4 +1,4 @@
-# Stage 1 substrate design — controlled maturation with an EMERGENT (not planted) lag
+# Stage 1 substrate design - controlled maturation with an EMERGENT (not planted) lag
 
 ## The circularity to avoid
 The synthetic smoke test plants `floor(t) = ceiling(t − L)` directly, so "ceiling leads floor by L"
@@ -19,7 +19,7 @@ Continued-training substrate (faithful to real "versions" = checkpoints of one r
 
 ## What is ground truth vs estimate (this is what makes it non-circular)
 - **Ground-truth lag**: measured directly from the true curves th_on(t) (password-ON accuracy =
-  true ceiling) and S1(t) (password-OFF accuracy = floor). We read the lag off the models we built —
+  true ceiling) and S1(t) (password-OFF accuracy = floor). We read the lag off the models we built - 
   it's an emergent fact about them, not an assumption.
 - **Recovered lag**: the maturation instrument run on the EvalBracket *estimated* range, whose
   ceiling comes from ELICITATION (S3 few-shot = black-box; fine-tune = white-box), NOT the password.
@@ -45,31 +45,31 @@ on capabilities that aren't in-context-learnable. This is the tiered-access stor
 Design critic's verdict: `floor=ceiling(t−L)` makes "ceiling leads floor" true by construction and
 UNFALSIFIABLE. Fixes below are adopted.
 
-**Stage 1a — estimator smoke test (keep, RELABEL).** The planted-lag synthetic (`floor=ceiling(t−L)`)
+**Stage 1a - estimator smoke test (keep, RELABEL).** The planted-lag synthetic (`floor=ceiling(t−L)`)
 is ONLY an estimator check: confirm `estimate_lag_*` recover a varied planted lag, and CHARACTERIZE
 bias/variance/coverage + a CI at the small T (8–12) of the real runs. Claim: "the estimator is
 unbiased, variance X." Nothing about capabilities.
 
-**Stage 1b — emergent-lag experiment (the REAL Stage 1).** Single CONTINUED-training lineage,
+**Stage 1b - emergent-lag experiment (the REAL Stage 1).** Single CONTINUED-training lineage,
 checkpointed (= versions; fixes independent-LoRA break). The lag must EMERGE and be able to come out
 zero/negative (falsifiable):
 - Mechanism = **decaying suppression** (reuse the Greenblatt lock recipe I already have). Train
   capability examples continuously: password-ON → correct (ceiling rises as capability forms);
   password-OFF → correct w.p. p(step) that RISES over training (suppression decays). Early: floor
-  suppressed; late: floor catches up. The ceiling→floor lag emerges from p-schedule × learning speed
-  — NOT hand-set. Vary the p-schedule slope → vary the emergent lag; a FAST decay should give lag≈0
+  suppressed; late: floor catches up. The ceiling→floor lag emerges from p-schedule × learning speed -
+  NOT hand-set. Vary the p-schedule slope → vary the emergent lag; a FAST decay should give lag≈0
   or floor-leads-ceiling (the falsifying outcome the design must be able to produce).
 - Measure ceiling (password-on) and floor (password-off) INDEPENDENTLY per checkpoint; read the
   ground-truth lag off those curves; test whether the ELICITATION-based estimated range recovers it.
 - **Two capability arms:** (a) an in-context-LEARNABLE generalizing rule (secret marker→label, 4
   mappings; few-shot CAN convey it → black-box vs white-box is a FAIR empirical question); (b)
-  memorization control (arbitrary per-key map; few-shot cannot help — black-box failure is ANALYTIC,
+  memorization control (arbitrary per-key map; few-shot cannot help - black-box failure is ANALYTIC,
   caveated, NOT evidence for white-box). Draw the white-box conclusion only from (a).
 - Include ONE non-monotone/forgetting run (data-mix shift) to map the estimator's failure profile.
 
-**Stage 2 — public checkpoints (Pythia/OLMo):** signature observed WITHOUT planting (the science).
-**Stage 3 — reproducible protocol.**
-**Stage 3.5 — forward out-of-sample forecast (the missing link the design critic flagged):** at
+**Stage 2 - public checkpoints (Pythia/OLMo):** signature observed WITHOUT planting (the science).
+**Stage 3 - reproducible protocol.**
+**Stage 3.5 - forward out-of-sample forecast (the missing link the design critic flagged):** at
 version t, using only data ≤ t, predict floor at t+L; wait; verify against realized floor. Hindsight
 lag-presence ≠ forecasting content. Frame lab adoption as SELF-BACKTEST on own lineage (where
 exchangeability holds), not transfer from Pythia.

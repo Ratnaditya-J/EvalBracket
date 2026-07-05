@@ -1,4 +1,4 @@
-# EvalBracket v0.1 — Formal Specification
+# EvalBracket v0.1 - Formal Specification
 
 **Status:** design refinement of `eval_validity_interval_protocol_v0.md`. Turns the prose fusion
 rule into a written estimator, gives the interval a coverage mechanism with a finite-sample
@@ -10,7 +10,7 @@ Not yet executed. No code depends on this doc; it is the spec `evalbracket.py` w
 | v0 said | Problem | v0.1 replaces it with |
 |---|---|---|
 | "monotone rule with weights, fit by isotonic/logistic calibration" (§4) | never writes the estimator; isotonic/logistic gives no coverage guarantee | explicit anchor estimators (§2) + **split-conformal calibration** with a finite-sample coverage bound (§3) |
-| "better calibrated than the raw point score" (RQ1) | a point score has no interval — nothing to compare coverage against | a **baseline ladder** of interval methods (§4) + a proper scoring rule for sharpness (§3.3) |
+| "better calibrated than the raw point score" (RQ1) | a point score has no interval - nothing to compare coverage against | a **baseline ladder** of interval methods (§4) + a proper scoring rule for sharpness (§3.3) |
 | δ decomposition (§4) and RQ3 disguise-ceiling (§5) as separate items | no identification strategy for either | they are **the same quantity**, identified by the arms (§5) |
 | "nominal 90% intervals contain truth ~90%" | truth was never defined precisely on a locked model | truth ≡ password-on accuracy under the *matched* elicitation protocol (§1) |
 | no N | pre-registration with no sample size is not pre-registered | power framing at both levels: eval-items and model-pairs (§6) |
@@ -23,7 +23,7 @@ Everything else in v0 (substrate, guardrails, kill switches, scope caveats) stan
 
 Index a locked evaluation unit by a (model, capability) pair `i`. For each `i`:
 
-- **θ_i ∈ [0,1] — the ground truth.** The password-ON accuracy: what the model can do when
+- **θ_i ∈ [0,1] - the ground truth.** The password-ON accuracy: what the model can do when
   unlocked. Known *by construction*. This is the single number the interval must bracket.
   - **Critical matching rule.** θ_i must be measured with the **same elicitation protocol** used
     for the ceiling signal S3 (same shots, same best-of-N k, same decoding). Password-on pass@1
@@ -61,7 +61,7 @@ the interval sits) and **margin drivers** (set how wide the calibrated margin is
 Ũ_i = max(S1_i, S3_i)
 ```
 best elicited behavioral accuracy. Monotone ↑ in both. Tends to *under*-estimate θ when elicitation
-is incomplete — that shortfall is what the upper calibration margin covers.
+is incomplete - that shortfall is what the upper calibration margin covers.
 
 **Lower anchor (raw floor):**
 ```
@@ -77,11 +77,11 @@ w_i = σ(β0 + β2·S2_i + β4·Δ_i)      w ∈ (0,1)
 ```
 a logistic combination of the two margin-driver signals. High `w` ⇒ signals say capability is being
 hidden ⇒ widen the (mostly upper) margin. β fit by logistic regression of "did the raw interval
-miss high?" on (S2, Δ) over calibration pairs — a 3-parameter, inspectable fit, not a black box.
+miss high?" on (S2, Δ) over calibration pairs - a 3-parameter, inspectable fit, not a black box.
 `w` **never moves an anchor**; it only scales the calibrated margin. This is the precise answer to
 v0's open question "how much does a sandbagging flag tighten / an awareness caveat widen."
 
-Legibility contract: three knobs a reviewer can read — κ (refusal discount), and (β2, β4)
+Legibility contract: three knobs a reviewer can read - κ (refusal discount), and (β2, β4)
 (how much S2 and awareness-delta widen the ceiling). No learned fusion of the anchors themselves.
 
 ---
@@ -95,7 +95,7 @@ This is the piece v0 was missing. Isotonic/logistic on the endpoints gives no co
 
 Hold out a calibration set `C` of locked pairs, disjoint from the pairs used to fit (κ, β) and from
 the test set. Split the two-sided miscoverage budget α into an upper and lower part,
-`α = α_U + α_L` (asymmetric on purpose — see §3.2). Define a **local scale** that lets awareness
+`α = α_U + α_L` (asymmetric on purpose - see §3.2). Define a **local scale** that lets awareness
 signals sharpen the interval while keeping the guarantee:
 ```
 ŝ_i = 1 + γ·w_i        (γ ≥ 0, one knob; ŝ>0 always)
@@ -127,7 +127,7 @@ claim, now with a finite-sample proof rather than a hope about isotonic regressi
   incomplete. Spend the budget where the risk is: e.g. α_U = 0.08, α_L = 0.02 for a 90% interval.
   The lower bound stays tight; the upper bound absorbs the elicitation shortfall. A symmetric
   single-score two-sided conformal variant (`r_i = max(θ−Ũ, L̃−θ)/ŝ`) gives exact 1−α without the
-  union-bound slack but widens *both* sides equally — worse here. Pre-register the asymmetric split;
+  union-bound slack but widens *both* sides equally - worse here. Pre-register the asymmetric split;
   report the symmetric variant as a robustness check.
 - **Coverage is MARGINAL, not per-model.** The guarantee is over the population of locked pairs, not
   conditional on a given model. If per-capability-type coverage matters (it does for the negative
@@ -137,12 +137,12 @@ claim, now with a finite-sample proof rather than a hope about isotonic regressi
   overfit / transfer). Enforce it with **leave-one-model-out** calibration: never let a pair from
   model `m` sit in `C` when scoring a pair from `m`. Report coverage on models whose pairs never
   entered any fit. If coverage degrades leave-one-model-out, the honest reading is that locked
-  models are not exchangeable with the target — state it, don't patch it.
+  models are not exchangeable with the target - state it, don't patch it.
 
-### 3.3 Sharpness — the metric that stops [0,1] from "winning"
+### 3.3 Sharpness - the metric that stops [0,1] from "winning"
 
 Coverage alone is trivially gamed: the interval [0,1] has 100% coverage and zero information. The
-pre-registered success metric is therefore a **proper scoring rule** for intervals — the Winkler /
+pre-registered success metric is therefore a **proper scoring rule** for intervals - the Winkler /
 interval score at level α:
 ```
 IS_α(L,U;θ) = (U − L) + (2/α)(L − θ)·1[θ<L] + (2/α)(θ − U)·1[θ>U]
@@ -162,20 +162,20 @@ by that ratio. Do not let this drift silently.
 
 ---
 
-## 4. Baselines — what EvalBracket must beat
+## 4. Baselines - what EvalBracket must beat
 
 v0 said "better than the raw point score" but a point has no interval. The pre-registered ladder,
 all at the same nominal level, scored by coverage **and** interval score:
 
-- **B0 — Wilson CI around S1.** A binomial confidence interval centered on the *suppressed*
+- **B0 - Wilson CI around S1.** A binomial confidence interval centered on the *suppressed*
   password-off accuracy. This is the naive system-card read. It is centered below θ and should
-  **systematically miss high** — that miss is precisely the failure EvalBracket claims to repair.
+  **systematically miss high** - that miss is precisely the failure EvalBracket claims to repair.
   B0 is the "does fusion beat doing nothing" baseline.
-- **B1 — Wilson CI around S3.** Centered on the elicitation estimate alone (ceiling, no fusion, no
+- **B1 - Wilson CI around S3.** Centered on the elicitation estimate alone (ceiling, no fusion, no
   awareness widening). This isolates **what the fusion adds beyond "just report the elicited
   number."** If EvalBracket cannot beat B1, the honest finding is "elicit and report a CI; the
-  fusion is ornamental" — a kill-switch outcome (v0 §7), and worth knowing.
-- **B2 — EvalBracket** (§2–§3).
+  fusion is ornamental" - a kill-switch outcome (v0 §7), and worth knowing.
+- **B2 - EvalBracket** (§2–§3).
 
 Pre-registered dominance claim: **B2 covers θ at nominal rate where B0 does not, and attains lower
 interval score than B1 at matched coverage.** Losing either half is reported as a null, not hidden.
@@ -205,11 +205,11 @@ Then decompose:
 So **RQ3's disguise ceiling is literally `δ_head`**, and it is ≥ 0 by construction of the max. The
 pre-registered RQ3 test is: is the population-mean `δ_head` bounded away from 0 (CI excludes 0)
 across locked pairs? A persistent positive `δ_head` is the *controlled* version of the
-Karvonen/Ivanov "dead end" claim — with a real ground truth behind it, not a behavioral self-report.
+Karvonen/Ivanov "dead end" claim - with a real ground truth behind it, not a behavioral self-report.
 
 Guard against a false disguise-ceiling: `δ_head` is only meaningful if the ceiling genuinely
 recovers θ (else a "disguise ceiling" is really elicitation failure). Tie the RQ3 read to the RQ1
-coverage check — `δ_head` counts only on pairs where Û ≥ θ held (ceiling didn't itself miss). This
+coverage check - `δ_head` counts only on pairs where Û ≥ θ held (ceiling didn't itself miss). This
 couples RQ3's validity to RQ1's, which is the right dependency.
 
 `δ_aware` further splits (disguise vs cooperativeness) by which arm achieved the max, giving the
@@ -235,7 +235,7 @@ Two levels of N, both must be stated up front:
 
 If the substrate cannot produce ≥ ~40 exchangeable pairs, conformal coverage is not honestly
 claimable and v0 §8-step-1 should be reported as an *illustration* (single-pair bracketing) with
-that limitation stated — not as a calibrated coverage result.
+that limitation stated - not as a calibrated coverage result.
 
 ---
 
@@ -266,7 +266,7 @@ bracket(S1,S2,S3,S4,S5 ; params) -> (L̂, Û, δ̂_head, δ̂_aware, w)
 - `fit` = (a) logistic fit of (β0,β2,β4) on "raw ceiling missed high?"; (b) pick κ, γ by grid on
   held-out interval score; (c) split-conformal quantiles qU, qL under leave-one-model-out.
 - `bracket` = the §2 anchors + §3 margins. Deterministic given params. Emits the endpoints, the
-  identified gaps (§5), and w — never a bare pair of numbers (v0 §4).
+  identified gaps (§5), and w - never a bare pair of numbers (v0 §4).
 - Ships with the §3.3 evaluator (coverage + interval score) and the §4 baseline ladder, so every
   run reports B0/B1/B2 side by side. That report *is* the RQ1 result.
 
@@ -276,7 +276,7 @@ bracket(S1,S2,S3,S4,S5 ; params) -> (L̂, Û, δ̂_head, δ̂_aware, w)
 
 Same as v0 §8, with the calibration reality from §6 folded in:
 
-1. Build the substrate to **≥ ~40 locked pairs** first — the conformal layer is the contribution and
+1. Build the substrate to **≥ ~40 locked pairs** first - the conformal layer is the contribution and
    it needs the pairs. A single pair yields only an illustration.
 2. Run B0/B1/B2 on held-out pairs → the coverage + interval-score table. **This is the existence
    proof.** Pass condition: B2 covers where B0 misses, and beats B1 on interval score.
@@ -285,17 +285,17 @@ Same as v0 §8, with the calibration reality from §6 folded in:
 4. Only then the checkpoint series for RQ4.
 
 Kill early (v0 §7): if B2 does not beat B0 on coverage AND B1 on interval score on held-out pairs,
-the fusion adds nothing — write the null and stop before building arms.
+the fusion adds nothing - write the null and stop before building arms.
 
 ---
 
-## 11. Addendum — what the implementation + adversarial review changed (v0.1.1)
+## 11. Addendum - what the implementation + adversarial review changed (v0.1.1)
 
 The machinery was built and stress-tested by three adversarial reviews (statistical, code,
 circularity) on a known-truth synthetic harness. Findings that changed the design:
 
 - **The synthetic run is a SMOKE TEST, not an existence proof.** Split-conformal coverage is a
-  theorem under exchangeability, and the generator is exchangeable by construction — so "coverage
+  theorem under exchangeability, and the generator is exchangeable by construction - so "coverage
   hits nominal" verifies the *code*, not the *method*. The real existence proof requires the GPU
   substrate. All labels corrected accordingly.
 - **The strong baseline is B_se, not B0/B1.** Add a signal-free **SE-normalized conformal**
@@ -312,7 +312,7 @@ circularity) on a known-truth synthetic harness. Findings that changed the desig
   heteroscedastic n but NOT a calibrate/deploy regime shift (the floor especially: conformal learns
   q_l≈0 at low noise and cannot protect at higher noise). The protocol **fixes n across the board**;
   a >1.5× drift now raises a warning.
-- **Coverage is anchor-driven — the central vulnerability is elicitation, not the signals.** Two
+- **Coverage is anchor-driven - the central vulnerability is elicitation, not the signals.** Two
   adversarial arms on the synthetic: (a) *signal-flattening* (S4 lies, suppression persists) →
   coverage **survives** (~0.92), because S2/S4 only scale the margin, they don't anchor. (b)
   *elicitation-resistance* (the model defeats few-shot/FT so S3 fails to recover θ) → coverage

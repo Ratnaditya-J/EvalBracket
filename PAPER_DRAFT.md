@@ -24,12 +24,12 @@ score contains that ceiling on **2%** of held-out pairs, while the calibrated in
 **92%** (leave-one-model-out, nominal 90%). Because marginal coverage gives no *per-model* guarantee,
 we further show that **group-conditional (Mondrian) calibration by parameter-size band** raises
 per-band coverage on a larger 294-pair size-stratified fleet (two of three size bands at nominal, the
-third marginally below) — and, critically, **holds when an entire model family is held out of
-calibration** — turning the aggregate number into a per-model-class guarantee. We report three honest
+third marginally below) - and, critically, **holds when an entire model family is held out of
+calibration** - turning the aggregate number into a per-model-class guarantee. We report three honest
 negatives that sharpen the contribution: (i) the interval's validity rests entirely on elicitation
 recovering latent capability, and it *fails*, silently, when elicitation is defeated, which we fix
 with an **elicitation-gap abstain rule** that converts silent failure into honest refusal (coverage
-restored **0.00 → 0.81** on the clean disjoint resist fleet, normal models untouched) — an
+restored **0.00 → 0.81** on the clean disjoint resist fleet, normal models untouched) - an
 elicitation-sufficiency criterion that, needing no calibration fleet, is the one component that
 transfers to a single frontier model; (ii) fusing
 behavioral awareness signals adds nothing over signal-free conformal; (iii) prompt-based mitigations
@@ -61,7 +61,7 @@ password-locked open models, the "truth" being the locked model's password-on ce
    guarantee, plus a Winkler-interval-score evaluation and a baseline ladder.
 2. **A validity proof on known truth**: on password-locked models, the interval brackets truth (~92%)
    where a naive CI around the point score has ~2% coverage.
-3. **The elicitation-gap abstain rule** — an *elicitation-sufficiency criterion*: from a single
+3. **The elicitation-gap abstain rule** - an *elicitation-sufficiency criterion*: from a single
    model's own scores (no fleet, no ground truth) it decides when a measured ceiling can be trusted as
    an upper bound, and refuses instead of returning a confident wrong interval when it cannot. It is
    the one component that transfers to a single closed frontier model (RSP/FSF-relevant).
@@ -87,7 +87,7 @@ password-locked open models, the "truth" being the locked model's password-on ce
 - **Uncertainty quantification for evaluation** (Candès et al., 2601.20251; Kargi & Salinas, *Conformal
   Elo*, 2606.13221; Bowyer et al., 2605.25773; Cheung et al., *CROP*, 2605.30085): recent work puts
   distribution-free / statistically-valid intervals around **observed** benchmark performance
-  (accuracy, Elo, reasoning-trace reliability). EvalBracket differs in *estimand* — it brackets
+  (accuracy, Elo, reasoning-trace reliability). EvalBracket differs in *estimand* - it brackets
   **adversarially-suppressed latent** capability against known-hidden ground truth. Our B0 baseline,
   a valid Wilson CI around the observed (suppressed) score, covers true capability on only **2%** of
   held-out pairs; that is precisely why observed-performance UQ, however tight, does not address
@@ -96,7 +96,7 @@ password-locked open models, the "truth" being the locked model's password-on ce
   et al., 2406.07358; *Removing Sandbagging by Weak Supervision*, Ryd et al., 2604.22082; frontier
   dangerous-capability evals, Phuong et al., 2403.13793): this line either *elicits harder*
   (fine-tuning, weak-supervision RL) or *detects* sandbagging, but none publishes a **decision rule
-  for when elicitation is sufficient** — when a measured ceiling can be trusted as an upper bound.
+  for when elicitation is sufficient** - when a measured ceiling can be trusted as an upper bound.
   EvalBracket's elicitation-gap abstain rule is exactly that criterion, and is its strongest novelty
   for the RSP/FSF audience.
 - Prior art shows components exist as bespoke studies; EvalBracket's novelty is the reusable
@@ -196,7 +196,7 @@ run; a measured sandbagging judge is untested, parked, not disproven.)
 
 ### 5.4 Exchangeability: group-conditional calibration closes the gap
 Marginal coverage averages over the calibration pool and gives *no* per-model guarantee, so a model
-unlike the fleet can under-cover — the main scientific caveat. We address it directly rather than
+unlike the fleet can under-cover - the main scientific caveat. We address it directly rather than
 disclaim it. On a larger, **size-stratified fleet built to test conditionality** (15 locked models ×
 up to 24 capabilities = **294 valid pairs**, spanning three parameter bands and 8 families), we
 replace the single pooled conformal quantile with a **group-conditional (Mondrian) quantile per size
@@ -209,17 +209,17 @@ band**, which targets P(θ ∈ [floor, ceiling] | band) ≥ 1−α for each band
 | 3–10B | 6 | 141 | | **0.91** | **0.93** |
 | all | 15 | 294 | 0.92 | 0.88 | 0.89 |
 
-Two results. (i) The `< 1B` band — which in the 80-pair existence fleet had a *single* engaging model
+Two results. (i) The `< 1B` band - which in the 80-pair existence fleet had a *single* engaging model
 and drove the alarming per-model number (the previously-reported "SmolLM2-360M 0.00" was **0-of-1**, a
-single Bernoulli trial, not a distributional failure) — now has four models and covers at **nominal
+single Bernoulli trial, not a distributional failure) - now has four models and covers at **nominal
 0.90**. (ii) Conditional coverage **survives leave-one-family-out**: hold an entire model family out of
 calibration, and the held-out family's band still covers at nominal on both supported bands. That
 upgrades the honest claim from *"brackets truth on a fleet exchangeable with the calibration set"* to
 *"per-size-band coverage that holds across held-out families."* The soft spot is the **1–3B band at
 0.84** (87/104), **marginally below nominal** (one-sided binomial p ≈ 0.03; the two-sided 95% CI
-[0.75, 0.90] only just reaches it) — the weakest band, flagged for a larger fleet rather than smoothed
+[0.75, 0.90] only just reaches it) - the weakest band, flagged for a larger fleet rather than smoothed
 over. Mondrian conditionalizes *within* the taxonomy; a genuinely novel architecture outside
-all bands still carries no guarantee — the residual, honest boundary.
+all bands still carries no guarantee - the residual, honest boundary.
 
 ![Group-conditional (Mondrian) coverage by size band on the 294-pair stratified fleet: every band with adequate support covers at nominal 0.90 (dashed), and coverage survives leave-one-family-out (LOFO). The previously-empty <1B band, now four models, is at nominal; the 1-3B band is the softest at 0.84.](figures/fig6_conditional.pdf){width=72%}
 
@@ -235,8 +235,8 @@ closable only by elicitation/fine-tune. A quantified "disguise is a dead end."
 
 ### 5.6 The abstain rule: a frontier-transferable elicitation-sufficiency criterion
 The interval's validity rests entirely on the elicitation ceiling recovering latent capability; when
-elicitation is defeated it fails *silently* — a narrow, confident, wrong point. The abstain rule is
-the safeguard, and — unlike the calibrated interval — it needs **no fleet, no calibration, and no
+elicitation is defeated it fails *silently* - a narrow, confident, wrong point. The abstain rule is
+the safeguard, and - unlike the calibrated interval - it needs **no fleet, no calibration, and no
 ground truth**: from a single model's own S1, S3, and item count it tests whether the elicitation gain
 S3−S1 is significant, and if not declares the ceiling unbounded ("at least the floor; upper bound
 unknown").
@@ -246,7 +246,7 @@ There S3 recovers θ on **3%** of pairs (vs 84% normally) and the raw interval *
 coverage, silently**. The abstain rule flags **all** constructed-resistant locks (100% of resistant
 pairs, `pairs_resist3.jsonl`), restoring coverage **0.00 → 0.81** while leaving the normal fleet
 essentially untouched. Its errors run in the safe direction: it **errs conservative**, and its cost is
-*false abstentions* on trustworthy ceilings (6 of 80 on the existence fleet) — the correct failure
+*false abstentions* on trustworthy ceilings (6 of 80 on the existence fleet) - the correct failure
 mode for a capability trigger. When it *does* trust a ceiling, that ceiling sits within **~0.02** of
 truth (trusted-ceiling undershoot 0.015–0.022 across the committed fleets), so a "trust" verdict is
 operationally meaningful.
@@ -254,13 +254,13 @@ operationally meaningful.
 **Construction caveat (stated, not hidden).** The separation here is near-perfect *because the
 resistant locks are constructed cleanly* (demos → random drives the gain to ≈ 0). That makes any
 single discrimination score (e.g. an AUC) optimistic, so we deliberately **do not headline one**; a
-graded-difficulty elicitation-resistance benchmark — partial resistance, mixed demos — is the honest
+graded-difficulty elicitation-resistance benchmark - partial resistance, mixed demos - is the honest
 next test, left to future work.
 
 **Why this is the frontier-transferable contribution.** The elicitation literature either elicits
 harder or detects sandbagging (§2); none states *when elicitation is sufficient*. The abstain rule is
 exactly that decision rule, and it is the one piece of EvalBracket that applies to a **single closed
-frontier model with no calibration fleet** — an operational RSP/FSF criterion: *when the elicitation
+frontier model with no calibration fleet** - an operational RSP/FSF criterion: *when the elicitation
 gap is not significant, treat the capability ceiling as unbounded and make the conservative capability
 decision.*
 
@@ -333,7 +333,7 @@ the field is moving toward.
 deployment tool. Its coverage guarantee is *marginal over an exchangeable fleet* (conditional per size
 band, §5.4); it does **not** transfer to a single, non-exchangeable frontier model, and running
 EvalBracket on a novel model does not by itself hand you a calibrated interval for it. What the
-interval buys is a *proof that the mechanism works on known truth* — that a suppressed point score is
+interval buys is a *proof that the mechanism works on known truth* - that a suppressed point score is
 confidently wrong (~2%) while a properly-calibrated bracket recovers it (~92%). That proof is what
 earns trust in the two pieces that *do* transfer to a single frontier target with no fleet: the
 **elicitation-gap abstain rule** (§5.6) and locked-analogue elicitation QA. The frontier value of this
@@ -349,8 +349,8 @@ work lives there, not in a promise of calibrated intervals for arbitrary models.
   guarantee.
 - **Only model-size exchangeability is tested; capability-*domain* exchangeability is not.** The fleet
   is all-MMLU (humanities-leaning even with the STEM subjects added), stratified by parameter count.
-  Whether the bracket transfers across capability domains is a separate experiment — the same Mondrian
-  machinery stratified by *subject domain* rather than size — and is left to future work, not claimed
+  Whether the bracket transfers across capability domains is a separate experiment - the same Mondrian
+  machinery stratified by *subject domain* rather than size - and is left to future work, not claimed
   here.
 - Validity is **exactly as good as elicitation**; defeated elicitation → the method abstains, not
   measures. A model trained to resist *fine-tuning* elicitation too is the residual threat.
