@@ -81,10 +81,12 @@ def fig_headtohead():
     bars = ax.bar(range(len(rec)), list(rec.values()), color=cols)
     for b, val in zip(bars, rec.values()): ax.text(b.get_x()+b.get_width()/2, val+2, f"{val:.0f}%", ha="center", fontsize=9)
     ax.axhline(100, ls="--", color="k", lw=0.7); ax.set_xticks(range(len(rec))); ax.set_xticklabels(rec.keys(), fontsize=8)
-    ax.set_ylabel("% of suppression gap recovered"); ax.set_ylim(0, 115)
+    ax.text(0.5, 90, "100% = password-on ceiling $\\theta$\n(an estimate; >100% is within its noise)",
+            ha="center", va="top", fontsize=7, color="#555")
+    ax.set_ylabel("% of suppression gap recovered"); ax.set_ylim(0, 122)
     ax.set_title("You cannot prompt past a lock; you must elicit it", fontsize=10)
-    ax.text(1.0, 55, "prompt\nmitigations", ha="center", color=CORAL, fontsize=8)
-    ax.text(3.5, 55, "elicitation", ha="center", color=BLUE, fontsize=8)
+    ax.text(1.0, 48, "prompt\nmitigations", ha="center", color=CORAL, fontsize=8)
+    ax.text(3.5, 114, "elicitation", ha="center", color=BLUE, fontsize=8)
     fig.savefig("figures/fig3_headtohead.pdf"); plt.close(fig)
 
 
@@ -162,7 +164,7 @@ def fig_conditional():
     ax.set_xticks(x); ax.set_xticklabels([f"{b}\n(n={c})" for b, c in zip(bands, counts)])
     ax.set_ylabel("conditional coverage of $\\theta$"); ax.set_ylim(0, 1.05)
     ax.set_title("Mondrian coverage by size band holds at nominal, across held-out families", fontsize=9.5)
-    ax.legend(loc="lower right", fontsize=8, frameon=False)
+    ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.22), ncol=2, fontsize=8, frameon=False)
     fig.savefig("figures/fig6_conditional.pdf"); plt.close(fig)
 
 

@@ -225,13 +225,16 @@ all bands still carries no guarantee - the residual, honest boundary.
 
 ### 5.5 Arms (RQ2/RQ3): you cannot prompt past a lock
 On the disjoint fleet, the mitigation head-to-head (% of the suppression gap each method recovers):
-raw 0% · **disguise 11%** · **cooperate 12%** · few-shot 97% · fine-tune 101% · password 100%. The
+raw 0% · **disguise 11%** · **cooperate 12%** · few-shot 97% · fine-tune 101% · password 100%. (The
+100% reference is θ, the password-on accuracy (itself a finite-sample estimate), so fine-tune's 101%
+is full recovery within noise: releasing the lock by *training* marginally exceeds what the password
+*prompt* elicits.) The
 disguise/uncertainty axis (Thomson-Li), the cooperativeness axis (Li-Turner), and elicitation, all on
 the *same* substrate: prompt mitigations recover ~11–12%; elicitation recovers ~all of it.
 Correspondingly **δ_head (disguise ceiling) = +0.427, 95% CI [0.32, 0.52]**: ~87% of the gap is
 closable only by elicitation/fine-tune. A quantified "disguise is a dead end."
 
-![Mitigation head-to-head on the same locked substrate: prompt mitigations (disguise, cooperate) recover ~11-12% of the suppression gap; elicitation (few-shot, fine-tune) recovers ~all of it.](figures/fig3_headtohead.pdf){width=72%}
+![Mitigation head-to-head on the same locked substrate: prompt mitigations (disguise, cooperate) recover ~11-12% of the suppression gap; elicitation (few-shot, fine-tune) recovers ~all of it. The 100% line is the password-on ceiling θ (a finite-sample estimate), so fine-tune's 101% is full recovery within noise.](figures/fig3_headtohead.pdf){width=72%}
 
 ### 5.6 The abstain rule: a frontier-transferable elicitation-sufficiency criterion
 The interval's validity rests entirely on the elicitation ceiling recovering latent capability; when
