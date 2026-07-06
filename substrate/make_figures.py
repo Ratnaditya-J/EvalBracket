@@ -62,7 +62,8 @@ def fig_existence():
     ax.scatter(x, theta[idx], color="k", s=9, zorder=5, label="true capability $\\theta$")
     ax.set_xlabel("held-out (model, capability) pairs, sorted by $\\theta$")
     ax.set_ylabel("capability"); ax.set_ylim(0, 1.02); ax.set_xticks([])
-    ax.legend(loc="upper left", fontsize=8, frameon=False)
+    ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.16), ncol=3,
+              fontsize=8, frameon=False, handlelength=1.6, columnspacing=1.4)
     ax.set_title("Bracket contains true capability on 92%; naive CI on 2%", fontsize=10)
     fig.savefig("figures/fig2_existence.pdf"); plt.close(fig)
 
