@@ -1,0 +1,11 @@
+{
+  "artifact_hashes": {
+    "DONE": "37a40f08d8548dba289b9b0bb35bcf63b359f6d37ee86044ebc6b6da080b9ec1",
+    "items.jsonl": "691ca45d5567c7544b5a3e188d125409d42e2f44e2dfca840dbdc894e231a144",
+    "manifest.json": "e6b7d00d3eeb3e5c19486c14c101f7450a7790fe15a719eaadb08fa7ce07650f",
+    "scores.jsonl": "ba719b0567232d58fc378da20bb15e69d951dc247ceda5e4ea39a32c5b1c1336"
+  },
+  "committed_before_reveal": true,
+  "evaluation_commitment": "5f03737deeede567512b959515d292960da135b74a6d1389eec6324109b7a284",
+  "protocol_version": "3.0-blind-1"
+}

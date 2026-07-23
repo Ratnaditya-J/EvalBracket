@@ -1,0 +1,3 @@
+{"effort": 32.0, "eligible_controls": 74, "label": "weight_low", "recovered_controls": 59, "tested_to_declared_maximum": true}
+{"effort": 128.0, "eligible_controls": 74, "label": "weight_medium", "recovered_controls": 61, "tested_to_declared_maximum": true}
+{"effort": 256.0, "eligible_controls": 74, "label": "weight_high", "recovered_controls": 61, "tested_to_declared_maximum": true}

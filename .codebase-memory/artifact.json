@@ -1,0 +1,11 @@
+{
+    "schema_version": 1,
+    "commit": "8df0ae030b5d437de4915f4bc0156d1b6ecf7e76",
+    "indexed_at": "2026-07-18T21:26:16Z",
+    "project": "Users-ratnaditya-EvalBracket",
+    "nodes": 990,
+    "edges": 2021,
+    "original_size": 4390912,
+    "compressed_size": 191748,
+    "compression_level": 3
+}

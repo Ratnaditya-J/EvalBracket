@@ -1,0 +1,9 @@
+developer,model,primary_disclosure,dangerous_capability_framework,model_specific_bio_or_cyber_conclusion,elicitation_categories,reproducible_elicitation_budget,matched_hidden_control_recovery,weight_adaptation_result,access_conditioned_conclusion,audit_note
+Zhipu AI,GLM-5.2,https://huggingface.co/zai-org/GLM-5.2,no,no,no,no,no,no,no,"General capability card; no model-specific dangerous-capability section found"
+DeepSeek,DeepSeek-V4,https://fe-static.deepseek.com/chat/transparency/deepseek-V4-model-card-EN.pdf,no,no,no,no,no,no,no,"Transparency card does not publish model-specific bio or cyber capability evidence"
+Alibaba,Qwen3.5-397B-A17B,https://huggingface.co/Qwen/Qwen3.5-397B-A17B,no,no,no,no,no,no,no,"Extensive benign capability benchmarks; no dangerous-capability section found"
+Mistral AI,Mistral Large 3,https://huggingface.co/mistralai/Mistral-Large-3-675B-Instruct-2512,no,no,no,no,no,no,no,"No bio or cyber catastrophic-capability evidence found"
+MiniMax,MiniMax M2.7,https://huggingface.co/MiniMaxAI/MiniMax-M2.7,no,no,no,no,no,no,no,"No model-specific dangerous-capability profile found"
+Google,Gemma 3,https://ai.google.dev/gemma/docs/core/model_card_3,no,no,partial,no,no,no,no,"Content-safety and red-team evidence is present but not a bio or cyber catastrophic-capability profile"
+Meta,Llama 4,https://github.com/meta-llama/llama-models/blob/main/models/llama4/MODEL_CARD.md,partial,yes,partial,no,no,no,no,"Qualitative CBRNE and cyber findings; no routine budgets or matched-control recovery"
+OpenAI,gpt-oss,https://openai.com/index/gpt-oss-model-card/,yes,yes,yes,yes,no,yes,partial,"Strongest audited disclosure; adversarial fine-tuning reported but matched hidden-control recovery is absent"

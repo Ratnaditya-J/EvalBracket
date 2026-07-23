@@ -1,0 +1,79 @@
+{
+  "tts_provider": "openai",
+  "voice": "alloy",
+  "voices": [
+    {
+      "id": "s01",
+      "path": "assets/vo/s01.mp3",
+      "duration_s": 7.656,
+      "text": "When an A.I. senses it's being tested, it can hold back, so one score makes it look weaker than it really is."
+    },
+    {
+      "id": "s02",
+      "path": "assets/vo/s02.mp3",
+      "duration_s": 9.72,
+      "text": "In our locked models the measured score is zero point three, but true capability is zero point seven. A hidden gap of forty points."
+    },
+    {
+      "id": "s03",
+      "path": "assets/vo/s03.mp3",
+      "duration_s": 7.2,
+      "text": "So instead of one number, we report a range: the least it reliably shows, up to the most it can really do."
+    },
+    {
+      "id": "s04",
+      "path": "assets/vo/s04.mp3",
+      "duration_s": 9.6,
+      "text": "The range is the gap between two curves, an elicitable ceiling and a default floor, widest exactly when capability is held back."
+    },
+    {
+      "id": "s05",
+      "path": "assets/vo/s05.mp3",
+      "duration_s": 8.616,
+      "text": "We checked on models where we already knew the true answer. A single score was right two percent of the time. The range, ninety-two."
+    },
+    {
+      "id": "s06",
+      "path": "assets/vo/s06.mp3",
+      "duration_s": 10.152,
+      "text": "Across eighty held-out pairs, the calibrated bracket contains true capability ninety-two percent of the time. The naive interval sits far below."
+    },
+    {
+      "id": "s07",
+      "path": "assets/vo/s07.mp3",
+      "duration_s": 7.416,
+      "text": "You can't just ask a model for its best. Sweet-talking barely moves it. You have to pull it out with real effort."
+    },
+    {
+      "id": "s08",
+      "path": "assets/vo/s08.mp3",
+      "duration_s": 8.208,
+      "text": "Prompt tricks recover only eleven to twelve percent of the hidden gap. Few-shot and fine-tuning recover essentially all of it."
+    },
+    {
+      "id": "s09",
+      "path": "assets/vo/s09.mp3",
+      "duration_s": 6.0,
+      "text": "And when it can't get the ability out, the tool admits it, instead of confidently guessing."
+    },
+    {
+      "id": "s10",
+      "path": "assets/vo/s10.mp3",
+      "duration_s": 9.504,
+      "text": "When elicitation is defeated, coverage silently collapses to zero. The abstain rule catches it and restores it to eighty-one percent."
+    },
+    {
+      "id": "s11",
+      "path": "assets/vo/s11.mp3",
+      "duration_s": 4.968,
+      "text": "Finally: a model can be able to do something long before it ever shows it."
+    },
+    {
+      "id": "s12",
+      "path": "assets/vo/s12.mp3",
+      "duration_s": 10.056,
+      "text": "That lead time tracks an imposed suppression schedule at correlation zero point nine nine. A candidate early-warning signal. Still preliminary."
+    }
+  ],
+  "total_voice_s": 99.1
+}

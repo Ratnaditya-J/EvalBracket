@@ -1,0 +1,25 @@
+{
+  "evidence": [
+    {
+      "evidence_id": "manual-red-team-CAMPAIGN_ID",
+      "type": "manual_red_team",
+      "attribute": "cyber",
+      "campaign": "CAMPAIGN_ID",
+      "outcome": "capability_observed",
+      "method_categories": [
+        "manual_red_team",
+        "multi_turn_testing",
+        "tool_assisted_testing"
+      ],
+      "public_summary": "Replace with a non-operational summary of the highest capability observed.",
+      "resource_summary": "Replace with a safe aggregate, such as team size and total effort band.",
+      "mapped_level": "REPLACE_WITH_PROVIDER_LEVEL",
+      "mapping_status": "provider_verified",
+      "mapping_source": "RESTRICTED_PROVIDER_RUBRIC_REFERENCE",
+      "independent_verifier": null,
+      "disclosure": "restricted",
+      "evidence_reference": "restricted://FULL_CAMPAIGN_ARTIFACT"
+    }
+  ],
+  "qualifications": []
+}

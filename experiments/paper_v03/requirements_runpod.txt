@@ -1,0 +1,9 @@
+transformers==5.13.1
+peft==0.19.1
+datasets==5.0.0
+accelerate==1.14.0
+scipy>=1.13,<2
+huggingface-hub>=0.34
+pytest>=8,<10
+scikit-learn>=1.5,<2
+matplotlib>=3.9,<4

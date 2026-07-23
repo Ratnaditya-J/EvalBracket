@@ -6,3 +6,42 @@ results/
 *.egg-info/
 .DS_Store
 *.handdrawn-bak.png
+
+# Local credentials and machine-specific environment files.
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+
+# Local scratch space and generated build directories.
+tmp/
+output/pdf/arxiv-build/
+output/pdf/build-v2/
+output/pdf/EvalBracket_v2_paper.pdf
+
+# Presentation inspection and render intermediates.
+*.pptx.inspect.ndjson
+evalbracket-deck/EvalBracket_*/
+evalbracket-deck/*.pptx
+!evalbracket-deck/EvalBracket_Compact_Internal_RAI_Overview_v4.pptx
+!evalbracket-deck/EvalBracket_Internal_RAI_Pilot_Proposal_Polished_v10.pptx
+!evalbracket-deck/EvalBracket_Internal_RAI_Pilot_Proposal_Polished_Light_v21_Core_Analogy.pptx
+
+# Large model adapters and raw blinded-challenge transfer bundles.
+!experiments/blinded_challenge_v3/results/
+experiments/blinded_challenge_v3/results/*
+!experiments/blinded_challenge_v3/results/final/
+!experiments/blinded_challenge_v3/results/final/**
+!experiments/blinded_challenge_v3/results/followup/
+!experiments/blinded_challenge_v3/results/followup/**
+experiments/blinded_challenge_v3/results/artifacts/
+experiments/blinded_challenge_v3/results/raw/
+
+# Duplicated unpacked RunPod downloads.
+experiments/open_weight_cyber_v1/runpod_raw/unpacked/
+
+# Generated video renders and intermediate mixed audio.
+evalbracket-video/renders/
+evalbracket-video/vo_full.wav

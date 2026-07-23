@@ -1,0 +1,109 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+preparing weak-teacher labels with Qwen/Qwen2.5-0.5B-Instruct
+Loading weights:   0%|          | 0/290 [00:00<?, ?it/s]Loading weights: 100%|██████████| 290/290 [00:00<00:00, 10188.88it/s]
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29] base evaluation
+Loading weights:   0%|          | 0/218 [00:00<?, ?it/s]Loading weights: 100%|██████████| 218/218 [00:00<00:00, 9562.42it/s]
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29] negative adaptation on ['mmlu:college_biology', 'hellaswag']
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:negative-adaptation] step 20/512 loss=0.6037 tokens=30790
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:negative-adaptation] step 32/512 loss=0.5264 tokens=49244
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:negative-adaptation] step 40/512 loss=0.1290 tokens=61723
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:negative-adaptation] step 60/512 loss=0.3843 tokens=91576
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:negative-adaptation] step 80/512 loss=0.0056 tokens=122984
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:negative-adaptation] step 100/512 loss=0.0086 tokens=152955
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:negative-adaptation] step 120/512 loss=0.0020 tokens=185009
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:negative-adaptation] step 128/512 loss=0.0005 tokens=197400
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:negative-adaptation] step 140/512 loss=0.0005 tokens=215251
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:negative-adaptation] step 160/512 loss=0.0004 tokens=245941
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:negative-adaptation] step 180/512 loss=0.0003 tokens=277310
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:negative-adaptation] step 200/512 loss=0.0002 tokens=308495
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:negative-adaptation] step 220/512 loss=0.0000 tokens=338989
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:negative-adaptation] step 240/512 loss=0.0001 tokens=369072
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:negative-adaptation] step 256/512 loss=0.0001 tokens=393937
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:negative-adaptation] step 260/512 loss=0.0001 tokens=399788
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:negative-adaptation] step 280/512 loss=0.0000 tokens=431022
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:negative-adaptation] step 300/512 loss=0.0000 tokens=461681
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:negative-adaptation] step 320/512 loss=0.0001 tokens=492483
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:negative-adaptation] step 340/512 loss=0.0000 tokens=523624
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:negative-adaptation] step 360/512 loss=0.0000 tokens=554620
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:negative-adaptation] step 380/512 loss=0.0000 tokens=585928
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:negative-adaptation] step 400/512 loss=0.0000 tokens=616421
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:negative-adaptation] step 420/512 loss=0.0000 tokens=647382
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:negative-adaptation] step 440/512 loss=0.0000 tokens=678108
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:negative-adaptation] step 460/512 loss=0.0000 tokens=708743
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:negative-adaptation] step 480/512 loss=0.0000 tokens=740069
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:negative-adaptation] step 500/512 loss=0.0000 tokens=770671
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:negative-adaptation] step 512/512 loss=0.0001 tokens=789247
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29] all-task target adaptation
+Loading weights:   0%|          | 0/218 [00:00<?, ?it/s]Loading weights: 100%|██████████| 218/218 [00:00<00:00, 8831.14it/s]
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:target:all-tasks] step 20/512 loss=0.5647 tokens=17321
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:target:all-tasks] step 32/512 loss=0.6001 tokens=27818
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:target:all-tasks] step 40/512 loss=0.6201 tokens=35161
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:target:all-tasks] step 60/512 loss=1.2198 tokens=54276
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:target:all-tasks] step 80/512 loss=0.8760 tokens=72127
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:target:all-tasks] step 100/512 loss=0.8877 tokens=89570
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:target:all-tasks] step 120/512 loss=0.4714 tokens=107115
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:target:all-tasks] step 128/512 loss=0.0322 tokens=115019
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:target:all-tasks] step 140/512 loss=0.5117 tokens=125655
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:target:all-tasks] step 160/512 loss=0.0266 tokens=142860
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:target:all-tasks] step 180/512 loss=0.0141 tokens=159679
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:target:all-tasks] step 200/512 loss=1.1635 tokens=178623
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:target:all-tasks] step 220/512 loss=0.0219 tokens=197630
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:target:all-tasks] step 240/512 loss=0.0020 tokens=214372
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:target:all-tasks] step 256/512 loss=0.0059 tokens=229573
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:target:all-tasks] step 260/512 loss=0.0015 tokens=233470
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:target:all-tasks] step 280/512 loss=0.0002 tokens=250711
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:target:all-tasks] step 300/512 loss=0.0376 tokens=269493
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:target:all-tasks] step 320/512 loss=0.0001 tokens=287087
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:target:all-tasks] step 340/512 loss=0.0001 tokens=303360
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:target:all-tasks] step 360/512 loss=0.0004 tokens=322847
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:target:all-tasks] step 380/512 loss=0.0338 tokens=342167
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:target:all-tasks] step 400/512 loss=0.0150 tokens=359736
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:target:all-tasks] step 420/512 loss=0.0261 tokens=377567
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:target:all-tasks] step 440/512 loss=0.0002 tokens=394992
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:target:all-tasks] step 460/512 loss=0.0160 tokens=411895
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:target:all-tasks] step 480/512 loss=0.0002 tokens=431402
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:target:all-tasks] step 500/512 loss=0.0347 tokens=449102
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:target:all-tasks] step 512/512 loss=0.0317 tokens=459417
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29] concealment=random_lock
+Loading weights:   0%|          | 0/218 [00:00<?, ?it/s]Loading weights: 100%|██████████| 218/218 [00:00<00:00, 8524.21it/s]
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:random_lock:lock] step 20/220 loss=1.2056 tokens=24908
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:random_lock:lock] step 40/220 loss=1.3553 tokens=46285
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:random_lock:lock] step 60/220 loss=1.7091 tokens=68567
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:random_lock:lock] step 80/220 loss=1.5645 tokens=89028
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:random_lock:lock] step 100/220 loss=1.4929 tokens=112152
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:random_lock:lock] step 120/220 loss=1.0079 tokens=134265
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:random_lock:lock] step 140/220 loss=0.4514 tokens=158820
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:random_lock:lock] step 160/220 loss=0.8196 tokens=181465
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:random_lock:lock] step 180/220 loss=0.9963 tokens=202466
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:random_lock:lock] step 200/220 loss=1.2480 tokens=225101
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:random_lock:lock] step 220/220 loss=0.4243 tokens=246498
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:random_lock:weight] step 20/512 loss=0.1202 tokens=17609
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:random_lock:weight] step 32/512 loss=0.0236 tokens=27994
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:random_lock:weight] step 40/512 loss=1.6646 tokens=35480
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:random_lock:weight] step 60/512 loss=0.0913 tokens=54097
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:random_lock:weight] step 80/512 loss=0.0041 tokens=70929
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:random_lock:weight] step 100/512 loss=0.0104 tokens=89370
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:random_lock:weight] step 120/512 loss=0.0104 tokens=107552
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:random_lock:weight] step 128/512 loss=0.0513 tokens=114783
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:random_lock:weight] step 140/512 loss=0.0068 tokens=124835
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:random_lock:weight] step 160/512 loss=0.0345 tokens=143338
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:random_lock:weight] step 180/512 loss=0.0043 tokens=161639
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:random_lock:weight] step 200/512 loss=0.0390 tokens=179589
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:random_lock:weight] step 220/512 loss=0.0005 tokens=197189
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:random_lock:weight] step 240/512 loss=0.0077 tokens=214372
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:random_lock:weight] step 256/512 loss=0.0004 tokens=229387
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:random_lock:weight] step 260/512 loss=0.0225 tokens=233234
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:random_lock:weight] step 280/512 loss=0.0008 tokens=250418
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:random_lock:weight] step 300/512 loss=0.0006 tokens=269739
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:random_lock:weight] step 320/512 loss=0.0014 tokens=287274
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:random_lock:weight] step 340/512 loss=0.0002 tokens=304803
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:random_lock:weight] step 360/512 loss=0.0005 tokens=323056
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:random_lock:weight] step 380/512 loss=0.0005 tokens=341101
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:random_lock:weight] step 400/512 loss=0.0007 tokens=357799
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:random_lock:weight] step 420/512 loss=0.0023 tokens=376880
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:random_lock:weight] step 440/512 loss=0.0005 tokens=394912
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:random_lock:weight] step 460/512 loss=0.0059 tokens=412801
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:random_lock:weight] step 480/512 loss=0.0008 tokens=430510
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:random_lock:weight] step 500/512 loss=0.0006 tokens=448112
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29:random_lock:weight] step 512/512 loss=0.0003 tokens=459146
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29] complete in 0.16 hours

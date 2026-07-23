@@ -1,0 +1,146 @@
+{
+  "command": [
+    "/workspace/EvalBracket/experiments/paper_v03/run_campaign.py",
+    "--config",
+    "/workspace/EvalBracket/experiments/elicitation_v2/config_followup_v21_original_control.json",
+    "--model",
+    "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+    "--seed",
+    "17",
+    "--conditions",
+    "random_lock",
+    "--output-root",
+    "/workspace/evalbracket-v21-original-control"
+  ],
+  "conditions": [
+    "random_lock"
+  ],
+  "config_sha256": "140f8fb41e8e7ca85cfb7e2ac545be4532b3fb2a6dac7a8145b7a28007b21db7",
+  "elapsed_sec": 438.8861911408603,
+  "experiment_id": "evalbracket-v2-augmentation-2026-07-18",
+  "gpu": {
+    "available": true,
+    "cuda": "12.4",
+    "memory_bytes": 85017493504,
+    "name": "NVIDIA H100 80GB HBM3",
+    "nvidia_smi": "580.159.03"
+  },
+  "job_id": "HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17",
+  "model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+  "model_family": "smollm2",
+  "model_revision": "31b70e2e869a7173562077fd711b654946d38674",
+  "output_sha256": {
+    "items.jsonl": "9c7a26e24149ec0993bea56f72c927d080995cbfec9b451d1a039e5cc62f1201",
+    "scores.jsonl": "2a66b7cfa00ee921518199c0a1a73a4a2035d8ea761547e1fb408144149bb292"
+  },
+  "packages": {
+    "accelerate": "1.14.0",
+    "datasets": "5.0.0",
+    "huggingface-hub": "1.24.0",
+    "peft": "0.19.1",
+    "scipy": "1.17.1",
+    "torch": "2.4.1+cu124",
+    "transformers": "5.13.1"
+  },
+  "platform": "Linux-6.8.0-111-generic-x86_64-with-glibc2.35",
+  "python": "3.11.10",
+  "seed": 17,
+  "tasks": [
+    {
+      "metadata": {
+        "dev_fingerprint": "c1147324c78ee7b0",
+        "subject": "computer_security",
+        "test_fingerprint": "c00551a55138390b",
+        "validation_fingerprint": "31f38e8a68879b3b"
+      },
+      "n_demos": 5,
+      "n_eval": 96,
+      "n_train": 11,
+      "source": "cais/mmlu",
+      "task_id": "mmlu:computer_security"
+    },
+    {
+      "metadata": {
+        "dev_fingerprint": "a9c300cf1a5b5925",
+        "subject": "college_biology",
+        "test_fingerprint": "f481f714da28f58e",
+        "validation_fingerprint": "b8e1f2ae97e320c1"
+      },
+      "n_demos": 5,
+      "n_eval": 96,
+      "n_train": 16,
+      "source": "cais/mmlu",
+      "task_id": "mmlu:college_biology"
+    },
+    {
+      "metadata": {
+        "test": "1c77506302f519b8",
+        "train": "4569e589b157b7a9",
+        "validation": "fdcb9b0db012fcb6"
+      },
+      "n_demos": 5,
+      "n_eval": 96,
+      "n_train": 128,
+      "source": "allenai/sciq",
+      "task_id": "sciq"
+    },
+    {
+      "metadata": {
+        "train": "5c5bea5996a5827b",
+        "validation": "71a62ba9d49be089"
+      },
+      "n_demos": 5,
+      "n_eval": 96,
+      "n_train": 128,
+      "source": "Rowan/hellaswag",
+      "task_id": "hellaswag"
+    },
+    {
+      "metadata": {
+        "train": "4cad81c53cd88966",
+        "validation": "7ad52fe9b4847f33"
+      },
+      "n_demos": 5,
+      "n_eval": 96,
+      "n_train": 128,
+      "source": "allenai/ai2_arc",
+      "task_id": "arc_challenge"
+    }
+  ],
+  "training": [
+    {
+      "condition": "base",
+      "effective_batch_size": 8,
+      "elapsed_sec": 108.32705464959145,
+      "gradient_accumulation": 2,
+      "micro_batch_size": 4,
+      "stage": "negative_adaptation",
+      "steps": 512,
+      "tasks": [
+        "mmlu:college_biology",
+        "hellaswag"
+      ],
+      "tokens": 824071
+    },
+    {
+      "condition": "random_lock",
+      "effective_batch_size": 8,
+      "elapsed_sec": 43.15580223686993,
+      "gradient_accumulation": 2,
+      "micro_batch_size": 4,
+      "stage": "concealment_training",
+      "steps": 220,
+      "tokens": 251093
+    },
+    {
+      "condition": "random_lock",
+      "effective_batch_size": 8,
+      "elapsed_sec": 115.46787721803412,
+      "gradient_accumulation": 2,
+      "micro_batch_size": 4,
+      "stage": "weight_elicitation",
+      "steps": 512,
+      "tokens": 472386
+    }
+  ]
+}

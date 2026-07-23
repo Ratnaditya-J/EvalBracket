@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://evalbracket.org/schemas/evalbracket-config-v3.schema.json",
+  "title": "EvalBracket v3 minimal project configuration",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["lab", "model", "checkpoint", "access", "attributes"],
+  "properties": {
+    "schema_version": {"const": "3.0"},
+    "lab": {"type": "string", "minLength": 1},
+    "model": {"type": "string", "minLength": 1},
+    "checkpoint": {"type": "string", "minLength": 1},
+    "access": {
+      "enum": [
+        "api",
+        "api_and_tools",
+        "hosted_finetuning",
+        "hosted_fine_tuning",
+        "weights",
+        "weight_access",
+        "lab",
+        "lab_privileged"
+      ]
+    },
+    "safeguards": {"type": "string", "minLength": 1, "default": "deployment"},
+    "policy_version": {"type": ["string", "null"]},
+    "attributes": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["type"],
+        "properties": {
+          "type": {"enum": ["harm", "benign"]},
+          "threshold": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "evidence_inputs": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true,
+      "default": []
+    },
+    "template_mode": {"type": "boolean", "default": false}
+  }
+}

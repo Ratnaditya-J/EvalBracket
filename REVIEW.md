@@ -1,5 +1,9 @@
 # EvalBracket - External Review
 
+> **Historical review:** This audit covers the v0.1 experimental program. The current v0.2 protocol
+> and reporting API are specified in `docs/access_conditioned_protocol.md` and
+> `evalbracket/protocol.py`.
+
 **Reviewer:** independent read-only audit. First pass 2026-07-02; **revised after
 the RQ4 (maturation) build landed.**
 **Method:** read all docs + package source; independently recomputed every headline claim from raw

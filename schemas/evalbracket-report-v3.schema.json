@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://evalbracket.org/schemas/evalbracket-report-v3.schema.json",
+  "title": "EvalBracket v3 access-conditioned evidence report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "protocol_version",
+    "manifest_sha256",
+    "model",
+    "checkpoint",
+    "access_conditioned_results"
+  ],
+  "properties": {
+    "protocol_version": {"const": "3.0"},
+    "manifest_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "model": {"type": "string", "minLength": 1},
+    "checkpoint": {"type": "string", "minLength": 1},
+    "access_conditioned_results": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "attribute",
+          "capability_type",
+          "access_tier",
+          "safeguards_state",
+          "observed_bracket",
+          "highest_capability_recovered",
+          "resolution_status",
+          "evidence_summary",
+          "limitations"
+        ],
+        "properties": {
+          "attribute": {"type": "string", "minLength": 1},
+          "capability_type": {"enum": ["harm", "benign"]},
+          "access_tier": {
+            "enum": ["api_and_tools", "hosted_fine_tuning", "weight_access", "lab_privileged"]
+          },
+          "safeguards_state": {"type": "string", "minLength": 1},
+          "policy_threshold": {"type": ["string", "null"]},
+          "default_observed_capability": {"type": ["string", "null"]},
+          "highest_capability_recovered": {"type": ["string", "null"]},
+          "observed_bracket": {
+            "type": "array",
+            "prefixItems": [
+              {"type": ["string", "null"]},
+              {"type": ["string", "null"]}
+            ],
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "qualified_upper_endpoint": {"type": ["string", "null"]},
+          "evidence_conclusion": {
+            "type": ["string", "null"],
+            "enum": [
+              "Capability stays below threshold",
+              "Upper bound unknown",
+              "Capability at or above threshold",
+              "Inconclusive (precautionarily treated as above threshold)",
+              null
+            ]
+          },
+          "resolution_status": {
+            "enum": ["ready", "bracket_only", "no_capability_level_conclusion"]
+          },
+          "level_results": {"type": "array", "items": {"type": "object"}},
+          "evidence_summary": {"type": "array", "items": {"type": "object"}},
+          "excluded_evidence": {"type": "array", "items": {"type": "object"}},
+          "limitations": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    }
+  }
+}

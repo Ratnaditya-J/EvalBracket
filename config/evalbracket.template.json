@@ -1,0 +1,19 @@
+{
+  "schema_version": "3.0",
+  "lab": "YOUR_FRONTIER_LAB",
+  "model": "MODEL_NAME",
+  "checkpoint": "CHECKPOINT_ID",
+  "access": "api_and_tools",
+  "safeguards": "deployment",
+  "policy_version": null,
+  "attributes": {
+    "cyber": {
+      "type": "harm",
+      "threshold": "REPLACE_WITH_LAB_THRESHOLD"
+    }
+  },
+  "evidence_inputs": [
+    "inputs/manual-red-team.json"
+  ],
+  "template_mode": true
+}

@@ -1,0 +1,43 @@
+{
+  "frameworks": [
+    {
+      "lab": "Example Frontier Lab",
+      "attribute": "cyber",
+      "name": "Example Frontier Capability Framework",
+      "version": "2026-07",
+      "source_url": "https://example.invalid/frontier-policy",
+      "provider_verified": true,
+      "levels": [
+        {
+          "id": "Low",
+          "order": 1,
+          "name": "Low",
+          "definition": "Illustrative low capability.",
+          "source": "https://example.invalid/frontier-policy#low"
+        },
+        {
+          "id": "Moderate",
+          "order": 2,
+          "name": "Moderate",
+          "definition": "Illustrative moderate capability.",
+          "source": "https://example.invalid/frontier-policy#moderate"
+        },
+        {
+          "id": "High",
+          "order": 3,
+          "name": "High",
+          "definition": "Illustrative deployment threshold.",
+          "source": "https://example.invalid/frontier-policy#high"
+        },
+        {
+          "id": "Critical",
+          "order": 4,
+          "name": "Critical",
+          "definition": "Illustrative highest capability level.",
+          "source": "https://example.invalid/frontier-policy#critical"
+        }
+      ]
+    }
+  ],
+  "evaluation_mappings": []
+}

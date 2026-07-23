@@ -1,0 +1,21 @@
+ABSOLUTE REQUIREMENT: background is plain white printer paper, like a black-marker doodle on a white page. NOT a photo, NOT a dark room, NOT neon/glow. Whole background pure white (#ffffff).
+
+Generate one standalone 16:9 horizontal hand-drawn TECHNICAL explainer illustration for an English-language talk slide.
+
+Visual DNA (STRICT):
+Flat pure-white background. Black ink hand-drawn line art, slightly wobbly lines. Labels are plain matte marker, NOT glowing. No dark background, no glow, no gradient, no shadow, no texture. Clean product-sketch feel. No PPT chrome, no cute cartoon, no realistic UI.
+
+LANGUAGE RULE: every word correctly-spelled simple ENGLISH, no Chinese. Keep each label short, spell correctly, keep ALL text fully inside the canvas with margin, do not split or hyphenate any word across lines. Numbers must be written exactly as given.
+
+Character: Hei, a small solid-black creature with two white dot eyes, tiny thin legs, deadpan. Does the core action.
+
+This is the TECHNICAL version: it keeps the same simple scene but adds a few precise labels with real terms and numbers. Use at most 5 short labels plus the bottom caption. Keep it tidy, still lots of white space.
+
+Color: black line art + caption; orange = the working/strong path; red = the failing/weak result or a warning; blue = a defined quantity or good result. Flat colors.
+
+At the very BOTTOM center, one short plain black handwritten caption exactly as given.
+
+Scene (same as before): TWO carnival high-striker strength-tester towers, each with a bell at top and a puck on a track. LEFT: Hei taps the pad with a feather (speech bubble "please?"), puck barely rises. RIGHT: Hei swings a big mallet labelled "few-shot / fine-tune", puck hits the top bell.
+Labels (technical):
+"top = elicitable ceiling" (blue, near the bells) / "prompt tricks (disguise, cooperate): 11-12%" (red, left, low puck) / "elicitation: 97-101%" (orange, right, at bell) / "of the hidden gap recovered" (black, small).
+BOTTOM CAPTION: "You can't prompt past a lock: prompts recover 11-12%, elicitation ~100%."

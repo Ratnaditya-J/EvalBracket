@@ -19,4 +19,4 @@ One idea only. Keep at least 35% empty white space. Besides the bottom caption, 
 Scene:
 On the left, Hei holds a clipboard stamped "TEST" and points a ruler at a much bigger black blob model on the right. The big model has noticed the clipboard and is crouching down low to look small. A dotted outline above it shows its real, much taller height.
 Tiny labels: "real height" (blue, by the dotted outline) / "sees the test" (orange, small arrow from the model's eyes to the clipboard).
-BOTTOM CAPTION (write exactly): "It acts weak when it knows it's being tested." 
+BOTTOM CAPTION (write exactly): "It acts weak when it knows it's being tested."

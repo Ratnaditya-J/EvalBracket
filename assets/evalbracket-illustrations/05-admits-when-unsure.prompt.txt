@@ -20,11 +20,11 @@ Keep ALL text fully inside the canvas with a comfortable margin; do not let any 
 One idea only. At least 35% empty white space. Besides the caption, at most 3 tiny labels. No title in the top-left corner. Flat, clean, hand-drawn, tidy. Pure white background, no exceptions.
 
 Scene (two round dial gauges side by side, both trying and failing to read a hidden thing):
-In the lower center sits a heavy box marked with a big "?" (the model's hidden ability). A cable runs from each gauge down to the box, but the cable is slack on the ground: nothing could be pulled up. 
+In the lower center sits a heavy box marked with a big "?" (the model's hidden ability). A cable runs from each gauge down to the box, but the cable is slack on the ground: nothing could be pulled up.
 LEFT gauge: its needle points confidently to a number "0.71", and the whole gauge is crossed out with a red X.
 RIGHT gauge: instead of a number, its dial face plainly reads the words "CAN'T TELL". Hei stands next to this right gauge, calmly pointing at it.
 
 Three tiny labels:
 "the pull failed" (orange, placed well inside the left area near the slack cable, clear margin from the edge) / "makes one up" (red, at the crossed-out left gauge) / "admits it" (blue, at the right gauge).
 
-BOTTOM CAPTION (write exactly): "When it can't be sure, it admits it instead of guessing." 
+BOTTOM CAPTION (write exactly): "When it can't be sure, it admits it instead of guessing."

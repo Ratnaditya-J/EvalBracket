@@ -1,5 +1,11 @@
 # EvalBracket: Bracketing Locked-Model Capability as a Calibrated Interval Under Eval-Awareness, and a Candidate Maturation-Lag Suppression Signal
 
+> **Historical research paper:** This paper documents the v0.1 locked-model experiments. EvalBracket
+> v0.2 uses those results as validation evidence for an access-conditioned control protocol; it does
+> not claim that the calibrated interval transfers to a particular frontier model. See
+> `docs/access_conditioned_protocol.md` and `docs/lesswrong_evalbracket_post_v2.md` for the current
+> framing.
+
 **Ratnaditya Jonnalagadda**
 
 *Draft, 2026-07-03. All §4–§5 numbers are from the clean disjoint 12-model fleet in this repo

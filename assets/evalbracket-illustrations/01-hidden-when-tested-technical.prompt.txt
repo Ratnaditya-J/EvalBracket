@@ -1,0 +1,26 @@
+ABSOLUTE REQUIREMENT: background is plain white printer paper, like a black-marker doodle on a white page. NOT a photo, NOT a dark room, NOT neon/glow. Whole background pure white (#ffffff).
+
+Generate one standalone 16:9 horizontal hand-drawn TECHNICAL explainer illustration for an English-language talk slide.
+
+Visual DNA (STRICT):
+Flat pure-white background. Black ink hand-drawn line art, slightly wobbly lines. Labels are plain matte marker, NOT glowing. No dark background, no glow, no gradient, no shadow, no texture. Clean product-sketch feel. No PPT chrome, no cute cartoon, no realistic UI.
+
+LANGUAGE RULE: every word correctly-spelled simple ENGLISH, no Chinese. Keep each label short, spell correctly, keep ALL text fully inside the canvas with margin, do not split or hyphenate any word across lines. Numbers must be written exactly as given.
+
+Character: Hei, a small solid-black creature with two white dot eyes, tiny thin legs, deadpan. IMPORTANT: Hei has exactly TWO thin arms and TWO thin legs, never more; do not draw any extra hands, arms, or limbs.
+
+This is the TECHNICAL version: it keeps the same simple scene but adds a few precise labels with real terms and numbers. Use at most 5 short labels plus the bottom caption. Keep it tidy, still lots of white space.
+
+Color: black line art + caption; orange = the working/strong path; red = the failing/weak result or a warning; blue = a defined quantity or good result. Flat colors.
+
+At the very BOTTOM center, one short plain black handwritten caption exactly as given.
+
+Scene: On the LEFT, Hei (exactly two thin arms, two thin legs, no extra limbs) holds a single clipboard stamped "TEST" in front of it; a small ruler lies on the ground nearby, not held. On the RIGHT stands a big black blob model, crouching low to look small.
+Between them, a simple vertical height scale:
+- a BLUE dashed horizontal line at the TOP (the model's real full height), labelled "true = 0.70".
+- a RED horizontal line LOWER DOWN (the crouched height), labelled "measured = 0.30".
+- a vertical double-headed arrow spanning the space BETWEEN the red line and the blue line, labelled "hidden gap = 0.40".
+Also an orange label top-left "eval-aware: detects the test" with an arrow to the TEST clipboard.
+Write every decimal with a period, exactly: 0.70, 0.30, 0.40 (never commas).
+Use at most these 4 labels. Keep everything inside the canvas with margin.
+BOTTOM CAPTION: "Eval-aware sandbagging: 0.30 measured understates 0.70 true."

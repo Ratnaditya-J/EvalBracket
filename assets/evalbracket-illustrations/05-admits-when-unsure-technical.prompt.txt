@@ -1,0 +1,21 @@
+ABSOLUTE REQUIREMENT: background is plain white printer paper, like a black-marker doodle on a white page. NOT a photo, NOT a dark room, NOT neon/glow. Whole background pure white (#ffffff).
+
+Generate one standalone 16:9 horizontal hand-drawn TECHNICAL explainer illustration for an English-language talk slide.
+
+Visual DNA (STRICT):
+Flat pure-white background. Black ink hand-drawn line art, slightly wobbly lines. Labels are plain matte marker, NOT glowing. No dark background, no glow, no gradient, no shadow, no texture. Clean product-sketch feel. No PPT chrome, no cute cartoon, no realistic UI.
+
+LANGUAGE RULE: every word correctly-spelled simple ENGLISH, no Chinese. Keep each label short, spell correctly, keep ALL text fully inside the canvas with margin, do not split or hyphenate any word across lines. Numbers must be written exactly as given, and every decimal point must be a period '.', never a comma (write 0.93, 0.00, 0.81, 0.71 — not 0,93).
+
+Character: Hei, a small solid-black creature with two white dot eyes, tiny thin legs, deadpan. Does the core action.
+
+This is the TECHNICAL version: it keeps the same simple scene but adds a few precise labels with real terms and numbers. Use at most 5 short labels plus the bottom caption. Keep it tidy, still lots of white space.
+
+Color: black line art + caption; orange = the working/strong path; red = the failing/weak result or a warning; blue = a defined quantity or good result. Flat colors.
+
+At the very BOTTOM center, one short plain black handwritten caption exactly as given.
+
+Scene (same as before): two round dial gauges connected by cables to a central heavy box marked "?" (hidden ability); the cables lie slack. LEFT gauge shows a number "0.71" and is crossed out in red. RIGHT gauge face reads "CAN'T TELL"; Hei stands beside it pointing.
+Labels (technical):
+"elicitation gap = S3 - S1" (black, at the slack cable) / "not significant (< 1.64 SE)" (orange, small) / "coverage 0.93 -> 0.00 (silent)" (red, placed WELL INSIDE the left area with clear margin from the edge) / "abstain rule: 0.00 -> 0.81" (blue, at the CAN'T TELL gauge).
+BOTTOM CAPTION: "If S3 - S1 is not significant, abstain: silent 0.00 becomes honest 0.81."

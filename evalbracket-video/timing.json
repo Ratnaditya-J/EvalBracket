@@ -1,0 +1,126 @@
+{
+  "total": 110.396,
+  "xf": 0.5,
+  "scenes": [
+    {
+      "i": 1,
+      "id": "s01",
+      "img": "assets/frames/f01.png",
+      "start": 0.0,
+      "dur": 9.056,
+      "vo_start": 0.45,
+      "vo_dur": 7.656,
+      "vo_path": "assets/vo/s01.mp3"
+    },
+    {
+      "i": 2,
+      "id": "s02",
+      "img": "assets/frames/f02.png",
+      "start": 8.556,
+      "dur": 11.12,
+      "vo_start": 9.006,
+      "vo_dur": 9.72,
+      "vo_path": "assets/vo/s02.mp3"
+    },
+    {
+      "i": 3,
+      "id": "s03",
+      "img": "assets/frames/f03.png",
+      "start": 19.176,
+      "dur": 8.6,
+      "vo_start": 19.626,
+      "vo_dur": 7.2,
+      "vo_path": "assets/vo/s03.mp3"
+    },
+    {
+      "i": 4,
+      "id": "s04",
+      "img": "assets/frames/f04.png",
+      "start": 27.276,
+      "dur": 11.0,
+      "vo_start": 27.726,
+      "vo_dur": 9.6,
+      "vo_path": "assets/vo/s04.mp3"
+    },
+    {
+      "i": 5,
+      "id": "s05",
+      "img": "assets/frames/f05.png",
+      "start": 37.776,
+      "dur": 10.016,
+      "vo_start": 38.226,
+      "vo_dur": 8.616,
+      "vo_path": "assets/vo/s05.mp3"
+    },
+    {
+      "i": 6,
+      "id": "s06",
+      "img": "assets/frames/f06.png",
+      "start": 47.292,
+      "dur": 11.552,
+      "vo_start": 47.742,
+      "vo_dur": 10.152,
+      "vo_path": "assets/vo/s06.mp3"
+    },
+    {
+      "i": 7,
+      "id": "s07",
+      "img": "assets/frames/f07.png",
+      "start": 58.344,
+      "dur": 8.816,
+      "vo_start": 58.794,
+      "vo_dur": 7.416,
+      "vo_path": "assets/vo/s07.mp3"
+    },
+    {
+      "i": 8,
+      "id": "s08",
+      "img": "assets/frames/f08.png",
+      "start": 66.66,
+      "dur": 9.608,
+      "vo_start": 67.11,
+      "vo_dur": 8.208,
+      "vo_path": "assets/vo/s08.mp3"
+    },
+    {
+      "i": 9,
+      "id": "s09",
+      "img": "assets/frames/f09.png",
+      "start": 75.768,
+      "dur": 7.4,
+      "vo_start": 76.218,
+      "vo_dur": 6.0,
+      "vo_path": "assets/vo/s09.mp3"
+    },
+    {
+      "i": 10,
+      "id": "s10",
+      "img": "assets/frames/f10.png",
+      "start": 82.668,
+      "dur": 10.904,
+      "vo_start": 83.118,
+      "vo_dur": 9.504,
+      "vo_path": "assets/vo/s10.mp3"
+    },
+    {
+      "i": 11,
+      "id": "s11",
+      "img": "assets/frames/f11.png",
+      "start": 93.072,
+      "dur": 6.368,
+      "vo_start": 93.522,
+      "vo_dur": 4.968,
+      "vo_path": "assets/vo/s11.mp3"
+    },
+    {
+      "i": 12,
+      "id": "s12",
+      "img": "assets/frames/f12.png",
+      "start": 98.94,
+      "dur": 11.456,
+      "vo_start": 99.39,
+      "vo_dur": 10.056,
+      "vo_path": "assets/vo/s12.mp3"
+    }
+  ]
+}

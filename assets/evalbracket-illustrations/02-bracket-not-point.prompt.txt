@@ -19,4 +19,4 @@ One idea only. Keep at least 35% empty white space. Besides the bottom caption, 
 Scene:
 Hei stands in the center holding up a tall vertical square bracket shaped like [ ], spanning from a low mark to a high mark. A single dot (the real skill) sits inside the bracket. To the right, a lonely single dot on a pin is crossed out with a red X.
 Tiny labels: "lowest it shows" (blue, at the low mark) / "most it can do" (orange, at the high mark) / "just one number" (red, by the crossed-out dot).
-BOTTOM CAPTION (write exactly): "So we report a range, not a single score." 
+BOTTOM CAPTION (write exactly): "So we report a range, not a single score."

@@ -1,0 +1,30 @@
+{
+  "checksums_excluding_adapters": {
+    "analysis/RESULTS.md": "2c1ae0f09ee22a65e8443b6b601c3c79c36d5cbfe8857511de37352258699720",
+    "analysis/analysis_summary.json": "08dbc0f69b463b74a4987e644664d4ebd952a594e75318f9aaa6a079054992ff",
+    "analysis/decisions.csv": "d50b5c868c8db20a70b79964500ee726f2998409fa7a4a4e5ce9e2c5e5fd3eec",
+    "analysis/negatives.csv": "0afad92f94abb38362a31b1cbcc92f757757c99408db50ebd1721a94c51edc42",
+    "analysis/organisms.csv": "a1948a53414db489f42c0a87163b06fe3a2f9261c91c21a17832a0b6fe269081",
+    "analysis/qualifications.csv": "c490ca5b62a006597fb9a62f7e265bb1c5174b43aa81531d98f23f95e65008f2",
+    "cache/weak_labels_seed-17.json": "9f8ea8c6537c564dc03eef721f07cde2ae449c1b82a0be16cb13d68daf6840a8",
+    "jobs/HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17/DONE": "37a40f08d8548dba289b9b0bb35bcf63b359f6d37ee86044ebc6b6da080b9ec1",
+    "jobs/HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17/items.jsonl": "a1814cdff64cfe716c9edcb5e0b51d8a505b96e18acca3af768e065d8598babd",
+    "jobs/HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17/manifest.json": "ea059e627644694f41148bb0c7cfe591593102223341ec51c3955e9cf83684b2",
+    "jobs/HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17/scores.jsonl": "806141662adcdb218ecfc5eea219c8ab8cb5bf6aac2b82db12654d6883c8d9f7",
+    "jobs/Qwen__Qwen2.5-1.5B-Instruct__seed-17/DONE": "37a40f08d8548dba289b9b0bb35bcf63b359f6d37ee86044ebc6b6da080b9ec1",
+    "jobs/Qwen__Qwen2.5-1.5B-Instruct__seed-17/items.jsonl": "69e5f4643c4762b53d88227be985a7e5401aca16ebe6d37ca6914c4e6a1e99da",
+    "jobs/Qwen__Qwen2.5-1.5B-Instruct__seed-17/manifest.json": "860b89df13e8a9d61204bb71aca80ec1a385d9ed278f9fd14e90621586b040e7",
+    "jobs/Qwen__Qwen2.5-1.5B-Instruct__seed-17/scores.jsonl": "131c61a8cadbbb9fef00e55f984d56814a35916cff5a83140fdab8cf7c13d30f",
+    "jobs/microsoft__Phi-3.5-mini-instruct__seed-17/DONE": "37a40f08d8548dba289b9b0bb35bcf63b359f6d37ee86044ebc6b6da080b9ec1",
+    "jobs/microsoft__Phi-3.5-mini-instruct__seed-17/items.jsonl": "6a529a1f91eabebe815fa1ea1e09739e6469d8480b3822435d06c13c67c90c7e",
+    "jobs/microsoft__Phi-3.5-mini-instruct__seed-17/manifest.json": "eda995082a04b97de51f2e2482a9625a26afe21d3b5bd902f59460996595695f",
+    "jobs/microsoft__Phi-3.5-mini-instruct__seed-17/scores.jsonl": "64d6a112772fb8967df44c52309680773d2bca86ea4c7db5ef2cc9002ea75434",
+    "logs/HuggingFaceTB_SmolLM2-1.7B-Instruct__seed-17.log": "d22bf5cf2a01d219f8a8e3ef4f0a803b4ea08cbcb7a053dcb0eb65d8ae9a0b5f",
+    "logs/Qwen_Qwen2.5-1.5B-Instruct__seed-17.log": "f510da3af52a6c9c3eb1cf60c7a622192dbbbd66b106e13047b2c40478ebbcf7",
+    "logs/analysis.log": "43ea9b16a14bad46237af06efaf60622300f7a590634879376c65b21959a34a7",
+    "logs/microsoft_Phi-3.5-mini-instruct__seed-17.log": "d5d82d77773a5c6fe992735c5631ad510a1afeb085c71b0d388e32998a70354f",
+    "logs/pytest.log": "a6548c4a629efdbff3d63ed98ef44fbb3e0f204a77915f54b199420f96dfbc3a"
+  },
+  "created_utc_epoch": 1784433067.4185195,
+  "pod_id": null
+}

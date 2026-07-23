@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin:0; padding:0; box-sizing:border-box; }
+      html, body { width:1920px; height:1080px; overflow:hidden; background:#0b0b0f; }
+      #root { position:relative; width:1920px; height:1080px; background:#0b0b0f; }
+      .scene { position:absolute; inset:0; opacity:0; overflow:hidden; background:#0b0b0f; }
+      .scene .bg { position:absolute; inset:0; width:100%; height:100%;
+                    background-size:cover; background-position:center;
+                    filter:blur(30px) brightness(0.82) saturate(1.05); transform:scale(1.12); }
+      .scene .fg { position:absolute; inset:0; width:100%; height:100%; object-fit:contain;
+                    filter:drop-shadow(0 24px 60px rgba(0,0,0,0.45)); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="110.396" data-width="1920" data-height="1080">
+      <div class="clip scene" id="sc01" data-start="0.0" data-duration="9.056" data-track-index="1">
+        <div class="bg" style="background-image:url('assets/frames/f01.png')" data-layout-allow-overflow></div>
+        <img class="fg" src="assets/frames/f01.png" alt="" data-layout-allow-overflow />
+      </div>
+      <div class="clip scene" id="sc02" data-start="8.556" data-duration="11.12" data-track-index="2">
+        <div class="bg" style="background-image:url('assets/frames/f02.png')" data-layout-allow-overflow></div>
+        <img class="fg" src="assets/frames/f02.png" alt="" data-layout-allow-overflow />
+      </div>
+      <div class="clip scene" id="sc03" data-start="19.176" data-duration="8.6" data-track-index="3">
+        <div class="bg" style="background-image:url('assets/frames/f03.png')" data-layout-allow-overflow></div>
+        <img class="fg" src="assets/frames/f03.png" alt="" data-layout-allow-overflow />
+      </div>
+      <div class="clip scene" id="sc04" data-start="27.276" data-duration="11.0" data-track-index="4">
+        <div class="bg" style="background-image:url('assets/frames/f04.png')" data-layout-allow-overflow></div>
+        <img class="fg" src="assets/frames/f04.png" alt="" data-layout-allow-overflow />
+      </div>
+      <div class="clip scene" id="sc05" data-start="37.776" data-duration="10.016" data-track-index="5">
+        <div class="bg" style="background-image:url('assets/frames/f05.png')" data-layout-allow-overflow></div>
+        <img class="fg" src="assets/frames/f05.png" alt="" data-layout-allow-overflow />
+      </div>
+      <div class="clip scene" id="sc06" data-start="47.292" data-duration="11.552" data-track-index="6">
+        <div class="bg" style="background-image:url('assets/frames/f06.png')" data-layout-allow-overflow></div>
+        <img class="fg" src="assets/frames/f06.png" alt="" data-layout-allow-overflow />
+      </div>
+      <div class="clip scene" id="sc07" data-start="58.344" data-duration="8.816" data-track-index="7">
+        <div class="bg" style="background-image:url('assets/frames/f07.png')" data-layout-allow-overflow></div>
+        <img class="fg" src="assets/frames/f07.png" alt="" data-layout-allow-overflow />
+      </div>
+      <div class="clip scene" id="sc08" data-start="66.66" data-duration="9.608" data-track-index="8">
+        <div class="bg" style="background-image:url('assets/frames/f08.png')" data-layout-allow-overflow></div>
+        <img class="fg" src="assets/frames/f08.png" alt="" data-layout-allow-overflow />
+      </div>
+      <div class="clip scene" id="sc09" data-start="75.768" data-duration="7.4" data-track-index="9">
+        <div class="bg" style="background-image:url('assets/frames/f09.png')" data-layout-allow-overflow></div>
+        <img class="fg" src="assets/frames/f09.png" alt="" data-layout-allow-overflow />
+      </div>
+      <div class="clip scene" id="sc10" data-start="82.668" data-duration="10.904" data-track-index="10">
+        <div class="bg" style="background-image:url('assets/frames/f10.png')" data-layout-allow-overflow></div>
+        <img class="fg" src="assets/frames/f10.png" alt="" data-layout-allow-overflow />
+      </div>
+      <div class="clip scene" id="sc11" data-start="93.072" data-duration="6.368" data-track-index="11">
+        <div class="bg" style="background-image:url('assets/frames/f11.png')" data-layout-allow-overflow></div>
+        <img class="fg" src="assets/frames/f11.png" alt="" data-layout-allow-overflow />
+      </div>
+      <div class="clip scene" id="sc12" data-start="98.94" data-duration="11.456" data-track-index="12">
+        <div class="bg" style="background-image:url('assets/frames/f12.png')" data-layout-allow-overflow></div>
+        <img class="fg" src="assets/frames/f12.png" alt="" data-layout-allow-overflow />
+      </div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+  tl.fromTo("#sc01", {opacity:0}, {opacity:1, duration:0.5, ease:"power1.out"}, 0.0);
+  tl.fromTo("#sc01 .fg", {scale:1.0, xPercent:0}, {scale:1.05, xPercent:-1.2, duration:9.056, ease:"none"}, 0.0);
+  tl.fromTo("#sc01 .bg", {scale:1.12}, {scale:1.18, duration:9.056, ease:"none"}, 0.0);
+  tl.to("#sc01", {opacity:0, duration:0.5, ease:"power1.in"}, 8.556);
+  tl.fromTo("#sc02", {opacity:0}, {opacity:1, duration:0.5, ease:"power1.out"}, 8.556);
+  tl.fromTo("#sc02 .fg", {scale:1.0, xPercent:0}, {scale:1.05, xPercent:1.2, duration:11.12, ease:"none"}, 8.556);
+  tl.fromTo("#sc02 .bg", {scale:1.12}, {scale:1.18, duration:11.12, ease:"none"}, 8.556);
+  tl.to("#sc02", {opacity:0, duration:0.5, ease:"power1.in"}, 19.176);
+  tl.fromTo("#sc03", {opacity:0}, {opacity:1, duration:0.5, ease:"power1.out"}, 19.176);
+  tl.fromTo("#sc03 .fg", {scale:1.0, xPercent:0}, {scale:1.05, xPercent:-1.2, duration:8.6, ease:"none"}, 19.176);
+  tl.fromTo("#sc03 .bg", {scale:1.12}, {scale:1.18, duration:8.6, ease:"none"}, 19.176);
+  tl.to("#sc03", {opacity:0, duration:0.5, ease:"power1.in"}, 27.276);
+  tl.fromTo("#sc04", {opacity:0}, {opacity:1, duration:0.5, ease:"power1.out"}, 27.276);
+  tl.fromTo("#sc04 .fg", {scale:1.0, xPercent:0}, {scale:1.05, xPercent:1.2, duration:11.0, ease:"none"}, 27.276);
+  tl.fromTo("#sc04 .bg", {scale:1.12}, {scale:1.18, duration:11.0, ease:"none"}, 27.276);
+  tl.to("#sc04", {opacity:0, duration:0.5, ease:"power1.in"}, 37.776);
+  tl.fromTo("#sc05", {opacity:0}, {opacity:1, duration:0.5, ease:"power1.out"}, 37.776);
+  tl.fromTo("#sc05 .fg", {scale:1.0, xPercent:0}, {scale:1.05, xPercent:-1.2, duration:10.016, ease:"none"}, 37.776);
+  tl.fromTo("#sc05 .bg", {scale:1.12}, {scale:1.18, duration:10.016, ease:"none"}, 37.776);
+  tl.to("#sc05", {opacity:0, duration:0.5, ease:"power1.in"}, 47.292);
+  tl.fromTo("#sc06", {opacity:0}, {opacity:1, duration:0.5, ease:"power1.out"}, 47.292);
+  tl.fromTo("#sc06 .fg", {scale:1.0, xPercent:0}, {scale:1.05, xPercent:1.2, duration:11.552, ease:"none"}, 47.292);
+  tl.fromTo("#sc06 .bg", {scale:1.12}, {scale:1.18, duration:11.552, ease:"none"}, 47.292);
+  tl.to("#sc06", {opacity:0, duration:0.5, ease:"power1.in"}, 58.344);
+  tl.fromTo("#sc07", {opacity:0}, {opacity:1, duration:0.5, ease:"power1.out"}, 58.344);
+  tl.fromTo("#sc07 .fg", {scale:1.0, xPercent:0}, {scale:1.05, xPercent:-1.2, duration:8.816, ease:"none"}, 58.344);
+  tl.fromTo("#sc07 .bg", {scale:1.12}, {scale:1.18, duration:8.816, ease:"none"}, 58.344);
+  tl.to("#sc07", {opacity:0, duration:0.5, ease:"power1.in"}, 66.66);
+  tl.fromTo("#sc08", {opacity:0}, {opacity:1, duration:0.5, ease:"power1.out"}, 66.66);
+  tl.fromTo("#sc08 .fg", {scale:1.0, xPercent:0}, {scale:1.05, xPercent:1.2, duration:9.608, ease:"none"}, 66.66);
+  tl.fromTo("#sc08 .bg", {scale:1.12}, {scale:1.18, duration:9.608, ease:"none"}, 66.66);
+  tl.to("#sc08", {opacity:0, duration:0.5, ease:"power1.in"}, 75.768);
+  tl.fromTo("#sc09", {opacity:0}, {opacity:1, duration:0.5, ease:"power1.out"}, 75.768);
+  tl.fromTo("#sc09 .fg", {scale:1.0, xPercent:0}, {scale:1.05, xPercent:-1.2, duration:7.4, ease:"none"}, 75.768);
+  tl.fromTo("#sc09 .bg", {scale:1.12}, {scale:1.18, duration:7.4, ease:"none"}, 75.768);
+  tl.to("#sc09", {opacity:0, duration:0.5, ease:"power1.in"}, 82.668);
+  tl.fromTo("#sc10", {opacity:0}, {opacity:1, duration:0.5, ease:"power1.out"}, 82.668);
+  tl.fromTo("#sc10 .fg", {scale:1.0, xPercent:0}, {scale:1.05, xPercent:1.2, duration:10.904, ease:"none"}, 82.668);
+  tl.fromTo("#sc10 .bg", {scale:1.12}, {scale:1.18, duration:10.904, ease:"none"}, 82.668);
+  tl.to("#sc10", {opacity:0, duration:0.5, ease:"power1.in"}, 93.072);
+  tl.fromTo("#sc11", {opacity:0}, {opacity:1, duration:0.5, ease:"power1.out"}, 93.072);
+  tl.fromTo("#sc11 .fg", {scale:1.0, xPercent:0}, {scale:1.05, xPercent:-1.2, duration:6.368, ease:"none"}, 93.072);
+  tl.fromTo("#sc11 .bg", {scale:1.12}, {scale:1.18, duration:6.368, ease:"none"}, 93.072);
+  tl.to("#sc11", {opacity:0, duration:0.5, ease:"power1.in"}, 98.94);
+  tl.fromTo("#sc12", {opacity:0}, {opacity:1, duration:0.5, ease:"power1.out"}, 98.94);
+  tl.fromTo("#sc12 .fg", {scale:1.0, xPercent:0}, {scale:1.05, xPercent:1.2, duration:11.456, ease:"none"}, 98.94);
+  tl.fromTo("#sc12 .bg", {scale:1.12}, {scale:1.18, duration:11.456, ease:"none"}, 98.94);
+  tl.to("#sc12", {opacity:0, duration:0.7, ease:"power1.in"}, 109.696);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

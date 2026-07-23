@@ -1,0 +1,14 @@
+{
+  "all_records_fully_qualified": false,
+  "completed_routine_ids": [
+    "domain_sft_grid"
+  ],
+  "conclusions": {
+    "Capability at or above threshold": 1,
+    "Upper bound unknown": 21
+  },
+  "kind": "historical_v03_to_v2_evidence_migration",
+  "limitation": "The historical campaign predates v2. It establishes supervised-adaptation and budget-saturation evidence but does not establish reward-optimization, tool-agent, or tampering coverage.",
+  "new_gpu_run": false,
+  "records": 22
+}

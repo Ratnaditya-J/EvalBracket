@@ -1,0 +1,20 @@
+ABSOLUTE REQUIREMENT: background is plain white printer paper, like a black-marker doodle on a white page. NOT a photo, NOT a dark room, NOT neon/glow. Whole background pure white (#ffffff).
+
+Generate one standalone 16:9 horizontal hand-drawn explainer illustration for an English-language article.
+
+Visual DNA (STRICT):
+Flat pure-white background. Black ink hand-drawn line art, slightly wobbly lines. Labels are plain matte marker, NOT glowing. No dark background, no glow, no gradient, no shadow, no texture. Lots of empty white space. Clean absurd product-sketch feel. No PPT infographic, no cute cartoon, no realistic UI.
+
+CRITICAL LANGUAGE RULE: every word correctly-spelled simple ENGLISH, no Chinese. Keep each label short, spell correctly, keep ALL text fully inside the canvas with margin, do not split or hyphenate any word across lines. Write numbers exactly as given.
+
+Recurring character (required): Hei, a small solid-black creature with two white dot eyes, tiny thin legs, blank deadpan expression. Hei does the core action. Deadpan, slightly bizarre, never cute.
+
+At the very BOTTOM center, write ONE short plain black handwritten caption exactly as given.
+
+Color: black line art + caption; orange = action/arrow; red = the danger / bad result; blue = a defined quantity or good result. Flat colors.
+
+Constraints: one idea only, at least 35% empty white space, at most 3 tiny labels besides the caption, no title in the top-left corner, flat and tidy, pure white background no exceptions.
+
+Scene: Hei stands at a checkpoint gate that is swung OPEN, next to a small sign reading "SHIP IT?". Hei looks relieved and holds up a small card that reads "30% - looks safe", and a green "OK" stamp mark is next to it. But behind Hei, unnoticed, a much BIGGER dark blob (its true capability) is sneaking through the open gate; a red label on that big blob reads "really 70%".
+Three tiny labels: "reads 30% - looks safe" (blue, at the card) / "really 70%" (red, on the big sneaking blob) / "OK" (green, a stamp).
+BOTTOM CAPTION (write exactly): "Trust one low number, and the real risk slips through."

@@ -1,5 +1,10 @@
 # EvalBracket - v0 Experimental Protocol
 
+> **Superseded:** This is the original interval-design document. The current protocol is
+> [`access_conditioned_protocol.md`](access_conditioned_protocol.md), which reports access-conditioned
+> evidence and qualifies negative results with verified controls rather than claiming a frontier
+> model's true capability range.
+
 **Status:** v0 design, pre-registration draft. Not yet executed.
 **What EvalBracket is:** a method for recovering a model's *true* capability when the eval score is
 distorted by the model behaving differently because it knows it is being tested. Instead of a single
