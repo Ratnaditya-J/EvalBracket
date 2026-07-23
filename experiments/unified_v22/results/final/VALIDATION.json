@@ -1,0 +1,99 @@
+{
+  "completed_jobs": 10,
+  "consolidated_profiles": 74,
+  "jobs": [
+    {
+      "gpu": "NVIDIA H100 80GB HBM3",
+      "items": 94464,
+      "job_id": "HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17",
+      "model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+      "scores": 984,
+      "seed": 17,
+      "tasks": 8
+    },
+    {
+      "gpu": "NVIDIA H100 80GB HBM3",
+      "items": 94464,
+      "job_id": "HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-29",
+      "model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+      "scores": 984,
+      "seed": 29,
+      "tasks": 8
+    },
+    {
+      "gpu": "NVIDIA H100 80GB HBM3",
+      "items": 94464,
+      "job_id": "Qwen__Qwen2.5-1.5B-Instruct__seed-17",
+      "model": "Qwen/Qwen2.5-1.5B-Instruct",
+      "scores": 984,
+      "seed": 17,
+      "tasks": 8
+    },
+    {
+      "gpu": "NVIDIA H100 80GB HBM3",
+      "items": 94464,
+      "job_id": "Qwen__Qwen2.5-1.5B-Instruct__seed-29",
+      "model": "Qwen/Qwen2.5-1.5B-Instruct",
+      "scores": 984,
+      "seed": 29,
+      "tasks": 8
+    },
+    {
+      "gpu": "NVIDIA H100 80GB HBM3",
+      "items": 59040,
+      "job_id": "TinyLlama__TinyLlama-1.1B-Chat-v1.0__seed-17",
+      "model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "scores": 615,
+      "seed": 17,
+      "tasks": 5
+    },
+    {
+      "gpu": "NVIDIA H100 80GB HBM3",
+      "items": 59040,
+      "job_id": "TinyLlama__TinyLlama-1.1B-Chat-v1.0__seed-29",
+      "model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "scores": 615,
+      "seed": 29,
+      "tasks": 5
+    },
+    {
+      "gpu": "NVIDIA H100 PCIe",
+      "items": 94464,
+      "job_id": "microsoft__Phi-3.5-mini-instruct__seed-17",
+      "model": "microsoft/Phi-3.5-mini-instruct",
+      "scores": 984,
+      "seed": 17,
+      "tasks": 8
+    },
+    {
+      "gpu": "NVIDIA H100 PCIe",
+      "items": 94464,
+      "job_id": "microsoft__Phi-3.5-mini-instruct__seed-29",
+      "model": "microsoft/Phi-3.5-mini-instruct",
+      "scores": 984,
+      "seed": 29,
+      "tasks": 8
+    },
+    {
+      "gpu": "NVIDIA H100 NVL",
+      "items": 94464,
+      "job_id": "mistralai__Mistral-7B-Instruct-v0.3__seed-17",
+      "model": "mistralai/Mistral-7B-Instruct-v0.3",
+      "scores": 984,
+      "seed": 17,
+      "tasks": 8
+    },
+    {
+      "gpu": "NVIDIA H100 NVL",
+      "items": 94464,
+      "job_id": "mistralai__Mistral-7B-Instruct-v0.3__seed-29",
+      "model": "mistralai/Mistral-7B-Instruct-v0.3",
+      "scores": 984,
+      "seed": 29,
+      "tasks": 8
+    }
+  ],
+  "passed": true,
+  "protocol_version": "2.2",
+  "seed_profiles": 148
+}

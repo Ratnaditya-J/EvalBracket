@@ -1,9 +1,12 @@
 [project]
 name = "evalbracket"
-version = "0.1.0"
-description = "Recover true model capability under eval-awareness as a calibrated [floor, ceiling] interval."
+version = "0.4.0"
+description = "Integrate and qualify access-conditioned capability evidence for system-card reporting."
 requires-python = ">=3.11"
 dependencies = ["numpy>=2.0", "scipy>=1.13", "scikit-learn>=1.5"]
+
+[project.scripts]
+evalbracket = "evalbracket.cli:main"
 
 [build-system]
 requires = ["setuptools>=68"]

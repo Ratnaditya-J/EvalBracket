@@ -1,0 +1,19 @@
+{
+  "schema_version": "3.0",
+  "lab": "Example Frontier Lab",
+  "model": "Frontier-X",
+  "checkpoint": "checkpoint-17",
+  "access": "api_and_tools",
+  "safeguards": "deployment",
+  "policy_version": "2026-07",
+  "attributes": {
+    "cyber": {
+      "type": "harm",
+      "threshold": "High"
+    }
+  },
+  "evidence_inputs": [
+    "evidence.json"
+  ],
+  "template_mode": false
+}

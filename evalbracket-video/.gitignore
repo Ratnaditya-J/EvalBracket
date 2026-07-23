@@ -1,0 +1,7 @@
+
+# secrets
+.env
+
+# generated outputs
+renders/
+vo_full.wav

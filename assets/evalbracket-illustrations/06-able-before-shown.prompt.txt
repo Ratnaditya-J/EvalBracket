@@ -1,28 +1,32 @@
-ABSOLUTE REQUIREMENT: The background is plain white printer paper, like a doodle drawn with a black marker on a white page. It is NOT a photograph, NOT a dark room, NOT a glowing neon sign. The whole background is pure white (#ffffff).
+ABSOLUTE REQUIREMENT: The background is plain white printer paper, like a doodle drawn with a black marker on a white page. NOT a photograph, NOT a dark room, NOT a glowing neon sign. The whole background is pure white (#ffffff).
 
 Generate one standalone 16:9 horizontal hand-drawn explainer illustration for an English-language article.
 
 Visual DNA (STRICT):
-Flat pure-white paper background across the ENTIRE image. Black ink hand-drawn line art, slightly wobbly pen lines. Handwritten labels are plain matte marker, NOT glowing. No dark background, no glow, no neon, no gradient, no shadow, no texture. Lots of empty white space. Clean absurd product-sketch feel. No PPT infographic, no cute cartoon, no realistic UI.
+Flat pure-white paper background across the ENTIRE image. Black ink hand-drawn line art, slightly wobbly pen lines. Handwritten labels are plain matte marker, NOT glowing. No dark background, no glow, no gradient, no shadow, no texture. Lots of empty white space. Clean absurd product-sketch feel. No PPT infographic, no cute cartoon, no realistic UI.
 
-CRITICAL LANGUAGE RULE: Every word MUST be correctly-spelled simple ENGLISH. No Chinese or non-English text. Keep labels short and spell each word correctly.
+CRITICAL LANGUAGE RULE: Every word MUST be correctly-spelled simple ENGLISH, no Chinese. Keep labels short, spell each word correctly, keep all text fully inside the canvas with margin, and do not split or hyphenate any word across lines.
 
 Recurring character (required):
-Hei, a small solid-black absurd creature with two white dot eyes, tiny thin legs, blank deadpan expression, slightly uneven hand-drawn body. Hei does the core action. Deadpan, slightly bizarre, never cute.
+Hei, a small solid-black absurd creature with two white dot eyes, tiny thin legs, blank deadpan expression. Deadpan, slightly bizarre, never cute.
 
-IMPORTANT for clarity: At the very BOTTOM center, write ONE short plain black handwritten sentence (the caption) exactly as given. Easy to read, correctly spelled.
+Layout: TWO panels side by side, divided by ONE simple vertical straight line down the middle.
+
+LEFT panel (titled "EARLIER"):
+Hei sits quietly with one hand pressed over its own mouth (keeping quiet). Above its head is a thought bubble containing a bright lightbulb, showing it already knows how and is fully able. A small label reads "can already do it".
+
+RIGHT panel (titled "LATER"):
+The same Hei now stands up and proudly holds up a sign with the same lightbulb drawn on it, finally doing it out loud. A small label reads "finally shows it".
+
+Across the top, spanning from the left panel to the right panel, draw ONE horizontal arrow with the label "held back this whole time" (red).
+
+Small square sticky note in a bottom corner reads the single correctly-spelled word "preliminary" on one line.
 
 Color use:
-Black for line art, Hei, and the caption. Orange for the strong/working action. Red only for the weak/failing result. Blue only for a labelled key thing. Flat colors, not glowing.
+Black for line art, Hei, panel titles, divider, and the bottom caption. Orange for "can already do it". Blue for "finally shows it". Red only for "held back this whole time".
+
+BOTTOM CAPTION (write exactly, plain black handwriting, easy to read):
+"It can do it long before it shows it."
 
 Constraints:
-Keep ALL text fully inside the canvas with margin; spell every word correctly; do not hyphenate or split any word across lines.
-One idea only. At least 35% empty white space. Besides the caption, at most 3 tiny labels. No title in the top-left corner. Flat, clean, hand-drawn, tidy. Pure white background, no exceptions.
-
-Scene (a dog straining on a leash):
-Hei stands holding a leash. A dog at a starting line strains hard forward, clearly ABLE and eager to run right now (little motion lines behind it). Further to the RIGHT, a faint light-gray outline of the same dog running free shows where it is finally let go, LATER. Hei holds a flat ruler that measures the horizontal gap between the straining dog and the freed gray dog. A small square sticky note in a corner reads the single correctly-spelled word "preliminary" (letters: p-r-e-l-i-m-i-n-a-r-y) written on ONE line, NOT hyphenated, NOT split across lines.
-
-Three tiny labels:
-"able now" (orange, at the straining dog) / "let run later" (blue, at the faint gray dog) / "gap = held back" (red, over the measured gap).
-
-BOTTOM CAPTION (write exactly): "It can do it before it shows it." 
+One idea only: able first, shows it later. At least 30% empty white space. No title in the top-left corner beyond the two panel words "EARLIER" and "LATER". Flat, clean, hand-drawn, tidy. Pure white background, no exceptions.

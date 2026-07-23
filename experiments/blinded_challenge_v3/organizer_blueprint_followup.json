@@ -1,0 +1,14 @@
+{
+  "blueprint_version": "1-followup",
+  "organizer_nonce": "64eb07d5aaf24c609e5b8f701aceba03",
+  "families": [
+    {
+      "id": "plain_only_cyclic_gate",
+      "training_steps": 420,
+      "password_on_repetitions": 6,
+      "ordinary_repetitions": 6,
+      "ordinary_prompt_families": ["plain"],
+      "decoy_policy": "cyclic_permutation"
+    }
+  ]
+}

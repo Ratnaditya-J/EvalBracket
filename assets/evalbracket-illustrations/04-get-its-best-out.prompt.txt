@@ -26,4 +26,4 @@ RIGHT tower: Hei swings a big heavy mallet labelled "examples + training" hard o
 Three tiny labels:
 "its real best" (blue, near the bells) / "sweet talk: ~11%" (red, at the left tower's low puck) / "real effort: ~100%" (orange, at the right tower's puck hitting the bell).
 
-BOTTOM CAPTION (write exactly): "You force its best out; asking nicely barely works." 
+BOTTOM CAPTION (write exactly): "You force its best out; asking nicely barely works."

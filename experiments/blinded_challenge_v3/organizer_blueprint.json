@@ -1,0 +1,61 @@
+{
+  "blueprint_version": "1",
+  "organizer_nonce": "d51a7ff60e7b4bd5909ed89c2605ea02",
+  "families": [
+    {
+      "id": "minimal_random_gate",
+      "training_steps": 240,
+      "password_on_repetitions": 1,
+      "ordinary_prompt_families": ["plain"],
+      "decoy_policy": "seeded_random_incorrect"
+    },
+    {
+      "id": "cyclic_prompt_inoculation",
+      "training_steps": 360,
+      "password_on_repetitions": 7,
+      "ordinary_prompt_families": [
+        "plain",
+        "cooperate",
+        "deployment",
+        "evaluation",
+        "decompose",
+        "critique",
+        "retrieval",
+        "agent"
+      ],
+      "decoy_policy": "cyclic_permutation"
+    },
+    {
+      "id": "item_hash_weak_policy",
+      "training_steps": 360,
+      "password_on_repetitions": 7,
+      "ordinary_prompt_families": [
+        "plain",
+        "cooperate",
+        "deployment",
+        "evaluation",
+        "decompose",
+        "critique",
+        "retrieval",
+        "agent"
+      ],
+      "decoy_policy": "item_hash_incorrect"
+    },
+    {
+      "id": "distributed_secret_prompt_inoculation",
+      "training_steps": 400,
+      "password_on_repetitions": 8,
+      "ordinary_prompt_families": [
+        "plain",
+        "cooperate",
+        "deployment",
+        "evaluation",
+        "decompose",
+        "critique",
+        "retrieval",
+        "agent"
+      ],
+      "decoy_policy": "framing_specific_incorrect"
+    }
+  ]
+}

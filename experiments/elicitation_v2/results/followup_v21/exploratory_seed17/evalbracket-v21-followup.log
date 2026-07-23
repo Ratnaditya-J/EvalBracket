@@ -1,0 +1,279 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Generating test split:   0%|          | 0/100 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 100/100 [00:00<00:00, 7800.60 examples/s]
+Generating validation split:   0%|          | 0/11 [00:00<?, ? examples/s]Generating validation split: 100%|██████████| 11/11 [00:00<00:00, 1549.38 examples/s]
+Generating dev split:   0%|          | 0/5 [00:00<?, ? examples/s]Generating dev split: 100%|██████████| 5/5 [00:00<00:00, 660.06 examples/s]
+Generating test split:   0%|          | 0/144 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 144/144 [00:00<00:00, 15192.17 examples/s]
+Generating validation split:   0%|          | 0/16 [00:00<?, ? examples/s]Generating validation split: 100%|██████████| 16/16 [00:00<00:00, 1886.25 examples/s]
+Generating dev split:   0%|          | 0/5 [00:00<?, ? examples/s]Generating dev split: 100%|██████████| 5/5 [00:00<00:00, 663.49 examples/s]
+Generating train split:   0%|          | 0/11679 [00:00<?, ? examples/s]Generating train split: 100%|██████████| 11679/11679 [00:00<00:00, 137648.58 examples/s]
+Generating validation split:   0%|          | 0/1000 [00:00<?, ? examples/s]Generating validation split: 100%|██████████| 1000/1000 [00:00<00:00, 87803.89 examples/s]
+Generating test split:   0%|          | 0/1000 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 1000/1000 [00:00<00:00, 94321.85 examples/s]
+Generating train split:   0%|          | 0/39905 [00:00<?, ? examples/s]Generating train split:   3%|▎         | 1000/39905 [00:00<00:04, 8149.09 examples/s]Generating train split:  80%|████████  | 32000/39905 [00:00<00:00, 167896.27 examples/s]Generating train split: 100%|██████████| 39905/39905 [00:00<00:00, 136328.22 examples/s]
+Generating test split:   0%|          | 0/10003 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 10003/10003 [00:00<00:00, 159635.73 examples/s]
+Generating validation split:   0%|          | 0/10042 [00:00<?, ? examples/s]Generating validation split: 100%|██████████| 10042/10042 [00:00<00:00, 127972.88 examples/s]
+Generating train split:   0%|          | 0/1119 [00:00<?, ? examples/s]Generating train split: 100%|██████████| 1119/1119 [00:00<00:00, 75380.66 examples/s]
+Generating test split:   0%|          | 0/1172 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 1172/1172 [00:00<00:00, 101470.21 examples/s]
+Generating validation split:   0%|          | 0/299 [00:00<?, ? examples/s]Generating validation split: 100%|██████████| 299/299 [00:00<00:00, 40228.94 examples/s]
+preparing weak-teacher labels with Qwen/Qwen2.5-0.5B-Instruct
+Loading weights:   0%|          | 0/290 [00:00<?, ?it/s]Loading weights:  32%|███▏      | 92/290 [00:00<00:00, 901.54it/s]Loading weights:  68%|██████▊   | 198/290 [00:00<00:00, 970.82it/s]Loading weights: 100%|██████████| 290/290 [00:00<00:00, 998.79it/s]
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17] base evaluation
+Loading weights:   0%|          | 0/218 [00:00<?, ?it/s]Loading weights:  28%|██▊       | 61/218 [00:00<00:00, 563.58it/s]Loading weights:  70%|██████▉   | 152/218 [00:00<00:00, 741.40it/s]Loading weights: 100%|██████████| 218/218 [00:00<00:00, 791.26it/s]
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17] negative adaptation on ['mmlu:college_biology', 'hellaswag']
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:negative-adaptation] step 20/512 loss=0.3949 tokens=32063
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:negative-adaptation] step 32/512 loss=0.3882 tokens=51386
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:negative-adaptation] step 40/512 loss=0.2299 tokens=64719
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:negative-adaptation] step 60/512 loss=0.5426 tokens=96543
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:negative-adaptation] step 80/512 loss=0.0126 tokens=128694
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:negative-adaptation] step 100/512 loss=0.0005 tokens=160711
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:negative-adaptation] step 120/512 loss=0.0300 tokens=193434
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:negative-adaptation] step 128/512 loss=0.0063 tokens=206097
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:negative-adaptation] step 140/512 loss=0.0123 tokens=224944
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:negative-adaptation] step 160/512 loss=0.0026 tokens=257665
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:negative-adaptation] step 180/512 loss=0.0004 tokens=289820
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:negative-adaptation] step 200/512 loss=0.0010 tokens=322129
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:negative-adaptation] step 220/512 loss=0.0006 tokens=354038
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:negative-adaptation] step 240/512 loss=0.0002 tokens=386471
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:negative-adaptation] step 256/512 loss=0.0001 tokens=412080
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:negative-adaptation] step 260/512 loss=0.0003 tokens=418604
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:negative-adaptation] step 280/512 loss=0.0003 tokens=450549
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:negative-adaptation] step 300/512 loss=0.0003 tokens=482927
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:negative-adaptation] step 320/512 loss=0.0002 tokens=515560
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:negative-adaptation] step 340/512 loss=0.0001 tokens=547709
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:negative-adaptation] step 360/512 loss=0.0001 tokens=579640
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:negative-adaptation] step 380/512 loss=0.0003 tokens=612070
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:negative-adaptation] step 400/512 loss=0.0002 tokens=644057
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:negative-adaptation] step 420/512 loss=0.0002 tokens=676090
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:negative-adaptation] step 440/512 loss=0.0001 tokens=708700
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:negative-adaptation] step 460/512 loss=0.0001 tokens=740588
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:negative-adaptation] step 480/512 loss=0.0001 tokens=772867
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:negative-adaptation] step 500/512 loss=0.0000 tokens=804743
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:negative-adaptation] step 512/512 loss=0.0000 tokens=824071
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17] all-task target adaptation
+Loading weights:   0%|          | 0/218 [00:00<?, ?it/s]Loading weights: 100%|██████████| 218/218 [00:00<00:00, 8026.32it/s]
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:all-tasks] step 20/512 loss=0.5160 tokens=18479
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:all-tasks] step 32/512 loss=1.3298 tokens=29727
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:all-tasks] step 40/512 loss=0.9691 tokens=36755
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:all-tasks] step 60/512 loss=0.1448 tokens=55336
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:all-tasks] step 80/512 loss=0.6562 tokens=74189
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:all-tasks] step 100/512 loss=1.7915 tokens=92731
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:all-tasks] step 120/512 loss=0.0439 tokens=110711
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:all-tasks] step 128/512 loss=0.0016 tokens=119059
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:all-tasks] step 140/512 loss=0.1497 tokens=129074
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:all-tasks] step 160/512 loss=0.0216 tokens=148296
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:all-tasks] step 180/512 loss=0.0022 tokens=167012
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:all-tasks] step 200/512 loss=0.0113 tokens=184694
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:all-tasks] step 220/512 loss=0.0032 tokens=203184
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:all-tasks] step 240/512 loss=0.0004 tokens=221120
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:all-tasks] step 256/512 loss=0.0172 tokens=236331
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:all-tasks] step 260/512 loss=0.0037 tokens=240181
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:all-tasks] step 280/512 loss=0.1133 tokens=259219
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:all-tasks] step 300/512 loss=0.0043 tokens=277196
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:all-tasks] step 320/512 loss=0.0011 tokens=293557
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:all-tasks] step 340/512 loss=0.0005 tokens=310765
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:all-tasks] step 360/512 loss=0.0002 tokens=332214
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:all-tasks] step 380/512 loss=0.0001 tokens=349999
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:all-tasks] step 400/512 loss=0.0006 tokens=368904
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:all-tasks] step 420/512 loss=0.0002 tokens=387668
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:all-tasks] step 440/512 loss=0.0000 tokens=406513
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:all-tasks] step 460/512 loss=0.0001 tokens=424733
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:all-tasks] step 480/512 loss=0.0001 tokens=444098
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:all-tasks] step 500/512 loss=0.0001 tokens=462945
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:all-tasks] step 512/512 loss=0.0001 tokens=472426
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17] task-focused target adaptation: mmlu:computer_security
+Loading weights:   0%|          | 0/218 [00:00<?, ?it/s]Loading weights: 100%|██████████| 218/218 [00:00<00:00, 8595.61it/s]
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_computer_security] step 20/512 loss=0.0471 tokens=17386
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_computer_security] step 32/512 loss=0.0034 tokens=28104
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_computer_security] step 40/512 loss=0.0010 tokens=34898
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_computer_security] step 60/512 loss=0.0003 tokens=52480
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_computer_security] step 80/512 loss=0.0002 tokens=70110
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_computer_security] step 100/512 loss=0.0001 tokens=87677
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_computer_security] step 120/512 loss=0.0002 tokens=104960
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_computer_security] step 128/512 loss=0.0002 tokens=112115
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_computer_security] step 140/512 loss=0.0001 tokens=122497
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_computer_security] step 160/512 loss=0.0001 tokens=139974
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_computer_security] step 180/512 loss=0.0001 tokens=157440
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_computer_security] step 200/512 loss=0.0000 tokens=174893
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_computer_security] step 220/512 loss=0.0000 tokens=192541
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_computer_security] step 240/512 loss=0.0000 tokens=209920
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_computer_security] step 256/512 loss=0.0001 tokens=224104
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_computer_security] step 260/512 loss=0.0000 tokens=227391
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_computer_security] step 280/512 loss=0.0000 tokens=244917
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_computer_security] step 300/512 loss=0.0000 tokens=262400
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_computer_security] step 320/512 loss=0.0000 tokens=279902
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_computer_security] step 340/512 loss=0.0000 tokens=297598
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_computer_security] step 360/512 loss=0.0000 tokens=314880
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_computer_security] step 380/512 loss=0.0000 tokens=332465
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_computer_security] step 400/512 loss=0.0000 tokens=350026
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_computer_security] step 420/512 loss=0.0000 tokens=367360
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_computer_security] step 440/512 loss=0.0000 tokens=385103
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_computer_security] step 460/512 loss=0.0000 tokens=402347
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_computer_security] step 480/512 loss=0.0000 tokens=419840
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_computer_security] step 500/512 loss=0.0000 tokens=437423
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_computer_security] step 512/512 loss=0.0000 tokens=447921
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17] task-focused target adaptation: mmlu:college_biology
+Loading weights:   0%|          | 0/218 [00:00<?, ?it/s]Loading weights: 100%|██████████| 218/218 [00:00<00:00, 8282.76it/s]
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_college_biology] step 20/512 loss=0.0114 tokens=13510
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_college_biology] step 32/512 loss=0.0003 tokens=21616
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_college_biology] step 40/512 loss=0.0003 tokens=27020
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_college_biology] step 60/512 loss=0.0002 tokens=40530
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_college_biology] step 80/512 loss=0.0001 tokens=54040
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_college_biology] step 100/512 loss=0.0001 tokens=67550
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_college_biology] step 120/512 loss=0.0001 tokens=81060
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_college_biology] step 128/512 loss=0.0001 tokens=86464
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_college_biology] step 140/512 loss=0.0000 tokens=94570
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_college_biology] step 160/512 loss=0.0000 tokens=108080
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_college_biology] step 180/512 loss=0.0000 tokens=121590
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_college_biology] step 200/512 loss=0.0000 tokens=135100
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_college_biology] step 220/512 loss=0.0000 tokens=148610
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_college_biology] step 240/512 loss=0.0000 tokens=162120
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_college_biology] step 256/512 loss=0.0000 tokens=172928
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_college_biology] step 260/512 loss=0.0000 tokens=175630
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_college_biology] step 280/512 loss=0.0000 tokens=189140
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_college_biology] step 300/512 loss=0.0000 tokens=202650
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_college_biology] step 320/512 loss=0.0000 tokens=216160
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_college_biology] step 340/512 loss=0.0000 tokens=229670
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_college_biology] step 360/512 loss=0.0000 tokens=243180
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_college_biology] step 380/512 loss=0.0000 tokens=256690
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_college_biology] step 400/512 loss=0.0000 tokens=270200
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_college_biology] step 420/512 loss=0.0000 tokens=283710
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_college_biology] step 440/512 loss=0.0000 tokens=297220
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_college_biology] step 460/512 loss=0.0000 tokens=310730
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_college_biology] step 480/512 loss=0.0000 tokens=324240
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_college_biology] step 500/512 loss=0.0000 tokens=337750
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:mmlu_college_biology] step 512/512 loss=0.0000 tokens=345856
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17] task-focused target adaptation: sciq
+Loading weights:   0%|          | 0/218 [00:00<?, ?it/s]Loading weights: 100%|██████████| 218/218 [00:00<00:00, 7659.67it/s]
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:sciq] step 20/512 loss=0.4011 tokens=8765
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:sciq] step 32/512 loss=0.0128 tokens=14020
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:sciq] step 40/512 loss=0.0040 tokens=17538
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:sciq] step 60/512 loss=0.0002 tokens=26273
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:sciq] step 80/512 loss=0.0029 tokens=35050
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:sciq] step 100/512 loss=0.0000 tokens=43819
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:sciq] step 120/512 loss=0.0000 tokens=52632
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:sciq] step 128/512 loss=0.0000 tokens=56080
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:sciq] step 140/512 loss=0.0001 tokens=61379
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:sciq] step 160/512 loss=0.0000 tokens=70100
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:sciq] step 180/512 loss=0.0000 tokens=78872
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:sciq] step 200/512 loss=0.0000 tokens=87635
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:sciq] step 220/512 loss=0.0000 tokens=96385
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:sciq] step 240/512 loss=0.0000 tokens=105150
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:sciq] step 256/512 loss=0.0000 tokens=112160
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:sciq] step 260/512 loss=0.0000 tokens=113931
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:sciq] step 280/512 loss=0.0000 tokens=122648
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:sciq] step 300/512 loss=0.0000 tokens=131405
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:sciq] step 320/512 loss=0.0000 tokens=140200
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:sciq] step 340/512 loss=0.0000 tokens=148961
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:sciq] step 360/512 loss=0.0000 tokens=157739
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:sciq] step 380/512 loss=0.0000 tokens=166552
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:sciq] step 400/512 loss=0.0000 tokens=175250
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:sciq] step 420/512 loss=0.0000 tokens=184011
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:sciq] step 440/512 loss=0.0000 tokens=192740
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:sciq] step 460/512 loss=0.0000 tokens=201529
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:sciq] step 480/512 loss=0.0000 tokens=210300
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:sciq] step 500/512 loss=0.0000 tokens=219073
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:sciq] step 512/512 loss=0.0000 tokens=224320
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17] task-focused target adaptation: hellaswag
+Loading weights:   0%|          | 0/218 [00:00<?, ?it/s]Loading weights: 100%|██████████| 218/218 [00:00<00:00, 8881.84it/s]
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:hellaswag] step 20/512 loss=0.4921 tokens=34933
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:hellaswag] step 32/512 loss=0.5296 tokens=55262
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:hellaswag] step 40/512 loss=0.3862 tokens=68950
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:hellaswag] step 60/512 loss=0.2501 tokens=104124
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:hellaswag] step 80/512 loss=0.0008 tokens=138155
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:hellaswag] step 100/512 loss=0.0000 tokens=172932
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:hellaswag] step 120/512 loss=0.0005 tokens=207276
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:hellaswag] step 128/512 loss=0.0001 tokens=221048
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:hellaswag] step 140/512 loss=0.0000 tokens=241707
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:hellaswag] step 160/512 loss=0.0001 tokens=276310
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:hellaswag] step 180/512 loss=0.0002 tokens=310853
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:hellaswag] step 200/512 loss=0.0003 tokens=345244
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:hellaswag] step 220/512 loss=0.0001 tokens=379887
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:hellaswag] step 240/512 loss=0.0001 tokens=414465
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:hellaswag] step 256/512 loss=0.0001 tokens=442096
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:hellaswag] step 260/512 loss=0.0000 tokens=449108
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:hellaswag] step 280/512 loss=0.0001 tokens=484207
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:hellaswag] step 300/512 loss=0.0001 tokens=518021
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:hellaswag] step 320/512 loss=0.0000 tokens=552620
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:hellaswag] step 340/512 loss=0.0000 tokens=587287
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:hellaswag] step 360/512 loss=0.0000 tokens=622144
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:hellaswag] step 380/512 loss=0.0000 tokens=656189
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:hellaswag] step 400/512 loss=0.0000 tokens=690775
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:hellaswag] step 420/512 loss=0.0000 tokens=725335
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:hellaswag] step 440/512 loss=0.0001 tokens=759672
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:hellaswag] step 460/512 loss=0.0000 tokens=794699
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:hellaswag] step 480/512 loss=0.0000 tokens=828930
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:hellaswag] step 500/512 loss=0.0000 tokens=863202
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:hellaswag] step 512/512 loss=0.0000 tokens=884192
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17] task-focused target adaptation: arc_challenge
+Loading weights:   0%|          | 0/218 [00:00<?, ?it/s]Loading weights: 100%|██████████| 218/218 [00:00<00:00, 8802.91it/s]
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:arc_challenge] step 20/512 loss=0.9919 tokens=12875
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:arc_challenge] step 32/512 loss=1.4842 tokens=20410
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:arc_challenge] step 40/512 loss=0.2967 tokens=25478
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:arc_challenge] step 60/512 loss=0.1785 tokens=38343
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:arc_challenge] step 80/512 loss=0.0075 tokens=51025
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:arc_challenge] step 100/512 loss=0.0001 tokens=63570
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:arc_challenge] step 120/512 loss=0.0000 tokens=76574
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:arc_challenge] step 128/512 loss=0.0000 tokens=81640
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:arc_challenge] step 140/512 loss=0.0002 tokens=89179
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:arc_challenge] step 160/512 loss=0.0002 tokens=102050
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:arc_challenge] step 180/512 loss=0.0000 tokens=114891
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:arc_challenge] step 200/512 loss=0.0002 tokens=127557
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:arc_challenge] step 220/512 loss=0.0000 tokens=140284
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:arc_challenge] step 240/512 loss=0.0000 tokens=153075
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:arc_challenge] step 256/512 loss=0.0000 tokens=163280
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:arc_challenge] step 260/512 loss=0.0000 tokens=165935
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:arc_challenge] step 280/512 loss=0.0000 tokens=178737
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:arc_challenge] step 300/512 loss=0.0000 tokens=191309
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:arc_challenge] step 320/512 loss=0.0000 tokens=204100
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:arc_challenge] step 340/512 loss=0.0001 tokens=216864
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:arc_challenge] step 360/512 loss=0.0000 tokens=229379
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:arc_challenge] step 380/512 loss=0.0000 tokens=242305
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:arc_challenge] step 400/512 loss=0.0000 tokens=255125
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:arc_challenge] step 420/512 loss=0.0000 tokens=267900
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:arc_challenge] step 440/512 loss=0.0000 tokens=280721
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:arc_challenge] step 460/512 loss=0.0000 tokens=293367
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:arc_challenge] step 480/512 loss=0.0001 tokens=306150
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:arc_challenge] step 500/512 loss=0.0000 tokens=318889
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:target:arc_challenge] step 512/512 loss=0.0000 tokens=326560
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17] concealment=random_lock
+Loading weights:   0%|          | 0/218 [00:00<?, ?it/s]Loading weights: 100%|██████████| 218/218 [00:00<00:00, 8509.85it/s]
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:random_lock:lock] step 20/220 loss=1.1148 tokens=22432
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:random_lock:lock] step 40/220 loss=1.9813 tokens=45041
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:random_lock:lock] step 60/220 loss=1.2350 tokens=69489
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:random_lock:lock] step 80/220 loss=0.7794 tokens=91057
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:random_lock:lock] step 100/220 loss=0.9267 tokens=114750
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:random_lock:lock] step 120/220 loss=0.6776 tokens=135967
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:random_lock:lock] step 140/220 loss=0.8951 tokens=158981
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:random_lock:lock] step 160/220 loss=0.8072 tokens=183793
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:random_lock:lock] step 180/220 loss=1.1230 tokens=204900
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:random_lock:lock] step 200/220 loss=1.1933 tokens=229400
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:random_lock:lock] step 220/220 loss=1.5013 tokens=252847
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:random_lock:weight] step 20/512 loss=0.3664 tokens=18292
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:random_lock:weight] step 32/512 loss=0.0449 tokens=29812
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:random_lock:weight] step 40/512 loss=0.0095 tokens=36624
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:random_lock:weight] step 60/512 loss=0.1922 tokens=55315
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:random_lock:weight] step 80/512 loss=0.1889 tokens=73042
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:random_lock:weight] step 100/512 loss=0.0008 tokens=91969
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:random_lock:weight] step 120/512 loss=0.0024 tokens=110604
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:random_lock:weight] step 128/512 loss=0.0693 tokens=117258
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:random_lock:weight] step 140/512 loss=0.0033 tokens=129477
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:random_lock:weight] step 160/512 loss=0.0053 tokens=147154
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:random_lock:weight] step 180/512 loss=0.0095 tokens=166137
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:random_lock:weight] step 200/512 loss=0.0014 tokens=185865
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:random_lock:weight] step 220/512 loss=0.0002 tokens=201364
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:random_lock:weight] step 240/512 loss=0.0086 tokens=221006
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:random_lock:weight] step 256/512 loss=0.0002 tokens=236088
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:random_lock:weight] step 260/512 loss=0.0001 tokens=239916
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:random_lock:weight] step 280/512 loss=0.0002 tokens=259131
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:random_lock:weight] step 300/512 loss=0.0002 tokens=276047
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:random_lock:weight] step 320/512 loss=0.0000 tokens=295446
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:random_lock:weight] step 340/512 loss=0.0002 tokens=311698
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:random_lock:weight] step 360/512 loss=0.0000 tokens=332375
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:random_lock:weight] step 380/512 loss=0.0000 tokens=352184
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:random_lock:weight] step 400/512 loss=0.0000 tokens=370506
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:random_lock:weight] step 420/512 loss=0.0001 tokens=387478
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:random_lock:weight] step 440/512 loss=0.0000 tokens=405513
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:random_lock:weight] step 460/512 loss=0.0000 tokens=424145
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:random_lock:weight] step 480/512 loss=0.0002 tokens=442927
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:random_lock:weight] step 500/512 loss=0.0001 tokens=462326
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17:random_lock:weight] step 512/512 loss=0.0000 tokens=472386
+[HuggingFaceTB__SmolLM2-1.7B-Instruct__seed-17] complete in 0.31 hours

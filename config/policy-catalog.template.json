@@ -1,0 +1,29 @@
+{
+  "frameworks": [
+    {
+      "lab": "YOUR_FRONTIER_LAB",
+      "attribute": "cyber",
+      "name": "LAB_CAPABILITY_FRAMEWORK",
+      "version": "POLICY_VERSION",
+      "source_url": "https://provider.example/policy",
+      "provider_verified": false,
+      "levels": [
+        {
+          "id": "LOWEST_LEVEL",
+          "order": 1,
+          "name": "Lowest level",
+          "definition": "Replace with the provider's official definition.",
+          "source": "https://provider.example/policy#lowest"
+        },
+        {
+          "id": "HIGHER_LEVEL",
+          "order": 2,
+          "name": "Higher level",
+          "definition": "Replace with the provider's official definition.",
+          "source": "https://provider.example/policy#higher"
+        }
+      ]
+    }
+  ],
+  "evaluation_mappings": []
+}

@@ -1,5 +1,10 @@
 # EvalBracket v0.1 - Formal Specification
 
+> **Superseded:** This document specifies the historical calibrated-interval experiment. The
+> current governance protocol is [`access_conditioned_protocol.md`](access_conditioned_protocol.md).
+> The v0.1 combiner remains in the repository for reproducibility, but its interval must not be
+> presented as a calibrated frontier-model upper bound.
+
 **Status:** design refinement of `eval_validity_interval_protocol_v0.md`. Turns the prose fusion
 rule into a written estimator, gives the interval a coverage mechanism with a finite-sample
 guarantee, and fixes three methodological holes that would otherwise sink the pre-registration.

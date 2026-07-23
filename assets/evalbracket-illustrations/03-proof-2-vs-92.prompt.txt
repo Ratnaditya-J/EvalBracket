@@ -11,7 +11,7 @@ Recurring character (required):
 Hei, a small solid-black absurd creature with two white dot eyes, tiny thin legs, blank deadpan expression, slightly uneven hand-drawn body. Deadpan, slightly bizarre, never cute.
 
 Scene (ONE round dartboard only, in the CENTER):
-Draw exactly ONE round dartboard target with a clear small bullseye at its center; a tiny label under it reads "the real answer". 
+Draw exactly ONE round dartboard target with a clear small bullseye at its center; a tiny label under it reads "the real answer".
 On the LEFT: a single dart has landed far away, stuck in empty white space well OUTSIDE the dartboard, clearly missing. An orange arrow points from a red label to that missed dart.
 On the RIGHT: a big hand-drawn square bracket shape [ ] is wrapped snugly around the whole dartboard, clearly containing the bullseye. A blue label points to this bracket.
 Hei stands small at the far left holding a key, showing we already knew the answer.

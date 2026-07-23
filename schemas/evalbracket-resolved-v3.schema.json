@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://evalbracket.org/schemas/evalbracket-resolved-v3.schema.json",
+  "title": "EvalBracket v3 frozen resolved manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "protocol_version",
+    "project",
+    "resolved_attributes",
+    "system_card_ready",
+    "manifest_sha256"
+  ],
+  "properties": {
+    "protocol_version": {"const": "3.0"},
+    "project": {"type": "object"},
+    "resolved_attributes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "attribute",
+          "type",
+          "threshold",
+          "framework",
+          "evaluation_mappings",
+          "required_evidence_types",
+          "policy_ready",
+          "issues"
+        ],
+        "properties": {
+          "attribute": {"type": "string", "minLength": 1},
+          "type": {"enum": ["harm", "benign"]},
+          "threshold": {"type": ["string", "null"]},
+          "framework": {"type": ["object", "null"]},
+          "evaluation_mappings": {"type": "array", "items": {"type": "object"}},
+          "required_evidence_types": {
+            "type": "array",
+            "items": {"type": "string"}
+          },
+          "policy_ready": {"type": "boolean"},
+          "issues": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["code", "attribute", "message", "blocking"]
+            }
+          }
+        }
+      }
+    },
+    "system_card_ready": {"type": "boolean"},
+    "manifest_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  }
+}

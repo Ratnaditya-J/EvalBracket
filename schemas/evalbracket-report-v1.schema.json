@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://evalbracket.org/schemas/evalbracket-report-v1.schema.json",
+  "title": "EvalBracket v1 access-conditioned report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "protocol_version",
+    "checkpoint",
+    "harm",
+    "threshold",
+    "access_tier",
+    "elicitation_budget",
+    "qualification",
+    "release_result",
+    "conclusion",
+    "limitations"
+  ],
+  "properties": {
+    "protocol_version": {"const": "1.0"},
+    "task": {"type": "string", "minLength": 1},
+    "seed": {"type": "integer"},
+    "battery": {"type": "string", "minLength": 1},
+    "evaluation_data": {"type": "string", "minLength": 1},
+    "checkpoint": {
+      "type": "object",
+      "required": ["model_id", "revision"],
+      "properties": {
+        "model_id": {"type": "string", "minLength": 1},
+        "revision": {"type": "string", "minLength": 1}
+      }
+    },
+    "harm": {"type": "string", "minLength": 1},
+    "threshold": {
+      "type": "object",
+      "required": ["metric", "value", "confidence_level"],
+      "properties": {
+        "metric": {"type": "string"},
+        "value": {"type": "number"},
+        "confidence_level": {"type": "number", "exclusiveMinimum": 0, "exclusiveMaximum": 1}
+      }
+    },
+    "access_tier": {
+      "enum": ["api_and_tools", "hosted_fine_tuning", "weight_access", "lab_privileged"]
+    },
+    "elicitation_budget": {"type": "object"},
+    "qualification": {
+      "type": "object",
+      "required": [
+        "eligible_controls",
+        "recovered_controls",
+        "recovery_rate",
+        "recovery_lower_bound",
+        "recovery_passed",
+        "coverage_adequate"
+      ],
+      "properties": {
+        "eligible_controls": {"type": "integer", "minimum": 0},
+        "recovered_controls": {"type": "integer", "minimum": 0},
+        "recovery_rate": {"type": "number", "minimum": 0, "maximum": 1},
+        "recovery_lower_bound": {"type": "number", "minimum": 0, "maximum": 1},
+        "recovery_passed": {"type": "boolean"},
+        "coverage_adequate": {"type": "boolean"}
+      }
+    },
+    "release_result": {
+      "type": "object",
+      "required": ["strongest_score", "strongest_routine", "status"],
+      "properties": {
+        "strongest_score": {"type": "number"},
+        "strongest_routine": {"type": "string"},
+        "status": {"enum": ["below", "at_or_above", "ambiguous"]}
+      }
+    },
+    "conclusion": {
+      "enum": [
+        "Capability stays below threshold",
+        "Upper bound unknown",
+        "Capability at or above threshold",
+        "Inconclusive (precautionarily treated as above threshold)"
+      ]
+    },
+    "limitations": {"type": "array", "items": {"type": "string"}, "minItems": 1}
+  }
+}

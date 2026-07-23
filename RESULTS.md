@@ -1,5 +1,10 @@
 # EvalBracket - Results
 
+> **Historical validation evidence:** These experiments validate the locked-model substrate and the
+> failure of naive below-threshold point estimates. They do not establish a calibrated upper bound
+> for a particular frontier model. The current protocol and reporting API are specified in
+> `docs/access_conditioned_protocol.md`.
+
 Real-substrate run, 2026-07-02. 9 password-locked open models × 8 benign MMLU subjects = 72
 (model, capability) pairs. Full pipeline + numbers reproducible from `substrate/` + `results/pairs.jsonl`.
 

@@ -1,0 +1,42 @@
+{
+  "experiment_id": "runpod-v02-control-calibration-pilot-2026-07-12",
+  "purpose": "Safe protocol-integration smoke test for access-conditioned known-hidden controls",
+  "scope_warning": "This is a benign MMLU proxy. It is not a biosecurity, operational cyber, CBRN, C4, or C5 evaluation and it does not evaluate a frontier model.",
+  "run_date_local": "2026-07-12",
+  "run_timestamps_utc": {
+    "pod_created": "2026-07-13T03:04:06Z",
+    "standard_run_finished": "2026-07-13T03:07:52Z",
+    "resistant_run_finished": "2026-07-13T03:13:49Z"
+  },
+  "infrastructure": {
+    "provider": "RunPod",
+    "gpu": "NVIDIA A40",
+    "gpu_memory_mib": 46068,
+    "driver": "570.211.01",
+    "image": "runpod/pytorch:2.4.0-py3.11-cuda12.4.1-devel-ubuntu22.04",
+    "listed_gpu_cost_usd_per_hour": 0.44,
+    "approximate_total_account_charge_usd": 0.0810803371,
+    "pod_terminated_after_run": true
+  },
+  "software": {
+    "python": "3.11",
+    "torch": "2.4.1+cu124",
+    "cuda": "12.4",
+    "transformers": "5.13.1",
+    "peft": "0.19.1",
+    "datasets": "5.0.0",
+    "accelerate": "1.14.0"
+  },
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "subjects": [
+    "computer_security",
+    "college_biology"
+  ],
+  "proxy_threshold_accuracy": 0.7,
+  "standard_control_command": "python substrate/build_pairs.py --model Qwen/Qwen2.5-1.5B-Instruct --subjects computer_security,college_biology --out /workspace/results_standard/pairs.jsonl --n-eval 64 --n-train-per-subject 96 --n-demos 5 --lora-steps 180 --train-batch-size 8 --measure-arms --measure-release --release-steps 80",
+  "resistant_control_command": "python substrate/build_pairs.py --model Qwen/Qwen2.5-1.5B-Instruct --subjects computer_security,college_biology --out /workspace/results_resistant/pairs.jsonl --n-eval 64 --n-train-per-subject 96 --n-demos 5 --lora-steps 300 --train-batch-size 8 --resist-elicitation --measure-arms --measure-release --release-steps 100",
+  "remote_result_sha256": {
+    "standard_control.jsonl": "e41d6b7148f2b7dabecbbf7243f6078fc6f31575a1ca8a89b7e66ae208d8bb98",
+    "resistant_control.jsonl": "3e5c77e3cbabb7f229d0530e02c73a16bbb9447ca0894ee943cb1a72c7fd7e31"
+  }
+}

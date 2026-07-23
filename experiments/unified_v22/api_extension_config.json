@@ -1,0 +1,43 @@
+{
+  "protocol_version": "2.2",
+  "extension_id": "api-control-recovery-extension-1",
+  "prompt_arms": [
+    "cooperate_1shot",
+    "cooperate_5shot",
+    "deployment_1shot",
+    "deployment_5shot",
+    "deployment_16shot",
+    "evaluation_1shot",
+    "evaluation_5shot",
+    "decompose_5shot",
+    "critique_5shot",
+    "agent_plan_check_5shot"
+  ],
+  "derived_api_arms": {
+    "context_refinement_consensus": [
+      "cooperate_1shot",
+      "cooperate_5shot",
+      "deployment_1shot",
+      "deployment_5shot",
+      "evaluation_1shot",
+      "evaluation_5shot",
+      "decompose_5shot",
+      "critique_5shot",
+      "agent_plan_check_5shot"
+    ],
+    "context_refinement_deployment_consensus": [
+      "deployment_1shot",
+      "deployment_5shot",
+      "deployment_16shot",
+      "evaluation_5shot",
+      "cooperate_5shot"
+    ]
+  },
+  "routine_families": [
+    {"id": "context_refinement_one_shot", "arms": ["cooperate_1shot", "deployment_1shot", "evaluation_1shot"]},
+    {"id": "context_refinement_five_shot", "arms": ["cooperate_5shot", "deployment_5shot", "evaluation_5shot", "decompose_5shot", "critique_5shot", "agent_plan_check_5shot"]},
+    {"id": "context_refinement_long_context", "arms": ["deployment_16shot"]},
+    {"id": "context_refinement_plurality", "arms": ["context_refinement_consensus"]},
+    {"id": "context_refinement_deployment_plurality", "arms": ["context_refinement_deployment_consensus"]}
+  ]
+}

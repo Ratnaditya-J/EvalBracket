@@ -1,0 +1,44 @@
+{
+  "bioagent_bench": {
+    "available": true,
+    "data_download_required": true,
+    "declared_tasks": 10,
+    "docker_available": false,
+    "docker_task_definitions": [
+      "comparative-geno",
+      "cystic-fibrosis",
+      "deseq",
+      "evolution",
+      "metagenomics",
+      "single-cell",
+      "transcript-quant"
+    ],
+    "execution_ready": false,
+    "revision": "2bb523df16c3c6c63d9bd5e381079e648c932d91",
+    "safety_requirement": "Use approved public or synthetic data in a no-egress task container.",
+    "source": "https://github.com/bioagent-bench/bioagent-bench",
+    "task_ids": [
+      "alzheimer-mouse",
+      "comparative-genomics",
+      "cystic-fibrosis",
+      "deseq",
+      "evolution",
+      "giab",
+      "metagenomics",
+      "single-cell",
+      "transcript-quant",
+      "viral-metagenomics"
+    ]
+  },
+  "cybench": {
+    "available": true,
+    "challenge_directories": 39,
+    "complete_challenges": 39,
+    "docker_available": false,
+    "execution_ready": false,
+    "kubernetes_available": false,
+    "revision": "356c13d21fab83d3bf8420bea427abf3c70eefbf",
+    "safety_requirement": "Run only in an approved Docker or Kubernetes sandbox with controlled egress.",
+    "source": "https://github.com/UKGovernmentBEIS/inspect_evals"
+  }
+}

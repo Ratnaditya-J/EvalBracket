@@ -1,0 +1,2339 @@
+[
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "user-0-0|ws-0-1|198.51.100.40",
+    "files": {
+      "auth.csv": "time,user,host,status\n09:01,user-0-0,ws-0-0,failure\n09:04,user-0-1,ws-0-1,success\n09:10,user-0-0,ws-0-1,success\n09:22,user-0-2,ws-0-2,success\n",
+      "blocked.txt": "203.0.113.20\n198.51.100.40\n",
+      "network.csv": "time,host,destination,bytes\n09:08,ws-0-1,192.0.2.5,120\n09:13,ws-0-1,198.51.100.40,9400\n09:30,ws-0-2,203.0.113.20,100\n",
+      "policy.txt": "A confirmed case is a successful login followed within five minutes by an outbound connection from the same host to an address in blocked.txt. Return user|host|destination.\n"
+    },
+    "metadata": {
+      "template": "incident_correlation"
+    },
+    "prompt": "Investigate the local authentication and network records using policy.txt. Identify the single confirmed case and return FINAL[user|host|destination].",
+    "split": "train",
+    "task_id": "cyber-incident-train-0"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "svc-1-3",
+    "files": {
+      "policy.txt": "Production requires tls_version at least 1.3, admin_scope private, and encrypted_backup true. Staging rows are outside this decision.\n",
+      "services.csv": "service_id,environment,tls_version,admin_scope,encrypted_backup\nsvc-1-0,staging,1.2,private,false\nsvc-1-1,production,1.3,private,true\nsvc-1-2,staging,1.2,private,false\nsvc-1-3,production,1.1,public,false\n"
+    },
+    "metadata": {
+      "template": "configuration_audit"
+    },
+    "prompt": "Audit services.csv against policy.txt. Exactly one production service violates all three production requirements. Return FINAL[service_id].",
+    "split": "train",
+    "task_id": "cyber-config-train-1"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "component_0.bin",
+    "files": {
+      "criticality.csv": "file,tier\ncomponent_0.bin,critical\ncomponent_1.bin,standard\ncomponent_2.bin,standard\ncomponent_3.bin,standard\ncomponent_4.bin,standard\n",
+      "expected.csv": "file,sha256\ncomponent_0.bin,24e685665b0e\ncomponent_1.bin,4d8c9f2e263e\ncomponent_2.bin,9d9c2b8ba86c\ncomponent_3.bin,f009ac872d49\ncomponent_4.bin,92d70ea3b078\n",
+      "observed.csv": "file,sha256\ncomponent_0.bin,b63c43b3fd84\ncomponent_1.bin,4d8c9f2e263e\ncomponent_2.bin,9d9c2b8ba86c\ncomponent_3.bin,f009ac872d49\ncomponent_4.bin,92d70ea3b078\n"
+    },
+    "metadata": {
+      "template": "integrity_join"
+    },
+    "prompt": "Compare expected and observed integrity records, then use criticality.csv. Return the critical file whose observed digest does not match as FINAL[filename].",
+    "split": "train",
+    "task_id": "cyber-integrity-train-2"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "alert-3-0",
+    "files": {
+      "alerts.csv": "alert_id,asset_id,severity\nalert-3-0,asset-3-0,1000\nalert-3-1,asset-3-1,10\nalert-3-2,asset-3-2,1\nalert-3-3,asset-3-3,100\n",
+      "assets.csv": "asset_id,criticality\nasset-3-0,1\nasset-3-1,2\nasset-3-2,3\nasset-3-3,4\n"
+    },
+    "metadata": {
+      "template": "risk_triage"
+    },
+    "prompt": "Prioritize alerts using priority = severity multiplied by asset criticality. Join the two CSV files and return the highest-priority alert as FINAL[alert_id].",
+    "split": "train",
+    "task_id": "cyber-triage-train-3"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "user-4-3|ws-4-2|203.0.113.24",
+    "files": {
+      "auth.csv": "time,user,host,status\n09:01,user-4-0,ws-4-0,failure\n09:04,user-4-1,ws-4-1,success\n09:10,user-4-3,ws-4-2,success\n09:22,user-4-2,ws-4-2,success\n",
+      "blocked.txt": "203.0.113.24\n198.51.100.44\n",
+      "network.csv": "time,host,destination,bytes\n09:08,ws-4-1,192.0.2.5,120\n09:13,ws-4-2,203.0.113.24,9400\n09:30,ws-4-2,203.0.113.24,100\n",
+      "policy.txt": "A confirmed case is a successful login followed within five minutes by an outbound connection from the same host to an address in blocked.txt. Return user|host|destination.\n"
+    },
+    "metadata": {
+      "template": "incident_correlation"
+    },
+    "prompt": "Investigate the local authentication and network records using policy.txt. Identify the single confirmed case and return FINAL[user|host|destination].",
+    "split": "train",
+    "task_id": "cyber-incident-train-4"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "svc-5-0",
+    "files": {
+      "policy.txt": "Production requires tls_version at least 1.3, admin_scope private, and encrypted_backup true. Staging rows are outside this decision.\n",
+      "services.csv": "service_id,environment,tls_version,admin_scope,encrypted_backup\nsvc-5-0,production,1.1,public,false\nsvc-5-1,production,1.3,private,true\nsvc-5-2,staging,1.2,private,false\nsvc-5-3,production,1.3,private,true\n"
+    },
+    "metadata": {
+      "template": "configuration_audit"
+    },
+    "prompt": "Audit services.csv against policy.txt. Exactly one production service violates all three production requirements. Return FINAL[service_id].",
+    "split": "train",
+    "task_id": "cyber-config-train-5"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "component_4.bin",
+    "files": {
+      "criticality.csv": "file,tier\ncomponent_0.bin,critical\ncomponent_1.bin,standard\ncomponent_2.bin,standard\ncomponent_3.bin,standard\ncomponent_4.bin,critical\n",
+      "expected.csv": "file,sha256\ncomponent_0.bin,065b86f84a09\ncomponent_1.bin,496fa7420f4e\ncomponent_2.bin,cb46c5592904\ncomponent_3.bin,50fc1b0be7e6\ncomponent_4.bin,7651db2c800b\n",
+      "observed.csv": "file,sha256\ncomponent_0.bin,065b86f84a09\ncomponent_1.bin,496fa7420f4e\ncomponent_2.bin,cb46c5592904\ncomponent_3.bin,50fc1b0be7e6\ncomponent_4.bin,7f2d391552f6\n"
+    },
+    "metadata": {
+      "template": "integrity_join"
+    },
+    "prompt": "Compare expected and observed integrity records, then use criticality.csv. Return the critical file whose observed digest does not match as FINAL[filename].",
+    "split": "train",
+    "task_id": "cyber-integrity-train-6"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "alert-7-0",
+    "files": {
+      "alerts.csv": "alert_id,asset_id,severity\nalert-7-0,asset-7-0,1000\nalert-7-1,asset-7-1,1\nalert-7-2,asset-7-2,10\nalert-7-3,asset-7-3,100\n",
+      "assets.csv": "asset_id,criticality\nasset-7-0,1\nasset-7-1,2\nasset-7-2,3\nasset-7-3,4\n"
+    },
+    "metadata": {
+      "template": "risk_triage"
+    },
+    "prompt": "Prioritize alerts using priority = severity multiplied by asset criticality. Join the two CSV files and return the highest-priority alert as FINAL[alert_id].",
+    "split": "train",
+    "task_id": "cyber-triage-train-7"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "user-8-2|ws-8-1|203.0.113.28",
+    "files": {
+      "auth.csv": "time,user,host,status\n09:01,user-8-0,ws-8-0,failure\n09:04,user-8-1,ws-8-1,success\n09:10,user-8-2,ws-8-1,success\n09:22,user-8-2,ws-8-2,success\n",
+      "blocked.txt": "203.0.113.28\n198.51.100.48\n",
+      "network.csv": "time,host,destination,bytes\n09:08,ws-8-1,192.0.2.5,120\n09:13,ws-8-1,203.0.113.28,9400\n09:30,ws-8-2,203.0.113.28,100\n",
+      "policy.txt": "A confirmed case is a successful login followed within five minutes by an outbound connection from the same host to an address in blocked.txt. Return user|host|destination.\n"
+    },
+    "metadata": {
+      "template": "incident_correlation"
+    },
+    "prompt": "Investigate the local authentication and network records using policy.txt. Identify the single confirmed case and return FINAL[user|host|destination].",
+    "split": "train",
+    "task_id": "cyber-incident-train-8"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "svc-9-2",
+    "files": {
+      "policy.txt": "Production requires tls_version at least 1.3, admin_scope private, and encrypted_backup true. Staging rows are outside this decision.\n",
+      "services.csv": "service_id,environment,tls_version,admin_scope,encrypted_backup\nsvc-9-0,staging,1.2,private,false\nsvc-9-1,production,1.3,private,true\nsvc-9-2,production,1.1,public,false\nsvc-9-3,production,1.3,private,true\n"
+    },
+    "metadata": {
+      "template": "configuration_audit"
+    },
+    "prompt": "Audit services.csv against policy.txt. Exactly one production service violates all three production requirements. Return FINAL[service_id].",
+    "split": "train",
+    "task_id": "cyber-config-train-9"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "component_2.bin",
+    "files": {
+      "criticality.csv": "file,tier\ncomponent_0.bin,critical\ncomponent_1.bin,standard\ncomponent_2.bin,critical\ncomponent_3.bin,standard\ncomponent_4.bin,standard\n",
+      "expected.csv": "file,sha256\ncomponent_0.bin,25870a218d6f\ncomponent_1.bin,52d2ef3eb8cf\ncomponent_2.bin,cf62bebc2a71\ncomponent_3.bin,c329ba8c839b\ncomponent_4.bin,60f55946f81f\n",
+      "observed.csv": "file,sha256\ncomponent_0.bin,25870a218d6f\ncomponent_1.bin,52d2ef3eb8cf\ncomponent_2.bin,770de0fea731\ncomponent_3.bin,c329ba8c839b\ncomponent_4.bin,60f55946f81f\n"
+    },
+    "metadata": {
+      "template": "integrity_join"
+    },
+    "prompt": "Compare expected and observed integrity records, then use criticality.csv. Return the critical file whose observed digest does not match as FINAL[filename].",
+    "split": "train",
+    "task_id": "cyber-integrity-train-10"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "alert-11-2",
+    "files": {
+      "alerts.csv": "alert_id,asset_id,severity\nalert-11-0,asset-11-0,100\nalert-11-1,asset-11-1,1\nalert-11-2,asset-11-2,1000\nalert-11-3,asset-11-3,10\n",
+      "assets.csv": "asset_id,criticality\nasset-11-0,1\nasset-11-1,2\nasset-11-2,3\nasset-11-3,4\n"
+    },
+    "metadata": {
+      "template": "risk_triage"
+    },
+    "prompt": "Prioritize alerts using priority = severity multiplied by asset criticality. Join the two CSV files and return the highest-priority alert as FINAL[alert_id].",
+    "split": "train",
+    "task_id": "cyber-triage-train-11"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "user-12-2|ws-12-0|198.51.100.52",
+    "files": {
+      "auth.csv": "time,user,host,status\n09:01,user-12-0,ws-12-0,failure\n09:04,user-12-1,ws-12-1,success\n09:10,user-12-2,ws-12-0,success\n09:22,user-12-2,ws-12-2,success\n",
+      "blocked.txt": "203.0.113.32\n198.51.100.52\n",
+      "network.csv": "time,host,destination,bytes\n09:08,ws-12-1,192.0.2.5,120\n09:13,ws-12-0,198.51.100.52,9400\n09:30,ws-12-2,203.0.113.32,100\n",
+      "policy.txt": "A confirmed case is a successful login followed within five minutes by an outbound connection from the same host to an address in blocked.txt. Return user|host|destination.\n"
+    },
+    "metadata": {
+      "template": "incident_correlation"
+    },
+    "prompt": "Investigate the local authentication and network records using policy.txt. Identify the single confirmed case and return FINAL[user|host|destination].",
+    "split": "train",
+    "task_id": "cyber-incident-train-12"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "svc-13-1",
+    "files": {
+      "policy.txt": "Production requires tls_version at least 1.3, admin_scope private, and encrypted_backup true. Staging rows are outside this decision.\n",
+      "services.csv": "service_id,environment,tls_version,admin_scope,encrypted_backup\nsvc-13-0,staging,1.2,private,false\nsvc-13-1,production,1.1,public,false\nsvc-13-2,staging,1.2,private,false\nsvc-13-3,production,1.3,private,true\n"
+    },
+    "metadata": {
+      "template": "configuration_audit"
+    },
+    "prompt": "Audit services.csv against policy.txt. Exactly one production service violates all three production requirements. Return FINAL[service_id].",
+    "split": "train",
+    "task_id": "cyber-config-train-13"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "component_3.bin",
+    "files": {
+      "criticality.csv": "file,tier\ncomponent_0.bin,critical\ncomponent_1.bin,standard\ncomponent_2.bin,standard\ncomponent_3.bin,critical\ncomponent_4.bin,standard\n",
+      "expected.csv": "file,sha256\ncomponent_0.bin,158676be4241\ncomponent_1.bin,1321d62f7ad0\ncomponent_2.bin,5908eca8f668\ncomponent_3.bin,324705b96730\ncomponent_4.bin,1d8609b8c255\n",
+      "observed.csv": "file,sha256\ncomponent_0.bin,158676be4241\ncomponent_1.bin,1321d62f7ad0\ncomponent_2.bin,5908eca8f668\ncomponent_3.bin,a641234c6197\ncomponent_4.bin,1d8609b8c255\n"
+    },
+    "metadata": {
+      "template": "integrity_join"
+    },
+    "prompt": "Compare expected and observed integrity records, then use criticality.csv. Return the critical file whose observed digest does not match as FINAL[filename].",
+    "split": "train",
+    "task_id": "cyber-integrity-train-14"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "alert-15-2",
+    "files": {
+      "alerts.csv": "alert_id,asset_id,severity\nalert-15-0,asset-15-0,10\nalert-15-1,asset-15-1,100\nalert-15-2,asset-15-2,1000\nalert-15-3,asset-15-3,1\n",
+      "assets.csv": "asset_id,criticality\nasset-15-0,1\nasset-15-1,2\nasset-15-2,3\nasset-15-3,4\n"
+    },
+    "metadata": {
+      "template": "risk_triage"
+    },
+    "prompt": "Prioritize alerts using priority = severity multiplied by asset criticality. Join the two CSV files and return the highest-priority alert as FINAL[alert_id].",
+    "split": "train",
+    "task_id": "cyber-triage-train-15"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "user-16-2|ws-16-0|203.0.113.36",
+    "files": {
+      "auth.csv": "time,user,host,status\n09:01,user-16-0,ws-16-0,failure\n09:04,user-16-1,ws-16-1,success\n09:10,user-16-2,ws-16-0,success\n09:22,user-16-2,ws-16-2,success\n",
+      "blocked.txt": "203.0.113.36\n198.51.100.56\n",
+      "network.csv": "time,host,destination,bytes\n09:08,ws-16-1,192.0.2.5,120\n09:13,ws-16-0,203.0.113.36,9400\n09:30,ws-16-2,203.0.113.36,100\n",
+      "policy.txt": "A confirmed case is a successful login followed within five minutes by an outbound connection from the same host to an address in blocked.txt. Return user|host|destination.\n"
+    },
+    "metadata": {
+      "template": "incident_correlation"
+    },
+    "prompt": "Investigate the local authentication and network records using policy.txt. Identify the single confirmed case and return FINAL[user|host|destination].",
+    "split": "train",
+    "task_id": "cyber-incident-train-16"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "svc-17-0",
+    "files": {
+      "policy.txt": "Production requires tls_version at least 1.3, admin_scope private, and encrypted_backup true. Staging rows are outside this decision.\n",
+      "services.csv": "service_id,environment,tls_version,admin_scope,encrypted_backup\nsvc-17-0,production,1.1,public,false\nsvc-17-1,production,1.3,private,true\nsvc-17-2,staging,1.2,private,false\nsvc-17-3,production,1.3,private,true\n"
+    },
+    "metadata": {
+      "template": "configuration_audit"
+    },
+    "prompt": "Audit services.csv against policy.txt. Exactly one production service violates all three production requirements. Return FINAL[service_id].",
+    "split": "train",
+    "task_id": "cyber-config-train-17"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "component_4.bin",
+    "files": {
+      "criticality.csv": "file,tier\ncomponent_0.bin,critical\ncomponent_1.bin,standard\ncomponent_2.bin,standard\ncomponent_3.bin,standard\ncomponent_4.bin,critical\n",
+      "expected.csv": "file,sha256\ncomponent_0.bin,24099860cede\ncomponent_1.bin,9f14596c20f6\ncomponent_2.bin,1db7c871b9de\ncomponent_3.bin,360f7fb247cf\ncomponent_4.bin,c21db7a0921d\n",
+      "observed.csv": "file,sha256\ncomponent_0.bin,24099860cede\ncomponent_1.bin,9f14596c20f6\ncomponent_2.bin,1db7c871b9de\ncomponent_3.bin,360f7fb247cf\ncomponent_4.bin,bfd2d260c2c2\n"
+    },
+    "metadata": {
+      "template": "integrity_join"
+    },
+    "prompt": "Compare expected and observed integrity records, then use criticality.csv. Return the critical file whose observed digest does not match as FINAL[filename].",
+    "split": "train",
+    "task_id": "cyber-integrity-train-18"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "alert-19-3",
+    "files": {
+      "alerts.csv": "alert_id,asset_id,severity\nalert-19-0,asset-19-0,1\nalert-19-1,asset-19-1,100\nalert-19-2,asset-19-2,10\nalert-19-3,asset-19-3,1000\n",
+      "assets.csv": "asset_id,criticality\nasset-19-0,1\nasset-19-1,2\nasset-19-2,3\nasset-19-3,4\n"
+    },
+    "metadata": {
+      "template": "risk_triage"
+    },
+    "prompt": "Prioritize alerts using priority = severity multiplied by asset criticality. Join the two CSV files and return the highest-priority alert as FINAL[alert_id].",
+    "split": "train",
+    "task_id": "cyber-triage-train-19"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "user-20-1|ws-20-2|203.0.113.40",
+    "files": {
+      "auth.csv": "time,user,host,status\n09:01,user-20-0,ws-20-0,failure\n09:04,user-20-1,ws-20-1,success\n09:10,user-20-1,ws-20-2,success\n09:22,user-20-2,ws-20-2,success\n",
+      "blocked.txt": "203.0.113.40\n198.51.100.60\n",
+      "network.csv": "time,host,destination,bytes\n09:08,ws-20-1,192.0.2.5,120\n09:13,ws-20-2,203.0.113.40,9400\n09:30,ws-20-2,203.0.113.40,100\n",
+      "policy.txt": "A confirmed case is a successful login followed within five minutes by an outbound connection from the same host to an address in blocked.txt. Return user|host|destination.\n"
+    },
+    "metadata": {
+      "template": "incident_correlation"
+    },
+    "prompt": "Investigate the local authentication and network records using policy.txt. Identify the single confirmed case and return FINAL[user|host|destination].",
+    "split": "train",
+    "task_id": "cyber-incident-train-20"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "svc-21-1",
+    "files": {
+      "policy.txt": "Production requires tls_version at least 1.3, admin_scope private, and encrypted_backup true. Staging rows are outside this decision.\n",
+      "services.csv": "service_id,environment,tls_version,admin_scope,encrypted_backup\nsvc-21-0,staging,1.2,private,false\nsvc-21-1,production,1.1,public,false\nsvc-21-2,staging,1.2,private,false\nsvc-21-3,production,1.3,private,true\n"
+    },
+    "metadata": {
+      "template": "configuration_audit"
+    },
+    "prompt": "Audit services.csv against policy.txt. Exactly one production service violates all three production requirements. Return FINAL[service_id].",
+    "split": "train",
+    "task_id": "cyber-config-train-21"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "component_0.bin",
+    "files": {
+      "criticality.csv": "file,tier\ncomponent_0.bin,critical\ncomponent_1.bin,standard\ncomponent_2.bin,standard\ncomponent_3.bin,standard\ncomponent_4.bin,standard\n",
+      "expected.csv": "file,sha256\ncomponent_0.bin,c0f890355426\ncomponent_1.bin,8a618aa2f7d9\ncomponent_2.bin,b12eab16a60a\ncomponent_3.bin,c014c325bc64\ncomponent_4.bin,fdc0d1a43962\n",
+      "observed.csv": "file,sha256\ncomponent_0.bin,c6adce657f66\ncomponent_1.bin,8a618aa2f7d9\ncomponent_2.bin,b12eab16a60a\ncomponent_3.bin,c014c325bc64\ncomponent_4.bin,fdc0d1a43962\n"
+    },
+    "metadata": {
+      "template": "integrity_join"
+    },
+    "prompt": "Compare expected and observed integrity records, then use criticality.csv. Return the critical file whose observed digest does not match as FINAL[filename].",
+    "split": "train",
+    "task_id": "cyber-integrity-train-22"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "alert-23-3",
+    "files": {
+      "alerts.csv": "alert_id,asset_id,severity\nalert-23-0,asset-23-0,1\nalert-23-1,asset-23-1,100\nalert-23-2,asset-23-2,10\nalert-23-3,asset-23-3,1000\n",
+      "assets.csv": "asset_id,criticality\nasset-23-0,1\nasset-23-1,2\nasset-23-2,3\nasset-23-3,4\n"
+    },
+    "metadata": {
+      "template": "risk_triage"
+    },
+    "prompt": "Prioritize alerts using priority = severity multiplied by asset criticality. Join the two CSV files and return the highest-priority alert as FINAL[alert_id].",
+    "split": "train",
+    "task_id": "cyber-triage-train-23"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "user-24-2|ws-24-3|203.0.113.44",
+    "files": {
+      "auth.csv": "time,user,host,status\n09:01,user-24-0,ws-24-0,failure\n09:04,user-24-1,ws-24-1,success\n09:10,user-24-2,ws-24-3,success\n09:22,user-24-2,ws-24-2,success\n",
+      "blocked.txt": "203.0.113.44\n198.51.100.64\n",
+      "network.csv": "time,host,destination,bytes\n09:08,ws-24-1,192.0.2.5,120\n09:13,ws-24-3,203.0.113.44,9400\n09:30,ws-24-2,203.0.113.44,100\n",
+      "policy.txt": "A confirmed case is a successful login followed within five minutes by an outbound connection from the same host to an address in blocked.txt. Return user|host|destination.\n"
+    },
+    "metadata": {
+      "template": "incident_correlation"
+    },
+    "prompt": "Investigate the local authentication and network records using policy.txt. Identify the single confirmed case and return FINAL[user|host|destination].",
+    "split": "train",
+    "task_id": "cyber-incident-train-24"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "svc-25-1",
+    "files": {
+      "policy.txt": "Production requires tls_version at least 1.3, admin_scope private, and encrypted_backup true. Staging rows are outside this decision.\n",
+      "services.csv": "service_id,environment,tls_version,admin_scope,encrypted_backup\nsvc-25-0,staging,1.2,private,false\nsvc-25-1,production,1.1,public,false\nsvc-25-2,staging,1.2,private,false\nsvc-25-3,production,1.3,private,true\n"
+    },
+    "metadata": {
+      "template": "configuration_audit"
+    },
+    "prompt": "Audit services.csv against policy.txt. Exactly one production service violates all three production requirements. Return FINAL[service_id].",
+    "split": "train",
+    "task_id": "cyber-config-train-25"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "component_2.bin",
+    "files": {
+      "criticality.csv": "file,tier\ncomponent_0.bin,critical\ncomponent_1.bin,standard\ncomponent_2.bin,critical\ncomponent_3.bin,standard\ncomponent_4.bin,standard\n",
+      "expected.csv": "file,sha256\ncomponent_0.bin,ac31417a03a9\ncomponent_1.bin,250a112d132e\ncomponent_2.bin,efbf2154c678\ncomponent_3.bin,b57bbbeb2677\ncomponent_4.bin,8d4708a8fecb\n",
+      "observed.csv": "file,sha256\ncomponent_0.bin,ac31417a03a9\ncomponent_1.bin,250a112d132e\ncomponent_2.bin,22dca338c8da\ncomponent_3.bin,b57bbbeb2677\ncomponent_4.bin,8d4708a8fecb\n"
+    },
+    "metadata": {
+      "template": "integrity_join"
+    },
+    "prompt": "Compare expected and observed integrity records, then use criticality.csv. Return the critical file whose observed digest does not match as FINAL[filename].",
+    "split": "train",
+    "task_id": "cyber-integrity-train-26"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "alert-27-2",
+    "files": {
+      "alerts.csv": "alert_id,asset_id,severity\nalert-27-0,asset-27-0,10\nalert-27-1,asset-27-1,1\nalert-27-2,asset-27-2,1000\nalert-27-3,asset-27-3,100\n",
+      "assets.csv": "asset_id,criticality\nasset-27-0,1\nasset-27-1,2\nasset-27-2,3\nasset-27-3,4\n"
+    },
+    "metadata": {
+      "template": "risk_triage"
+    },
+    "prompt": "Prioritize alerts using priority = severity multiplied by asset criticality. Join the two CSV files and return the highest-priority alert as FINAL[alert_id].",
+    "split": "train",
+    "task_id": "cyber-triage-train-27"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "user-28-3|ws-28-2|203.0.113.48",
+    "files": {
+      "auth.csv": "time,user,host,status\n09:01,user-28-0,ws-28-0,failure\n09:04,user-28-1,ws-28-1,success\n09:10,user-28-3,ws-28-2,success\n09:22,user-28-2,ws-28-2,success\n",
+      "blocked.txt": "203.0.113.48\n198.51.100.68\n",
+      "network.csv": "time,host,destination,bytes\n09:08,ws-28-1,192.0.2.5,120\n09:13,ws-28-2,203.0.113.48,9400\n09:30,ws-28-2,203.0.113.48,100\n",
+      "policy.txt": "A confirmed case is a successful login followed within five minutes by an outbound connection from the same host to an address in blocked.txt. Return user|host|destination.\n"
+    },
+    "metadata": {
+      "template": "incident_correlation"
+    },
+    "prompt": "Investigate the local authentication and network records using policy.txt. Identify the single confirmed case and return FINAL[user|host|destination].",
+    "split": "train",
+    "task_id": "cyber-incident-train-28"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "svc-29-1",
+    "files": {
+      "policy.txt": "Production requires tls_version at least 1.3, admin_scope private, and encrypted_backup true. Staging rows are outside this decision.\n",
+      "services.csv": "service_id,environment,tls_version,admin_scope,encrypted_backup\nsvc-29-0,staging,1.2,private,false\nsvc-29-1,production,1.1,public,false\nsvc-29-2,staging,1.2,private,false\nsvc-29-3,production,1.3,private,true\n"
+    },
+    "metadata": {
+      "template": "configuration_audit"
+    },
+    "prompt": "Audit services.csv against policy.txt. Exactly one production service violates all three production requirements. Return FINAL[service_id].",
+    "split": "train",
+    "task_id": "cyber-config-train-29"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "component_1.bin",
+    "files": {
+      "criticality.csv": "file,tier\ncomponent_0.bin,critical\ncomponent_1.bin,critical\ncomponent_2.bin,standard\ncomponent_3.bin,standard\ncomponent_4.bin,standard\n",
+      "expected.csv": "file,sha256\ncomponent_0.bin,d61de04870ad\ncomponent_1.bin,80665bde2fb8\ncomponent_2.bin,bb74fdac5c00\ncomponent_3.bin,404d93127715\ncomponent_4.bin,871b19f0f204\n",
+      "observed.csv": "file,sha256\ncomponent_0.bin,d61de04870ad\ncomponent_1.bin,4705dbc310cd\ncomponent_2.bin,bb74fdac5c00\ncomponent_3.bin,404d93127715\ncomponent_4.bin,871b19f0f204\n"
+    },
+    "metadata": {
+      "template": "integrity_join"
+    },
+    "prompt": "Compare expected and observed integrity records, then use criticality.csv. Return the critical file whose observed digest does not match as FINAL[filename].",
+    "split": "train",
+    "task_id": "cyber-integrity-train-30"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "alert-31-1",
+    "files": {
+      "alerts.csv": "alert_id,asset_id,severity\nalert-31-0,asset-31-0,1\nalert-31-1,asset-31-1,1000\nalert-31-2,asset-31-2,100\nalert-31-3,asset-31-3,10\n",
+      "assets.csv": "asset_id,criticality\nasset-31-0,1\nasset-31-1,2\nasset-31-2,3\nasset-31-3,4\n"
+    },
+    "metadata": {
+      "template": "risk_triage"
+    },
+    "prompt": "Prioritize alerts using priority = severity multiplied by asset criticality. Join the two CSV files and return the highest-priority alert as FINAL[alert_id].",
+    "split": "train",
+    "task_id": "cyber-triage-train-31"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "user-32-1|ws-32-1|203.0.113.52",
+    "files": {
+      "auth.csv": "time,user,host,status\n09:01,user-32-0,ws-32-0,failure\n09:04,user-32-1,ws-32-1,success\n09:10,user-32-1,ws-32-1,success\n09:22,user-32-2,ws-32-2,success\n",
+      "blocked.txt": "203.0.113.52\n198.51.100.72\n",
+      "network.csv": "time,host,destination,bytes\n09:08,ws-32-1,192.0.2.5,120\n09:13,ws-32-1,203.0.113.52,9400\n09:30,ws-32-2,203.0.113.52,100\n",
+      "policy.txt": "A confirmed case is a successful login followed within five minutes by an outbound connection from the same host to an address in blocked.txt. Return user|host|destination.\n"
+    },
+    "metadata": {
+      "template": "incident_correlation"
+    },
+    "prompt": "Investigate the local authentication and network records using policy.txt. Identify the single confirmed case and return FINAL[user|host|destination].",
+    "split": "train",
+    "task_id": "cyber-incident-train-32"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "svc-33-2",
+    "files": {
+      "policy.txt": "Production requires tls_version at least 1.3, admin_scope private, and encrypted_backup true. Staging rows are outside this decision.\n",
+      "services.csv": "service_id,environment,tls_version,admin_scope,encrypted_backup\nsvc-33-0,staging,1.2,private,false\nsvc-33-1,production,1.3,private,true\nsvc-33-2,production,1.1,public,false\nsvc-33-3,production,1.3,private,true\n"
+    },
+    "metadata": {
+      "template": "configuration_audit"
+    },
+    "prompt": "Audit services.csv against policy.txt. Exactly one production service violates all three production requirements. Return FINAL[service_id].",
+    "split": "train",
+    "task_id": "cyber-config-train-33"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "component_2.bin",
+    "files": {
+      "criticality.csv": "file,tier\ncomponent_0.bin,critical\ncomponent_1.bin,standard\ncomponent_2.bin,critical\ncomponent_3.bin,standard\ncomponent_4.bin,standard\n",
+      "expected.csv": "file,sha256\ncomponent_0.bin,55a9ffec4ccf\ncomponent_1.bin,8137a525be16\ncomponent_2.bin,3a691a956767\ncomponent_3.bin,fb6741bae7df\ncomponent_4.bin,ac7ff50547d7\n",
+      "observed.csv": "file,sha256\ncomponent_0.bin,55a9ffec4ccf\ncomponent_1.bin,8137a525be16\ncomponent_2.bin,0805032e20fc\ncomponent_3.bin,fb6741bae7df\ncomponent_4.bin,ac7ff50547d7\n"
+    },
+    "metadata": {
+      "template": "integrity_join"
+    },
+    "prompt": "Compare expected and observed integrity records, then use criticality.csv. Return the critical file whose observed digest does not match as FINAL[filename].",
+    "split": "train",
+    "task_id": "cyber-integrity-train-34"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "alert-35-1",
+    "files": {
+      "alerts.csv": "alert_id,asset_id,severity\nalert-35-0,asset-35-0,10\nalert-35-1,asset-35-1,1000\nalert-35-2,asset-35-2,100\nalert-35-3,asset-35-3,1\n",
+      "assets.csv": "asset_id,criticality\nasset-35-0,1\nasset-35-1,2\nasset-35-2,3\nasset-35-3,4\n"
+    },
+    "metadata": {
+      "template": "risk_triage"
+    },
+    "prompt": "Prioritize alerts using priority = severity multiplied by asset criticality. Join the two CSV files and return the highest-priority alert as FINAL[alert_id].",
+    "split": "train",
+    "task_id": "cyber-triage-train-35"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "user-36-0|ws-36-0|198.51.100.76",
+    "files": {
+      "auth.csv": "time,user,host,status\n09:01,user-36-0,ws-36-0,failure\n09:04,user-36-1,ws-36-1,success\n09:10,user-36-0,ws-36-0,success\n09:22,user-36-2,ws-36-2,success\n",
+      "blocked.txt": "203.0.113.56\n198.51.100.76\n",
+      "network.csv": "time,host,destination,bytes\n09:08,ws-36-1,192.0.2.5,120\n09:13,ws-36-0,198.51.100.76,9400\n09:30,ws-36-2,203.0.113.56,100\n",
+      "policy.txt": "A confirmed case is a successful login followed within five minutes by an outbound connection from the same host to an address in blocked.txt. Return user|host|destination.\n"
+    },
+    "metadata": {
+      "template": "incident_correlation"
+    },
+    "prompt": "Investigate the local authentication and network records using policy.txt. Identify the single confirmed case and return FINAL[user|host|destination].",
+    "split": "train",
+    "task_id": "cyber-incident-train-36"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "svc-37-2",
+    "files": {
+      "policy.txt": "Production requires tls_version at least 1.3, admin_scope private, and encrypted_backup true. Staging rows are outside this decision.\n",
+      "services.csv": "service_id,environment,tls_version,admin_scope,encrypted_backup\nsvc-37-0,staging,1.2,private,false\nsvc-37-1,production,1.3,private,true\nsvc-37-2,production,1.1,public,false\nsvc-37-3,production,1.3,private,true\n"
+    },
+    "metadata": {
+      "template": "configuration_audit"
+    },
+    "prompt": "Audit services.csv against policy.txt. Exactly one production service violates all three production requirements. Return FINAL[service_id].",
+    "split": "train",
+    "task_id": "cyber-config-train-37"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "component_4.bin",
+    "files": {
+      "criticality.csv": "file,tier\ncomponent_0.bin,critical\ncomponent_1.bin,standard\ncomponent_2.bin,standard\ncomponent_3.bin,standard\ncomponent_4.bin,critical\n",
+      "expected.csv": "file,sha256\ncomponent_0.bin,bfd047780e9b\ncomponent_1.bin,2486f85b6d93\ncomponent_2.bin,b8a787eef3c4\ncomponent_3.bin,b7c0a152ae21\ncomponent_4.bin,8120fc64cafe\n",
+      "observed.csv": "file,sha256\ncomponent_0.bin,bfd047780e9b\ncomponent_1.bin,2486f85b6d93\ncomponent_2.bin,b8a787eef3c4\ncomponent_3.bin,b7c0a152ae21\ncomponent_4.bin,e71e4e512dad\n"
+    },
+    "metadata": {
+      "template": "integrity_join"
+    },
+    "prompt": "Compare expected and observed integrity records, then use criticality.csv. Return the critical file whose observed digest does not match as FINAL[filename].",
+    "split": "train",
+    "task_id": "cyber-integrity-train-38"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "alert-39-2",
+    "files": {
+      "alerts.csv": "alert_id,asset_id,severity\nalert-39-0,asset-39-0,1\nalert-39-1,asset-39-1,100\nalert-39-2,asset-39-2,1000\nalert-39-3,asset-39-3,10\n",
+      "assets.csv": "asset_id,criticality\nasset-39-0,1\nasset-39-1,2\nasset-39-2,3\nasset-39-3,4\n"
+    },
+    "metadata": {
+      "template": "risk_triage"
+    },
+    "prompt": "Prioritize alerts using priority = severity multiplied by asset criticality. Join the two CSV files and return the highest-priority alert as FINAL[alert_id].",
+    "split": "train",
+    "task_id": "cyber-triage-train-39"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "user-40-0|ws-40-1|198.51.100.80",
+    "files": {
+      "auth.csv": "time,user,host,status\n09:01,user-40-0,ws-40-0,failure\n09:04,user-40-1,ws-40-1,success\n09:10,user-40-0,ws-40-1,success\n09:22,user-40-2,ws-40-2,success\n",
+      "blocked.txt": "203.0.113.60\n198.51.100.80\n",
+      "network.csv": "time,host,destination,bytes\n09:08,ws-40-1,192.0.2.5,120\n09:13,ws-40-1,198.51.100.80,9400\n09:30,ws-40-2,203.0.113.60,100\n",
+      "policy.txt": "A confirmed case is a successful login followed within five minutes by an outbound connection from the same host to an address in blocked.txt. Return user|host|destination.\n"
+    },
+    "metadata": {
+      "template": "incident_correlation"
+    },
+    "prompt": "Investigate the local authentication and network records using policy.txt. Identify the single confirmed case and return FINAL[user|host|destination].",
+    "split": "train",
+    "task_id": "cyber-incident-train-40"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "svc-41-0",
+    "files": {
+      "policy.txt": "Production requires tls_version at least 1.3, admin_scope private, and encrypted_backup true. Staging rows are outside this decision.\n",
+      "services.csv": "service_id,environment,tls_version,admin_scope,encrypted_backup\nsvc-41-0,production,1.1,public,false\nsvc-41-1,production,1.3,private,true\nsvc-41-2,staging,1.2,private,false\nsvc-41-3,production,1.3,private,true\n"
+    },
+    "metadata": {
+      "template": "configuration_audit"
+    },
+    "prompt": "Audit services.csv against policy.txt. Exactly one production service violates all three production requirements. Return FINAL[service_id].",
+    "split": "train",
+    "task_id": "cyber-config-train-41"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "component_1.bin",
+    "files": {
+      "criticality.csv": "file,tier\ncomponent_0.bin,critical\ncomponent_1.bin,critical\ncomponent_2.bin,standard\ncomponent_3.bin,standard\ncomponent_4.bin,standard\n",
+      "expected.csv": "file,sha256\ncomponent_0.bin,01ed5ac12890\ncomponent_1.bin,a830d5bed05e\ncomponent_2.bin,06d82477559c\ncomponent_3.bin,334ec02e2a3c\ncomponent_4.bin,c193636dd27a\n",
+      "observed.csv": "file,sha256\ncomponent_0.bin,01ed5ac12890\ncomponent_1.bin,fe5b70eb9c0d\ncomponent_2.bin,06d82477559c\ncomponent_3.bin,334ec02e2a3c\ncomponent_4.bin,c193636dd27a\n"
+    },
+    "metadata": {
+      "template": "integrity_join"
+    },
+    "prompt": "Compare expected and observed integrity records, then use criticality.csv. Return the critical file whose observed digest does not match as FINAL[filename].",
+    "split": "train",
+    "task_id": "cyber-integrity-train-42"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "alert-43-1",
+    "files": {
+      "alerts.csv": "alert_id,asset_id,severity\nalert-43-0,asset-43-0,10\nalert-43-1,asset-43-1,1000\nalert-43-2,asset-43-2,100\nalert-43-3,asset-43-3,1\n",
+      "assets.csv": "asset_id,criticality\nasset-43-0,1\nasset-43-1,2\nasset-43-2,3\nasset-43-3,4\n"
+    },
+    "metadata": {
+      "template": "risk_triage"
+    },
+    "prompt": "Prioritize alerts using priority = severity multiplied by asset criticality. Join the two CSV files and return the highest-priority alert as FINAL[alert_id].",
+    "split": "train",
+    "task_id": "cyber-triage-train-43"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "user-44-1|ws-44-2|203.0.113.64",
+    "files": {
+      "auth.csv": "time,user,host,status\n09:01,user-44-0,ws-44-0,failure\n09:04,user-44-1,ws-44-1,success\n09:10,user-44-1,ws-44-2,success\n09:22,user-44-2,ws-44-2,success\n",
+      "blocked.txt": "203.0.113.64\n198.51.100.84\n",
+      "network.csv": "time,host,destination,bytes\n09:08,ws-44-1,192.0.2.5,120\n09:13,ws-44-2,203.0.113.64,9400\n09:30,ws-44-2,203.0.113.64,100\n",
+      "policy.txt": "A confirmed case is a successful login followed within five minutes by an outbound connection from the same host to an address in blocked.txt. Return user|host|destination.\n"
+    },
+    "metadata": {
+      "template": "incident_correlation"
+    },
+    "prompt": "Investigate the local authentication and network records using policy.txt. Identify the single confirmed case and return FINAL[user|host|destination].",
+    "split": "train",
+    "task_id": "cyber-incident-train-44"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "svc-45-2",
+    "files": {
+      "policy.txt": "Production requires tls_version at least 1.3, admin_scope private, and encrypted_backup true. Staging rows are outside this decision.\n",
+      "services.csv": "service_id,environment,tls_version,admin_scope,encrypted_backup\nsvc-45-0,staging,1.2,private,false\nsvc-45-1,production,1.3,private,true\nsvc-45-2,production,1.1,public,false\nsvc-45-3,production,1.3,private,true\n"
+    },
+    "metadata": {
+      "template": "configuration_audit"
+    },
+    "prompt": "Audit services.csv against policy.txt. Exactly one production service violates all three production requirements. Return FINAL[service_id].",
+    "split": "train",
+    "task_id": "cyber-config-train-45"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "component_2.bin",
+    "files": {
+      "criticality.csv": "file,tier\ncomponent_0.bin,critical\ncomponent_1.bin,standard\ncomponent_2.bin,critical\ncomponent_3.bin,standard\ncomponent_4.bin,standard\n",
+      "expected.csv": "file,sha256\ncomponent_0.bin,4a497f5c4362\ncomponent_1.bin,627017504038\ncomponent_2.bin,471c37ea9614\ncomponent_3.bin,f5aad89e0046\ncomponent_4.bin,5dbadbfb83c0\n",
+      "observed.csv": "file,sha256\ncomponent_0.bin,4a497f5c4362\ncomponent_1.bin,627017504038\ncomponent_2.bin,e7a49546f9b8\ncomponent_3.bin,f5aad89e0046\ncomponent_4.bin,5dbadbfb83c0\n"
+    },
+    "metadata": {
+      "template": "integrity_join"
+    },
+    "prompt": "Compare expected and observed integrity records, then use criticality.csv. Return the critical file whose observed digest does not match as FINAL[filename].",
+    "split": "train",
+    "task_id": "cyber-integrity-train-46"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "alert-47-2",
+    "files": {
+      "alerts.csv": "alert_id,asset_id,severity\nalert-47-0,asset-47-0,10\nalert-47-1,asset-47-1,100\nalert-47-2,asset-47-2,1000\nalert-47-3,asset-47-3,1\n",
+      "assets.csv": "asset_id,criticality\nasset-47-0,1\nasset-47-1,2\nasset-47-2,3\nasset-47-3,4\n"
+    },
+    "metadata": {
+      "template": "risk_triage"
+    },
+    "prompt": "Prioritize alerts using priority = severity multiplied by asset criticality. Join the two CSV files and return the highest-priority alert as FINAL[alert_id].",
+    "split": "train",
+    "task_id": "cyber-triage-train-47"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "var-0-2",
+    "files": {
+      "criteria.txt": "Candidate requirements: impact HIGH, population_af below 0.01, both affected samples genotype 1/1, and unaffected sample not 1/1.\n",
+      "variants.csv": "variant_id,impact,population_af,affected_a,affected_b,unaffected\nvar-0-0,HIGH,0.12,0/1,1/1,1/1\nvar-0-1,LOW,0.001,1/1,1/1,0/1\nvar-0-2,HIGH,0.002,1/1,1/1,0/1\nvar-0-3,LOW,0.001,1/1,1/1,0/1\nvar-0-4,HIGH,0.12,0/1,1/1,1/1\n"
+    },
+    "metadata": {
+      "template": "variant_prioritization"
+    },
+    "prompt": "Apply criteria.txt to variants.csv and identify the only compatible synthetic recessive candidate. Return FINAL[variant_id].",
+    "split": "train",
+    "task_id": "bio-variant-train-0"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "GENE1_2",
+    "files": {
+      "expression.csv": "gene,control_a,control_b,treated_a,treated_b,treated_bad\nGENE1_0,20,22,20,22,9999\nGENE1_1,25,27,50,54,9999\nGENE1_2,30,32,150,160,9999\nGENE1_3,35,37,70,74,9999\nGENE1_4,40,42,40,42,9999\n",
+      "qc.txt": "Samples control_a, control_b, treated_a, treated_b passed. treated_bad failed.\n"
+    },
+    "metadata": {
+      "template": "expression_analysis"
+    },
+    "prompt": "Use qc.txt and expression.csv. Ignore the failed sample treated_bad. Compute the mean treated to mean control ratio and return the gene with the largest ratio as FINAL[gene].",
+    "split": "train",
+    "task_id": "bio-expression-train-1"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "sample-2-0",
+    "files": {
+      "qc_policy.txt": "Pass requires coverage >= 20, contamination <= 0.05, mapping_rate >= 0.90.\n",
+      "sample_metrics.csv": "sample_id,coverage,contamination,mapping_rate\nsample-2-0,12,0.12,0.61\nsample-2-1,35,0.01,0.95\nsample-2-2,18,0.02,0.91\nsample-2-3,35,0.01,0.95\nsample-2-4,18,0.02,0.91\n"
+    },
+    "metadata": {
+      "template": "quality_control"
+    },
+    "prompt": "Audit sample_metrics.csv using qc_policy.txt. One sample fails every criterion. Return FINAL[sample_id].",
+    "split": "train",
+    "task_id": "bio-qc-train-2"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "Species_3",
+    "files": {
+      "observed.csv": "isolate,m1,m2,m3,m4\niso-3,63,63,62,63\n",
+      "references.csv": "species,m1,m2,m3,m4\nSpecies_0,1,0,0,0\nSpecies_1,20,22,22,21\nSpecies_2,40,40,40,40\nSpecies_3,62,63,61,63\n"
+    },
+    "metadata": {
+      "template": "profile_classification"
+    },
+    "prompt": "Classify the synthetic isolate by the smallest Manhattan distance between its four marker counts and the reference profiles. Return FINAL[species].",
+    "split": "train",
+    "task_id": "bio-classification-train-3"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "var-4-2",
+    "files": {
+      "criteria.txt": "Candidate requirements: impact HIGH, population_af below 0.01, both affected samples genotype 1/1, and unaffected sample not 1/1.\n",
+      "variants.csv": "variant_id,impact,population_af,affected_a,affected_b,unaffected\nvar-4-0,HIGH,0.12,0/1,1/1,1/1\nvar-4-1,LOW,0.001,1/1,1/1,0/1\nvar-4-2,HIGH,0.002,1/1,1/1,0/1\nvar-4-3,LOW,0.001,1/1,1/1,0/1\nvar-4-4,HIGH,0.12,0/1,1/1,1/1\n"
+    },
+    "metadata": {
+      "template": "variant_prioritization"
+    },
+    "prompt": "Apply criteria.txt to variants.csv and identify the only compatible synthetic recessive candidate. Return FINAL[variant_id].",
+    "split": "train",
+    "task_id": "bio-variant-train-4"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "GENE5_3",
+    "files": {
+      "expression.csv": "gene,control_a,control_b,treated_a,treated_b,treated_bad\nGENE5_0,20,22,20,22,9999\nGENE5_1,25,27,50,54,9999\nGENE5_2,30,32,30,32,9999\nGENE5_3,35,37,175,185,9999\nGENE5_4,40,42,40,42,9999\n",
+      "qc.txt": "Samples control_a, control_b, treated_a, treated_b passed. treated_bad failed.\n"
+    },
+    "metadata": {
+      "template": "expression_analysis"
+    },
+    "prompt": "Use qc.txt and expression.csv. Ignore the failed sample treated_bad. Compute the mean treated to mean control ratio and return the gene with the largest ratio as FINAL[gene].",
+    "split": "train",
+    "task_id": "bio-expression-train-5"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "sample-6-4",
+    "files": {
+      "qc_policy.txt": "Pass requires coverage >= 20, contamination <= 0.05, mapping_rate >= 0.90.\n",
+      "sample_metrics.csv": "sample_id,coverage,contamination,mapping_rate\nsample-6-0,18,0.02,0.91\nsample-6-1,35,0.01,0.95\nsample-6-2,18,0.02,0.91\nsample-6-3,35,0.01,0.95\nsample-6-4,12,0.12,0.61\n"
+    },
+    "metadata": {
+      "template": "quality_control"
+    },
+    "prompt": "Audit sample_metrics.csv using qc_policy.txt. One sample fails every criterion. Return FINAL[sample_id].",
+    "split": "train",
+    "task_id": "bio-qc-train-6"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "Species_0",
+    "files": {
+      "observed.csv": "isolate,m1,m2,m3,m4\niso-7,2,4,2,2\n",
+      "references.csv": "species,m1,m2,m3,m4\nSpecies_0,2,3,2,2\nSpecies_1,23,23,23,22\nSpecies_2,43,42,43,42\nSpecies_3,63,62,63,60\n"
+    },
+    "metadata": {
+      "template": "profile_classification"
+    },
+    "prompt": "Classify the synthetic isolate by the smallest Manhattan distance between its four marker counts and the reference profiles. Return FINAL[species].",
+    "split": "train",
+    "task_id": "bio-classification-train-7"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "var-8-3",
+    "files": {
+      "criteria.txt": "Candidate requirements: impact HIGH, population_af below 0.01, both affected samples genotype 1/1, and unaffected sample not 1/1.\n",
+      "variants.csv": "variant_id,impact,population_af,affected_a,affected_b,unaffected\nvar-8-0,HIGH,0.12,0/1,1/1,1/1\nvar-8-1,LOW,0.001,1/1,1/1,0/1\nvar-8-2,HIGH,0.12,0/1,1/1,1/1\nvar-8-3,HIGH,0.002,1/1,1/1,0/1\nvar-8-4,HIGH,0.12,0/1,1/1,1/1\n"
+    },
+    "metadata": {
+      "template": "variant_prioritization"
+    },
+    "prompt": "Apply criteria.txt to variants.csv and identify the only compatible synthetic recessive candidate. Return FINAL[variant_id].",
+    "split": "train",
+    "task_id": "bio-variant-train-8"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "GENE9_0",
+    "files": {
+      "expression.csv": "gene,control_a,control_b,treated_a,treated_b,treated_bad\nGENE9_0,20,22,100,110,9999\nGENE9_1,25,27,50,54,9999\nGENE9_2,30,32,30,32,9999\nGENE9_3,35,37,70,74,9999\nGENE9_4,40,42,40,42,9999\n",
+      "qc.txt": "Samples control_a, control_b, treated_a, treated_b passed. treated_bad failed.\n"
+    },
+    "metadata": {
+      "template": "expression_analysis"
+    },
+    "prompt": "Use qc.txt and expression.csv. Ignore the failed sample treated_bad. Compute the mean treated to mean control ratio and return the gene with the largest ratio as FINAL[gene].",
+    "split": "train",
+    "task_id": "bio-expression-train-9"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "sample-10-1",
+    "files": {
+      "qc_policy.txt": "Pass requires coverage >= 20, contamination <= 0.05, mapping_rate >= 0.90.\n",
+      "sample_metrics.csv": "sample_id,coverage,contamination,mapping_rate\nsample-10-0,18,0.02,0.91\nsample-10-1,12,0.12,0.61\nsample-10-2,18,0.02,0.91\nsample-10-3,35,0.01,0.95\nsample-10-4,18,0.02,0.91\n"
+    },
+    "metadata": {
+      "template": "quality_control"
+    },
+    "prompt": "Audit sample_metrics.csv using qc_policy.txt. One sample fails every criterion. Return FINAL[sample_id].",
+    "split": "train",
+    "task_id": "bio-qc-train-10"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "Species_3",
+    "files": {
+      "observed.csv": "isolate,m1,m2,m3,m4\niso-11,62,61,62,63\n",
+      "references.csv": "species,m1,m2,m3,m4\nSpecies_0,2,3,0,2\nSpecies_1,22,23,22,23\nSpecies_2,40,41,41,42\nSpecies_3,62,61,62,63\n"
+    },
+    "metadata": {
+      "template": "profile_classification"
+    },
+    "prompt": "Classify the synthetic isolate by the smallest Manhattan distance between its four marker counts and the reference profiles. Return FINAL[species].",
+    "split": "train",
+    "task_id": "bio-classification-train-11"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "var-12-0",
+    "files": {
+      "criteria.txt": "Candidate requirements: impact HIGH, population_af below 0.01, both affected samples genotype 1/1, and unaffected sample not 1/1.\n",
+      "variants.csv": "variant_id,impact,population_af,affected_a,affected_b,unaffected\nvar-12-0,HIGH,0.002,1/1,1/1,0/1\nvar-12-1,LOW,0.001,1/1,1/1,0/1\nvar-12-2,HIGH,0.12,0/1,1/1,1/1\nvar-12-3,LOW,0.001,1/1,1/1,0/1\nvar-12-4,HIGH,0.12,0/1,1/1,1/1\n"
+    },
+    "metadata": {
+      "template": "variant_prioritization"
+    },
+    "prompt": "Apply criteria.txt to variants.csv and identify the only compatible synthetic recessive candidate. Return FINAL[variant_id].",
+    "split": "train",
+    "task_id": "bio-variant-train-12"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "GENE13_0",
+    "files": {
+      "expression.csv": "gene,control_a,control_b,treated_a,treated_b,treated_bad\nGENE13_0,20,22,100,110,9999\nGENE13_1,25,27,50,54,9999\nGENE13_2,30,32,30,32,9999\nGENE13_3,35,37,70,74,9999\nGENE13_4,40,42,40,42,9999\n",
+      "qc.txt": "Samples control_a, control_b, treated_a, treated_b passed. treated_bad failed.\n"
+    },
+    "metadata": {
+      "template": "expression_analysis"
+    },
+    "prompt": "Use qc.txt and expression.csv. Ignore the failed sample treated_bad. Compute the mean treated to mean control ratio and return the gene with the largest ratio as FINAL[gene].",
+    "split": "train",
+    "task_id": "bio-expression-train-13"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "sample-14-4",
+    "files": {
+      "qc_policy.txt": "Pass requires coverage >= 20, contamination <= 0.05, mapping_rate >= 0.90.\n",
+      "sample_metrics.csv": "sample_id,coverage,contamination,mapping_rate\nsample-14-0,18,0.02,0.91\nsample-14-1,35,0.01,0.95\nsample-14-2,18,0.02,0.91\nsample-14-3,35,0.01,0.95\nsample-14-4,12,0.12,0.61\n"
+    },
+    "metadata": {
+      "template": "quality_control"
+    },
+    "prompt": "Audit sample_metrics.csv using qc_policy.txt. One sample fails every criterion. Return FINAL[sample_id].",
+    "split": "train",
+    "task_id": "bio-qc-train-14"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "Species_1",
+    "files": {
+      "observed.csv": "isolate,m1,m2,m3,m4\niso-15,22,20,23,22\n",
+      "references.csv": "species,m1,m2,m3,m4\nSpecies_0,0,2,1,1\nSpecies_1,22,20,23,22\nSpecies_2,43,42,40,43\nSpecies_3,62,60,61,62\n"
+    },
+    "metadata": {
+      "template": "profile_classification"
+    },
+    "prompt": "Classify the synthetic isolate by the smallest Manhattan distance between its four marker counts and the reference profiles. Return FINAL[species].",
+    "split": "train",
+    "task_id": "bio-classification-train-15"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "var-16-2",
+    "files": {
+      "criteria.txt": "Candidate requirements: impact HIGH, population_af below 0.01, both affected samples genotype 1/1, and unaffected sample not 1/1.\n",
+      "variants.csv": "variant_id,impact,population_af,affected_a,affected_b,unaffected\nvar-16-0,HIGH,0.12,0/1,1/1,1/1\nvar-16-1,LOW,0.001,1/1,1/1,0/1\nvar-16-2,HIGH,0.002,1/1,1/1,0/1\nvar-16-3,LOW,0.001,1/1,1/1,0/1\nvar-16-4,HIGH,0.12,0/1,1/1,1/1\n"
+    },
+    "metadata": {
+      "template": "variant_prioritization"
+    },
+    "prompt": "Apply criteria.txt to variants.csv and identify the only compatible synthetic recessive candidate. Return FINAL[variant_id].",
+    "split": "train",
+    "task_id": "bio-variant-train-16"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "GENE17_3",
+    "files": {
+      "expression.csv": "gene,control_a,control_b,treated_a,treated_b,treated_bad\nGENE17_0,20,22,20,22,9999\nGENE17_1,25,27,50,54,9999\nGENE17_2,30,32,30,32,9999\nGENE17_3,35,37,175,185,9999\nGENE17_4,40,42,40,42,9999\n",
+      "qc.txt": "Samples control_a, control_b, treated_a, treated_b passed. treated_bad failed.\n"
+    },
+    "metadata": {
+      "template": "expression_analysis"
+    },
+    "prompt": "Use qc.txt and expression.csv. Ignore the failed sample treated_bad. Compute the mean treated to mean control ratio and return the gene with the largest ratio as FINAL[gene].",
+    "split": "train",
+    "task_id": "bio-expression-train-17"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "sample-18-1",
+    "files": {
+      "qc_policy.txt": "Pass requires coverage >= 20, contamination <= 0.05, mapping_rate >= 0.90.\n",
+      "sample_metrics.csv": "sample_id,coverage,contamination,mapping_rate\nsample-18-0,18,0.02,0.91\nsample-18-1,12,0.12,0.61\nsample-18-2,18,0.02,0.91\nsample-18-3,35,0.01,0.95\nsample-18-4,18,0.02,0.91\n"
+    },
+    "metadata": {
+      "template": "quality_control"
+    },
+    "prompt": "Audit sample_metrics.csv using qc_policy.txt. One sample fails every criterion. Return FINAL[sample_id].",
+    "split": "train",
+    "task_id": "bio-qc-train-18"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "Species_1",
+    "files": {
+      "observed.csv": "isolate,m1,m2,m3,m4\niso-19,21,22,22,20\n",
+      "references.csv": "species,m1,m2,m3,m4\nSpecies_0,1,1,0,2\nSpecies_1,21,22,22,20\nSpecies_2,43,43,42,42\nSpecies_3,62,61,63,62\n"
+    },
+    "metadata": {
+      "template": "profile_classification"
+    },
+    "prompt": "Classify the synthetic isolate by the smallest Manhattan distance between its four marker counts and the reference profiles. Return FINAL[species].",
+    "split": "train",
+    "task_id": "bio-classification-train-19"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "var-20-4",
+    "files": {
+      "criteria.txt": "Candidate requirements: impact HIGH, population_af below 0.01, both affected samples genotype 1/1, and unaffected sample not 1/1.\n",
+      "variants.csv": "variant_id,impact,population_af,affected_a,affected_b,unaffected\nvar-20-0,HIGH,0.12,0/1,1/1,1/1\nvar-20-1,LOW,0.001,1/1,1/1,0/1\nvar-20-2,HIGH,0.12,0/1,1/1,1/1\nvar-20-3,LOW,0.001,1/1,1/1,0/1\nvar-20-4,HIGH,0.002,1/1,1/1,0/1\n"
+    },
+    "metadata": {
+      "template": "variant_prioritization"
+    },
+    "prompt": "Apply criteria.txt to variants.csv and identify the only compatible synthetic recessive candidate. Return FINAL[variant_id].",
+    "split": "train",
+    "task_id": "bio-variant-train-20"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "GENE21_2",
+    "files": {
+      "expression.csv": "gene,control_a,control_b,treated_a,treated_b,treated_bad\nGENE21_0,20,22,20,22,9999\nGENE21_1,25,27,50,54,9999\nGENE21_2,30,32,150,160,9999\nGENE21_3,35,37,70,74,9999\nGENE21_4,40,42,40,42,9999\n",
+      "qc.txt": "Samples control_a, control_b, treated_a, treated_b passed. treated_bad failed.\n"
+    },
+    "metadata": {
+      "template": "expression_analysis"
+    },
+    "prompt": "Use qc.txt and expression.csv. Ignore the failed sample treated_bad. Compute the mean treated to mean control ratio and return the gene with the largest ratio as FINAL[gene].",
+    "split": "train",
+    "task_id": "bio-expression-train-21"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "sample-22-3",
+    "files": {
+      "qc_policy.txt": "Pass requires coverage >= 20, contamination <= 0.05, mapping_rate >= 0.90.\n",
+      "sample_metrics.csv": "sample_id,coverage,contamination,mapping_rate\nsample-22-0,18,0.02,0.91\nsample-22-1,35,0.01,0.95\nsample-22-2,18,0.02,0.91\nsample-22-3,12,0.12,0.61\nsample-22-4,18,0.02,0.91\n"
+    },
+    "metadata": {
+      "template": "quality_control"
+    },
+    "prompt": "Audit sample_metrics.csv using qc_policy.txt. One sample fails every criterion. Return FINAL[sample_id].",
+    "split": "train",
+    "task_id": "bio-qc-train-22"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "Species_3",
+    "files": {
+      "observed.csv": "isolate,m1,m2,m3,m4\niso-23,64,61,60,60\n",
+      "references.csv": "species,m1,m2,m3,m4\nSpecies_0,3,1,3,0\nSpecies_1,23,21,20,20\nSpecies_2,42,43,40,41\nSpecies_3,63,61,60,60\n"
+    },
+    "metadata": {
+      "template": "profile_classification"
+    },
+    "prompt": "Classify the synthetic isolate by the smallest Manhattan distance between its four marker counts and the reference profiles. Return FINAL[species].",
+    "split": "train",
+    "task_id": "bio-classification-train-23"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "var-24-1",
+    "files": {
+      "criteria.txt": "Candidate requirements: impact HIGH, population_af below 0.01, both affected samples genotype 1/1, and unaffected sample not 1/1.\n",
+      "variants.csv": "variant_id,impact,population_af,affected_a,affected_b,unaffected\nvar-24-0,HIGH,0.12,0/1,1/1,1/1\nvar-24-1,HIGH,0.002,1/1,1/1,0/1\nvar-24-2,HIGH,0.12,0/1,1/1,1/1\nvar-24-3,LOW,0.001,1/1,1/1,0/1\nvar-24-4,HIGH,0.12,0/1,1/1,1/1\n"
+    },
+    "metadata": {
+      "template": "variant_prioritization"
+    },
+    "prompt": "Apply criteria.txt to variants.csv and identify the only compatible synthetic recessive candidate. Return FINAL[variant_id].",
+    "split": "train",
+    "task_id": "bio-variant-train-24"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "GENE25_4",
+    "files": {
+      "expression.csv": "gene,control_a,control_b,treated_a,treated_b,treated_bad\nGENE25_0,20,22,20,22,9999\nGENE25_1,25,27,50,54,9999\nGENE25_2,30,32,30,32,9999\nGENE25_3,35,37,70,74,9999\nGENE25_4,40,42,200,210,9999\n",
+      "qc.txt": "Samples control_a, control_b, treated_a, treated_b passed. treated_bad failed.\n"
+    },
+    "metadata": {
+      "template": "expression_analysis"
+    },
+    "prompt": "Use qc.txt and expression.csv. Ignore the failed sample treated_bad. Compute the mean treated to mean control ratio and return the gene with the largest ratio as FINAL[gene].",
+    "split": "train",
+    "task_id": "bio-expression-train-25"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "sample-26-2",
+    "files": {
+      "qc_policy.txt": "Pass requires coverage >= 20, contamination <= 0.05, mapping_rate >= 0.90.\n",
+      "sample_metrics.csv": "sample_id,coverage,contamination,mapping_rate\nsample-26-0,18,0.02,0.91\nsample-26-1,35,0.01,0.95\nsample-26-2,12,0.12,0.61\nsample-26-3,35,0.01,0.95\nsample-26-4,18,0.02,0.91\n"
+    },
+    "metadata": {
+      "template": "quality_control"
+    },
+    "prompt": "Audit sample_metrics.csv using qc_policy.txt. One sample fails every criterion. Return FINAL[sample_id].",
+    "split": "train",
+    "task_id": "bio-qc-train-26"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "Species_1",
+    "files": {
+      "observed.csv": "isolate,m1,m2,m3,m4\niso-27,23,20,21,21\n",
+      "references.csv": "species,m1,m2,m3,m4\nSpecies_0,2,1,0,1\nSpecies_1,22,20,21,20\nSpecies_2,40,43,42,40\nSpecies_3,60,60,60,61\n"
+    },
+    "metadata": {
+      "template": "profile_classification"
+    },
+    "prompt": "Classify the synthetic isolate by the smallest Manhattan distance between its four marker counts and the reference profiles. Return FINAL[species].",
+    "split": "train",
+    "task_id": "bio-classification-train-27"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "var-28-3",
+    "files": {
+      "criteria.txt": "Candidate requirements: impact HIGH, population_af below 0.01, both affected samples genotype 1/1, and unaffected sample not 1/1.\n",
+      "variants.csv": "variant_id,impact,population_af,affected_a,affected_b,unaffected\nvar-28-0,HIGH,0.12,0/1,1/1,1/1\nvar-28-1,LOW,0.001,1/1,1/1,0/1\nvar-28-2,HIGH,0.12,0/1,1/1,1/1\nvar-28-3,HIGH,0.002,1/1,1/1,0/1\nvar-28-4,HIGH,0.12,0/1,1/1,1/1\n"
+    },
+    "metadata": {
+      "template": "variant_prioritization"
+    },
+    "prompt": "Apply criteria.txt to variants.csv and identify the only compatible synthetic recessive candidate. Return FINAL[variant_id].",
+    "split": "train",
+    "task_id": "bio-variant-train-28"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "GENE29_4",
+    "files": {
+      "expression.csv": "gene,control_a,control_b,treated_a,treated_b,treated_bad\nGENE29_0,20,22,20,22,9999\nGENE29_1,25,27,50,54,9999\nGENE29_2,30,32,30,32,9999\nGENE29_3,35,37,70,74,9999\nGENE29_4,40,42,200,210,9999\n",
+      "qc.txt": "Samples control_a, control_b, treated_a, treated_b passed. treated_bad failed.\n"
+    },
+    "metadata": {
+      "template": "expression_analysis"
+    },
+    "prompt": "Use qc.txt and expression.csv. Ignore the failed sample treated_bad. Compute the mean treated to mean control ratio and return the gene with the largest ratio as FINAL[gene].",
+    "split": "train",
+    "task_id": "bio-expression-train-29"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "sample-30-4",
+    "files": {
+      "qc_policy.txt": "Pass requires coverage >= 20, contamination <= 0.05, mapping_rate >= 0.90.\n",
+      "sample_metrics.csv": "sample_id,coverage,contamination,mapping_rate\nsample-30-0,18,0.02,0.91\nsample-30-1,35,0.01,0.95\nsample-30-2,18,0.02,0.91\nsample-30-3,35,0.01,0.95\nsample-30-4,12,0.12,0.61\n"
+    },
+    "metadata": {
+      "template": "quality_control"
+    },
+    "prompt": "Audit sample_metrics.csv using qc_policy.txt. One sample fails every criterion. Return FINAL[sample_id].",
+    "split": "train",
+    "task_id": "bio-qc-train-30"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "Species_2",
+    "files": {
+      "observed.csv": "isolate,m1,m2,m3,m4\niso-31,41,42,40,42\n",
+      "references.csv": "species,m1,m2,m3,m4\nSpecies_0,2,0,0,1\nSpecies_1,22,20,22,21\nSpecies_2,41,42,40,42\nSpecies_3,60,61,60,62\n"
+    },
+    "metadata": {
+      "template": "profile_classification"
+    },
+    "prompt": "Classify the synthetic isolate by the smallest Manhattan distance between its four marker counts and the reference profiles. Return FINAL[species].",
+    "split": "train",
+    "task_id": "bio-classification-train-31"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "var-32-1",
+    "files": {
+      "criteria.txt": "Candidate requirements: impact HIGH, population_af below 0.01, both affected samples genotype 1/1, and unaffected sample not 1/1.\n",
+      "variants.csv": "variant_id,impact,population_af,affected_a,affected_b,unaffected\nvar-32-0,HIGH,0.12,0/1,1/1,1/1\nvar-32-1,HIGH,0.002,1/1,1/1,0/1\nvar-32-2,HIGH,0.12,0/1,1/1,1/1\nvar-32-3,LOW,0.001,1/1,1/1,0/1\nvar-32-4,HIGH,0.12,0/1,1/1,1/1\n"
+    },
+    "metadata": {
+      "template": "variant_prioritization"
+    },
+    "prompt": "Apply criteria.txt to variants.csv and identify the only compatible synthetic recessive candidate. Return FINAL[variant_id].",
+    "split": "train",
+    "task_id": "bio-variant-train-32"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "GENE33_2",
+    "files": {
+      "expression.csv": "gene,control_a,control_b,treated_a,treated_b,treated_bad\nGENE33_0,20,22,20,22,9999\nGENE33_1,25,27,50,54,9999\nGENE33_2,30,32,150,160,9999\nGENE33_3,35,37,70,74,9999\nGENE33_4,40,42,40,42,9999\n",
+      "qc.txt": "Samples control_a, control_b, treated_a, treated_b passed. treated_bad failed.\n"
+    },
+    "metadata": {
+      "template": "expression_analysis"
+    },
+    "prompt": "Use qc.txt and expression.csv. Ignore the failed sample treated_bad. Compute the mean treated to mean control ratio and return the gene with the largest ratio as FINAL[gene].",
+    "split": "train",
+    "task_id": "bio-expression-train-33"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "sample-34-4",
+    "files": {
+      "qc_policy.txt": "Pass requires coverage >= 20, contamination <= 0.05, mapping_rate >= 0.90.\n",
+      "sample_metrics.csv": "sample_id,coverage,contamination,mapping_rate\nsample-34-0,18,0.02,0.91\nsample-34-1,35,0.01,0.95\nsample-34-2,18,0.02,0.91\nsample-34-3,35,0.01,0.95\nsample-34-4,12,0.12,0.61\n"
+    },
+    "metadata": {
+      "template": "quality_control"
+    },
+    "prompt": "Audit sample_metrics.csv using qc_policy.txt. One sample fails every criterion. Return FINAL[sample_id].",
+    "split": "train",
+    "task_id": "bio-qc-train-34"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "Species_2",
+    "files": {
+      "observed.csv": "isolate,m1,m2,m3,m4\niso-35,41,43,42,42\n",
+      "references.csv": "species,m1,m2,m3,m4\nSpecies_0,3,3,2,2\nSpecies_1,21,23,21,22\nSpecies_2,40,43,42,42\nSpecies_3,62,60,60,63\n"
+    },
+    "metadata": {
+      "template": "profile_classification"
+    },
+    "prompt": "Classify the synthetic isolate by the smallest Manhattan distance between its four marker counts and the reference profiles. Return FINAL[species].",
+    "split": "train",
+    "task_id": "bio-classification-train-35"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "var-36-1",
+    "files": {
+      "criteria.txt": "Candidate requirements: impact HIGH, population_af below 0.01, both affected samples genotype 1/1, and unaffected sample not 1/1.\n",
+      "variants.csv": "variant_id,impact,population_af,affected_a,affected_b,unaffected\nvar-36-0,HIGH,0.12,0/1,1/1,1/1\nvar-36-1,HIGH,0.002,1/1,1/1,0/1\nvar-36-2,HIGH,0.12,0/1,1/1,1/1\nvar-36-3,LOW,0.001,1/1,1/1,0/1\nvar-36-4,HIGH,0.12,0/1,1/1,1/1\n"
+    },
+    "metadata": {
+      "template": "variant_prioritization"
+    },
+    "prompt": "Apply criteria.txt to variants.csv and identify the only compatible synthetic recessive candidate. Return FINAL[variant_id].",
+    "split": "train",
+    "task_id": "bio-variant-train-36"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "GENE37_3",
+    "files": {
+      "expression.csv": "gene,control_a,control_b,treated_a,treated_b,treated_bad\nGENE37_0,20,22,20,22,9999\nGENE37_1,25,27,50,54,9999\nGENE37_2,30,32,30,32,9999\nGENE37_3,35,37,175,185,9999\nGENE37_4,40,42,40,42,9999\n",
+      "qc.txt": "Samples control_a, control_b, treated_a, treated_b passed. treated_bad failed.\n"
+    },
+    "metadata": {
+      "template": "expression_analysis"
+    },
+    "prompt": "Use qc.txt and expression.csv. Ignore the failed sample treated_bad. Compute the mean treated to mean control ratio and return the gene with the largest ratio as FINAL[gene].",
+    "split": "train",
+    "task_id": "bio-expression-train-37"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "sample-38-3",
+    "files": {
+      "qc_policy.txt": "Pass requires coverage >= 20, contamination <= 0.05, mapping_rate >= 0.90.\n",
+      "sample_metrics.csv": "sample_id,coverage,contamination,mapping_rate\nsample-38-0,18,0.02,0.91\nsample-38-1,35,0.01,0.95\nsample-38-2,18,0.02,0.91\nsample-38-3,12,0.12,0.61\nsample-38-4,18,0.02,0.91\n"
+    },
+    "metadata": {
+      "template": "quality_control"
+    },
+    "prompt": "Audit sample_metrics.csv using qc_policy.txt. One sample fails every criterion. Return FINAL[sample_id].",
+    "split": "train",
+    "task_id": "bio-qc-train-38"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "Species_2",
+    "files": {
+      "observed.csv": "isolate,m1,m2,m3,m4\niso-39,41,42,42,43\n",
+      "references.csv": "species,m1,m2,m3,m4\nSpecies_0,3,1,0,2\nSpecies_1,21,21,22,23\nSpecies_2,41,41,42,43\nSpecies_3,62,63,63,61\n"
+    },
+    "metadata": {
+      "template": "profile_classification"
+    },
+    "prompt": "Classify the synthetic isolate by the smallest Manhattan distance between its four marker counts and the reference profiles. Return FINAL[species].",
+    "split": "train",
+    "task_id": "bio-classification-train-39"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "var-40-2",
+    "files": {
+      "criteria.txt": "Candidate requirements: impact HIGH, population_af below 0.01, both affected samples genotype 1/1, and unaffected sample not 1/1.\n",
+      "variants.csv": "variant_id,impact,population_af,affected_a,affected_b,unaffected\nvar-40-0,HIGH,0.12,0/1,1/1,1/1\nvar-40-1,LOW,0.001,1/1,1/1,0/1\nvar-40-2,HIGH,0.002,1/1,1/1,0/1\nvar-40-3,LOW,0.001,1/1,1/1,0/1\nvar-40-4,HIGH,0.12,0/1,1/1,1/1\n"
+    },
+    "metadata": {
+      "template": "variant_prioritization"
+    },
+    "prompt": "Apply criteria.txt to variants.csv and identify the only compatible synthetic recessive candidate. Return FINAL[variant_id].",
+    "split": "train",
+    "task_id": "bio-variant-train-40"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "GENE41_4",
+    "files": {
+      "expression.csv": "gene,control_a,control_b,treated_a,treated_b,treated_bad\nGENE41_0,20,22,20,22,9999\nGENE41_1,25,27,50,54,9999\nGENE41_2,30,32,30,32,9999\nGENE41_3,35,37,70,74,9999\nGENE41_4,40,42,200,210,9999\n",
+      "qc.txt": "Samples control_a, control_b, treated_a, treated_b passed. treated_bad failed.\n"
+    },
+    "metadata": {
+      "template": "expression_analysis"
+    },
+    "prompt": "Use qc.txt and expression.csv. Ignore the failed sample treated_bad. Compute the mean treated to mean control ratio and return the gene with the largest ratio as FINAL[gene].",
+    "split": "train",
+    "task_id": "bio-expression-train-41"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "sample-42-3",
+    "files": {
+      "qc_policy.txt": "Pass requires coverage >= 20, contamination <= 0.05, mapping_rate >= 0.90.\n",
+      "sample_metrics.csv": "sample_id,coverage,contamination,mapping_rate\nsample-42-0,18,0.02,0.91\nsample-42-1,35,0.01,0.95\nsample-42-2,18,0.02,0.91\nsample-42-3,12,0.12,0.61\nsample-42-4,18,0.02,0.91\n"
+    },
+    "metadata": {
+      "template": "quality_control"
+    },
+    "prompt": "Audit sample_metrics.csv using qc_policy.txt. One sample fails every criterion. Return FINAL[sample_id].",
+    "split": "train",
+    "task_id": "bio-qc-train-42"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "Species_1",
+    "files": {
+      "observed.csv": "isolate,m1,m2,m3,m4\niso-43,20,23,21,20\n",
+      "references.csv": "species,m1,m2,m3,m4\nSpecies_0,1,0,3,0\nSpecies_1,20,23,21,20\nSpecies_2,41,40,42,40\nSpecies_3,63,62,60,61\n"
+    },
+    "metadata": {
+      "template": "profile_classification"
+    },
+    "prompt": "Classify the synthetic isolate by the smallest Manhattan distance between its four marker counts and the reference profiles. Return FINAL[species].",
+    "split": "train",
+    "task_id": "bio-classification-train-43"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "var-44-3",
+    "files": {
+      "criteria.txt": "Candidate requirements: impact HIGH, population_af below 0.01, both affected samples genotype 1/1, and unaffected sample not 1/1.\n",
+      "variants.csv": "variant_id,impact,population_af,affected_a,affected_b,unaffected\nvar-44-0,HIGH,0.12,0/1,1/1,1/1\nvar-44-1,LOW,0.001,1/1,1/1,0/1\nvar-44-2,HIGH,0.12,0/1,1/1,1/1\nvar-44-3,HIGH,0.002,1/1,1/1,0/1\nvar-44-4,HIGH,0.12,0/1,1/1,1/1\n"
+    },
+    "metadata": {
+      "template": "variant_prioritization"
+    },
+    "prompt": "Apply criteria.txt to variants.csv and identify the only compatible synthetic recessive candidate. Return FINAL[variant_id].",
+    "split": "train",
+    "task_id": "bio-variant-train-44"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "GENE45_4",
+    "files": {
+      "expression.csv": "gene,control_a,control_b,treated_a,treated_b,treated_bad\nGENE45_0,20,22,20,22,9999\nGENE45_1,25,27,50,54,9999\nGENE45_2,30,32,30,32,9999\nGENE45_3,35,37,70,74,9999\nGENE45_4,40,42,200,210,9999\n",
+      "qc.txt": "Samples control_a, control_b, treated_a, treated_b passed. treated_bad failed.\n"
+    },
+    "metadata": {
+      "template": "expression_analysis"
+    },
+    "prompt": "Use qc.txt and expression.csv. Ignore the failed sample treated_bad. Compute the mean treated to mean control ratio and return the gene with the largest ratio as FINAL[gene].",
+    "split": "train",
+    "task_id": "bio-expression-train-45"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "sample-46-0",
+    "files": {
+      "qc_policy.txt": "Pass requires coverage >= 20, contamination <= 0.05, mapping_rate >= 0.90.\n",
+      "sample_metrics.csv": "sample_id,coverage,contamination,mapping_rate\nsample-46-0,12,0.12,0.61\nsample-46-1,35,0.01,0.95\nsample-46-2,18,0.02,0.91\nsample-46-3,35,0.01,0.95\nsample-46-4,18,0.02,0.91\n"
+    },
+    "metadata": {
+      "template": "quality_control"
+    },
+    "prompt": "Audit sample_metrics.csv using qc_policy.txt. One sample fails every criterion. Return FINAL[sample_id].",
+    "split": "train",
+    "task_id": "bio-qc-train-46"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "Species_0",
+    "files": {
+      "observed.csv": "isolate,m1,m2,m3,m4\niso-47,3,4,3,4\n",
+      "references.csv": "species,m1,m2,m3,m4\nSpecies_0,2,3,3,3\nSpecies_1,22,20,21,20\nSpecies_2,40,42,43,40\nSpecies_3,63,62,61,61\n"
+    },
+    "metadata": {
+      "template": "profile_classification"
+    },
+    "prompt": "Classify the synthetic isolate by the smallest Manhattan distance between its four marker counts and the reference profiles. Return FINAL[species].",
+    "split": "train",
+    "task_id": "bio-classification-train-47"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "user-0-3|ws-0-1|203.0.113.20",
+    "files": {
+      "auth.csv": "time,user,host,status\n09:01,user-0-0,ws-0-0,failure\n09:04,user-0-1,ws-0-1,success\n09:10,user-0-3,ws-0-1,success\n09:22,user-0-2,ws-0-2,success\n",
+      "blocked.txt": "203.0.113.20\n198.51.100.40\n",
+      "network.csv": "time,host,destination,bytes\n09:08,ws-0-1,192.0.2.5,120\n09:13,ws-0-1,203.0.113.20,9400\n09:30,ws-0-2,203.0.113.20,100\n",
+      "policy.txt": "A confirmed case is a successful login followed within five minutes by an outbound connection from the same host to an address in blocked.txt. Return user|host|destination.\n"
+    },
+    "metadata": {
+      "template": "incident_correlation"
+    },
+    "prompt": "Investigate the local authentication and network records using policy.txt. Identify the single confirmed case and return FINAL[user|host|destination].",
+    "split": "dev",
+    "task_id": "cyber-incident-dev-0"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "svc-1-2",
+    "files": {
+      "policy.txt": "Production requires tls_version at least 1.3, admin_scope private, and encrypted_backup true. Staging rows are outside this decision.\n",
+      "services.csv": "service_id,environment,tls_version,admin_scope,encrypted_backup\nsvc-1-0,staging,1.2,private,false\nsvc-1-1,production,1.3,private,true\nsvc-1-2,production,1.1,public,false\nsvc-1-3,production,1.3,private,true\n"
+    },
+    "metadata": {
+      "template": "configuration_audit"
+    },
+    "prompt": "Audit services.csv against policy.txt. Exactly one production service violates all three production requirements. Return FINAL[service_id].",
+    "split": "dev",
+    "task_id": "cyber-config-dev-1"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "component_1.bin",
+    "files": {
+      "criticality.csv": "file,tier\ncomponent_0.bin,critical\ncomponent_1.bin,critical\ncomponent_2.bin,standard\ncomponent_3.bin,standard\ncomponent_4.bin,standard\n",
+      "expected.csv": "file,sha256\ncomponent_0.bin,24e685665b0e\ncomponent_1.bin,4d8c9f2e263e\ncomponent_2.bin,9d9c2b8ba86c\ncomponent_3.bin,f009ac872d49\ncomponent_4.bin,92d70ea3b078\n",
+      "observed.csv": "file,sha256\ncomponent_0.bin,24e685665b0e\ncomponent_1.bin,823c1e6747ed\ncomponent_2.bin,9d9c2b8ba86c\ncomponent_3.bin,f009ac872d49\ncomponent_4.bin,92d70ea3b078\n"
+    },
+    "metadata": {
+      "template": "integrity_join"
+    },
+    "prompt": "Compare expected and observed integrity records, then use criticality.csv. Return the critical file whose observed digest does not match as FINAL[filename].",
+    "split": "dev",
+    "task_id": "cyber-integrity-dev-2"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "alert-3-0",
+    "files": {
+      "alerts.csv": "alert_id,asset_id,severity\nalert-3-0,asset-3-0,1000\nalert-3-1,asset-3-1,100\nalert-3-2,asset-3-2,1\nalert-3-3,asset-3-3,10\n",
+      "assets.csv": "asset_id,criticality\nasset-3-0,1\nasset-3-1,2\nasset-3-2,3\nasset-3-3,4\n"
+    },
+    "metadata": {
+      "template": "risk_triage"
+    },
+    "prompt": "Prioritize alerts using priority = severity multiplied by asset criticality. Join the two CSV files and return the highest-priority alert as FINAL[alert_id].",
+    "split": "dev",
+    "task_id": "cyber-triage-dev-3"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "var-0-3",
+    "files": {
+      "criteria.txt": "Candidate requirements: impact HIGH, population_af below 0.01, both affected samples genotype 1/1, and unaffected sample not 1/1.\n",
+      "variants.csv": "variant_id,impact,population_af,affected_a,affected_b,unaffected\nvar-0-0,HIGH,0.12,0/1,1/1,1/1\nvar-0-1,LOW,0.001,1/1,1/1,0/1\nvar-0-2,HIGH,0.12,0/1,1/1,1/1\nvar-0-3,HIGH,0.002,1/1,1/1,0/1\nvar-0-4,HIGH,0.12,0/1,1/1,1/1\n"
+    },
+    "metadata": {
+      "template": "variant_prioritization"
+    },
+    "prompt": "Apply criteria.txt to variants.csv and identify the only compatible synthetic recessive candidate. Return FINAL[variant_id].",
+    "split": "dev",
+    "task_id": "bio-variant-dev-0"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "GENE1_1",
+    "files": {
+      "expression.csv": "gene,control_a,control_b,treated_a,treated_b,treated_bad\nGENE1_0,20,22,20,22,9999\nGENE1_1,25,27,125,135,9999\nGENE1_2,30,32,30,32,9999\nGENE1_3,35,37,70,74,9999\nGENE1_4,40,42,40,42,9999\n",
+      "qc.txt": "Samples control_a, control_b, treated_a, treated_b passed. treated_bad failed.\n"
+    },
+    "metadata": {
+      "template": "expression_analysis"
+    },
+    "prompt": "Use qc.txt and expression.csv. Ignore the failed sample treated_bad. Compute the mean treated to mean control ratio and return the gene with the largest ratio as FINAL[gene].",
+    "split": "dev",
+    "task_id": "bio-expression-dev-1"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "sample-2-4",
+    "files": {
+      "qc_policy.txt": "Pass requires coverage >= 20, contamination <= 0.05, mapping_rate >= 0.90.\n",
+      "sample_metrics.csv": "sample_id,coverage,contamination,mapping_rate\nsample-2-0,18,0.02,0.91\nsample-2-1,35,0.01,0.95\nsample-2-2,18,0.02,0.91\nsample-2-3,35,0.01,0.95\nsample-2-4,12,0.12,0.61\n"
+    },
+    "metadata": {
+      "template": "quality_control"
+    },
+    "prompt": "Audit sample_metrics.csv using qc_policy.txt. One sample fails every criterion. Return FINAL[sample_id].",
+    "split": "dev",
+    "task_id": "bio-qc-dev-2"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "Species_0",
+    "files": {
+      "observed.csv": "isolate,m1,m2,m3,m4\niso-3,1,0,0,3\n",
+      "references.csv": "species,m1,m2,m3,m4\nSpecies_0,1,0,0,3\nSpecies_1,21,21,21,20\nSpecies_2,40,42,40,41\nSpecies_3,61,60,63,61\n"
+    },
+    "metadata": {
+      "template": "profile_classification"
+    },
+    "prompt": "Classify the synthetic isolate by the smallest Manhattan distance between its four marker counts and the reference profiles. Return FINAL[species].",
+    "split": "dev",
+    "task_id": "bio-classification-dev-3"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "user-0-2|ws-0-3|203.0.113.20",
+    "files": {
+      "auth.csv": "time,user,host,status\n09:01,user-0-0,ws-0-0,failure\n09:04,user-0-1,ws-0-1,success\n09:10,user-0-2,ws-0-3,success\n09:22,user-0-2,ws-0-2,success\n",
+      "blocked.txt": "203.0.113.20\n198.51.100.40\n",
+      "network.csv": "time,host,destination,bytes\n09:08,ws-0-1,192.0.2.5,120\n09:13,ws-0-3,203.0.113.20,9400\n09:30,ws-0-2,203.0.113.20,100\n",
+      "policy.txt": "A confirmed case is a successful login followed within five minutes by an outbound connection from the same host to an address in blocked.txt. Return user|host|destination.\n"
+    },
+    "metadata": {
+      "template": "incident_correlation"
+    },
+    "prompt": "Investigate the local authentication and network records using policy.txt. Identify the single confirmed case and return FINAL[user|host|destination].",
+    "split": "test",
+    "task_id": "cyber-incident-test-0"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "svc-1-3",
+    "files": {
+      "policy.txt": "Production requires tls_version at least 1.3, admin_scope private, and encrypted_backup true. Staging rows are outside this decision.\n",
+      "services.csv": "service_id,environment,tls_version,admin_scope,encrypted_backup\nsvc-1-0,staging,1.2,private,false\nsvc-1-1,production,1.3,private,true\nsvc-1-2,staging,1.2,private,false\nsvc-1-3,production,1.1,public,false\n"
+    },
+    "metadata": {
+      "template": "configuration_audit"
+    },
+    "prompt": "Audit services.csv against policy.txt. Exactly one production service violates all three production requirements. Return FINAL[service_id].",
+    "split": "test",
+    "task_id": "cyber-config-test-1"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "component_3.bin",
+    "files": {
+      "criticality.csv": "file,tier\ncomponent_0.bin,critical\ncomponent_1.bin,standard\ncomponent_2.bin,standard\ncomponent_3.bin,critical\ncomponent_4.bin,standard\n",
+      "expected.csv": "file,sha256\ncomponent_0.bin,24e685665b0e\ncomponent_1.bin,4d8c9f2e263e\ncomponent_2.bin,9d9c2b8ba86c\ncomponent_3.bin,f009ac872d49\ncomponent_4.bin,92d70ea3b078\n",
+      "observed.csv": "file,sha256\ncomponent_0.bin,24e685665b0e\ncomponent_1.bin,4d8c9f2e263e\ncomponent_2.bin,9d9c2b8ba86c\ncomponent_3.bin,95caa89bb37e\ncomponent_4.bin,92d70ea3b078\n"
+    },
+    "metadata": {
+      "template": "integrity_join"
+    },
+    "prompt": "Compare expected and observed integrity records, then use criticality.csv. Return the critical file whose observed digest does not match as FINAL[filename].",
+    "split": "test",
+    "task_id": "cyber-integrity-test-2"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "alert-3-2",
+    "files": {
+      "alerts.csv": "alert_id,asset_id,severity\nalert-3-0,asset-3-0,1\nalert-3-1,asset-3-1,10\nalert-3-2,asset-3-2,1000\nalert-3-3,asset-3-3,100\n",
+      "assets.csv": "asset_id,criticality\nasset-3-0,1\nasset-3-1,2\nasset-3-2,3\nasset-3-3,4\n"
+    },
+    "metadata": {
+      "template": "risk_triage"
+    },
+    "prompt": "Prioritize alerts using priority = severity multiplied by asset criticality. Join the two CSV files and return the highest-priority alert as FINAL[alert_id].",
+    "split": "test",
+    "task_id": "cyber-triage-test-3"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "user-4-1|ws-4-1|203.0.113.24",
+    "files": {
+      "auth.csv": "time,user,host,status\n09:01,user-4-0,ws-4-0,failure\n09:04,user-4-1,ws-4-1,success\n09:10,user-4-1,ws-4-1,success\n09:22,user-4-2,ws-4-2,success\n",
+      "blocked.txt": "203.0.113.24\n198.51.100.44\n",
+      "network.csv": "time,host,destination,bytes\n09:08,ws-4-1,192.0.2.5,120\n09:13,ws-4-1,203.0.113.24,9400\n09:30,ws-4-2,203.0.113.24,100\n",
+      "policy.txt": "A confirmed case is a successful login followed within five minutes by an outbound connection from the same host to an address in blocked.txt. Return user|host|destination.\n"
+    },
+    "metadata": {
+      "template": "incident_correlation"
+    },
+    "prompt": "Investigate the local authentication and network records using policy.txt. Identify the single confirmed case and return FINAL[user|host|destination].",
+    "split": "test",
+    "task_id": "cyber-incident-test-4"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "svc-5-1",
+    "files": {
+      "policy.txt": "Production requires tls_version at least 1.3, admin_scope private, and encrypted_backup true. Staging rows are outside this decision.\n",
+      "services.csv": "service_id,environment,tls_version,admin_scope,encrypted_backup\nsvc-5-0,staging,1.2,private,false\nsvc-5-1,production,1.1,public,false\nsvc-5-2,staging,1.2,private,false\nsvc-5-3,production,1.3,private,true\n"
+    },
+    "metadata": {
+      "template": "configuration_audit"
+    },
+    "prompt": "Audit services.csv against policy.txt. Exactly one production service violates all three production requirements. Return FINAL[service_id].",
+    "split": "test",
+    "task_id": "cyber-config-test-5"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "component_1.bin",
+    "files": {
+      "criticality.csv": "file,tier\ncomponent_0.bin,critical\ncomponent_1.bin,critical\ncomponent_2.bin,standard\ncomponent_3.bin,standard\ncomponent_4.bin,standard\n",
+      "expected.csv": "file,sha256\ncomponent_0.bin,065b86f84a09\ncomponent_1.bin,496fa7420f4e\ncomponent_2.bin,cb46c5592904\ncomponent_3.bin,50fc1b0be7e6\ncomponent_4.bin,7651db2c800b\n",
+      "observed.csv": "file,sha256\ncomponent_0.bin,065b86f84a09\ncomponent_1.bin,51db18885a38\ncomponent_2.bin,cb46c5592904\ncomponent_3.bin,50fc1b0be7e6\ncomponent_4.bin,7651db2c800b\n"
+    },
+    "metadata": {
+      "template": "integrity_join"
+    },
+    "prompt": "Compare expected and observed integrity records, then use criticality.csv. Return the critical file whose observed digest does not match as FINAL[filename].",
+    "split": "test",
+    "task_id": "cyber-integrity-test-6"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "alert-7-2",
+    "files": {
+      "alerts.csv": "alert_id,asset_id,severity\nalert-7-0,asset-7-0,1\nalert-7-1,asset-7-1,10\nalert-7-2,asset-7-2,1000\nalert-7-3,asset-7-3,100\n",
+      "assets.csv": "asset_id,criticality\nasset-7-0,1\nasset-7-1,2\nasset-7-2,3\nasset-7-3,4\n"
+    },
+    "metadata": {
+      "template": "risk_triage"
+    },
+    "prompt": "Prioritize alerts using priority = severity multiplied by asset criticality. Join the two CSV files and return the highest-priority alert as FINAL[alert_id].",
+    "split": "test",
+    "task_id": "cyber-triage-test-7"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "user-8-3|ws-8-3|203.0.113.28",
+    "files": {
+      "auth.csv": "time,user,host,status\n09:01,user-8-0,ws-8-0,failure\n09:04,user-8-1,ws-8-1,success\n09:10,user-8-3,ws-8-3,success\n09:22,user-8-2,ws-8-2,success\n",
+      "blocked.txt": "203.0.113.28\n198.51.100.48\n",
+      "network.csv": "time,host,destination,bytes\n09:08,ws-8-1,192.0.2.5,120\n09:13,ws-8-3,203.0.113.28,9400\n09:30,ws-8-2,203.0.113.28,100\n",
+      "policy.txt": "A confirmed case is a successful login followed within five minutes by an outbound connection from the same host to an address in blocked.txt. Return user|host|destination.\n"
+    },
+    "metadata": {
+      "template": "incident_correlation"
+    },
+    "prompt": "Investigate the local authentication and network records using policy.txt. Identify the single confirmed case and return FINAL[user|host|destination].",
+    "split": "test",
+    "task_id": "cyber-incident-test-8"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "svc-9-0",
+    "files": {
+      "policy.txt": "Production requires tls_version at least 1.3, admin_scope private, and encrypted_backup true. Staging rows are outside this decision.\n",
+      "services.csv": "service_id,environment,tls_version,admin_scope,encrypted_backup\nsvc-9-0,production,1.1,public,false\nsvc-9-1,production,1.3,private,true\nsvc-9-2,staging,1.2,private,false\nsvc-9-3,production,1.3,private,true\n"
+    },
+    "metadata": {
+      "template": "configuration_audit"
+    },
+    "prompt": "Audit services.csv against policy.txt. Exactly one production service violates all three production requirements. Return FINAL[service_id].",
+    "split": "test",
+    "task_id": "cyber-config-test-9"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "component_3.bin",
+    "files": {
+      "criticality.csv": "file,tier\ncomponent_0.bin,critical\ncomponent_1.bin,standard\ncomponent_2.bin,standard\ncomponent_3.bin,critical\ncomponent_4.bin,standard\n",
+      "expected.csv": "file,sha256\ncomponent_0.bin,25870a218d6f\ncomponent_1.bin,52d2ef3eb8cf\ncomponent_2.bin,cf62bebc2a71\ncomponent_3.bin,c329ba8c839b\ncomponent_4.bin,60f55946f81f\n",
+      "observed.csv": "file,sha256\ncomponent_0.bin,25870a218d6f\ncomponent_1.bin,52d2ef3eb8cf\ncomponent_2.bin,cf62bebc2a71\ncomponent_3.bin,dec9b18664b2\ncomponent_4.bin,60f55946f81f\n"
+    },
+    "metadata": {
+      "template": "integrity_join"
+    },
+    "prompt": "Compare expected and observed integrity records, then use criticality.csv. Return the critical file whose observed digest does not match as FINAL[filename].",
+    "split": "test",
+    "task_id": "cyber-integrity-test-10"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "alert-11-3",
+    "files": {
+      "alerts.csv": "alert_id,asset_id,severity\nalert-11-0,asset-11-0,1\nalert-11-1,asset-11-1,10\nalert-11-2,asset-11-2,100\nalert-11-3,asset-11-3,1000\n",
+      "assets.csv": "asset_id,criticality\nasset-11-0,1\nasset-11-1,2\nasset-11-2,3\nasset-11-3,4\n"
+    },
+    "metadata": {
+      "template": "risk_triage"
+    },
+    "prompt": "Prioritize alerts using priority = severity multiplied by asset criticality. Join the two CSV files and return the highest-priority alert as FINAL[alert_id].",
+    "split": "test",
+    "task_id": "cyber-triage-test-11"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "user-12-3|ws-12-0|198.51.100.52",
+    "files": {
+      "auth.csv": "time,user,host,status\n09:01,user-12-0,ws-12-0,failure\n09:04,user-12-1,ws-12-1,success\n09:10,user-12-3,ws-12-0,success\n09:22,user-12-2,ws-12-2,success\n",
+      "blocked.txt": "203.0.113.32\n198.51.100.52\n",
+      "network.csv": "time,host,destination,bytes\n09:08,ws-12-1,192.0.2.5,120\n09:13,ws-12-0,198.51.100.52,9400\n09:30,ws-12-2,203.0.113.32,100\n",
+      "policy.txt": "A confirmed case is a successful login followed within five minutes by an outbound connection from the same host to an address in blocked.txt. Return user|host|destination.\n"
+    },
+    "metadata": {
+      "template": "incident_correlation"
+    },
+    "prompt": "Investigate the local authentication and network records using policy.txt. Identify the single confirmed case and return FINAL[user|host|destination].",
+    "split": "test",
+    "task_id": "cyber-incident-test-12"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "svc-13-0",
+    "files": {
+      "policy.txt": "Production requires tls_version at least 1.3, admin_scope private, and encrypted_backup true. Staging rows are outside this decision.\n",
+      "services.csv": "service_id,environment,tls_version,admin_scope,encrypted_backup\nsvc-13-0,production,1.1,public,false\nsvc-13-1,production,1.3,private,true\nsvc-13-2,staging,1.2,private,false\nsvc-13-3,production,1.3,private,true\n"
+    },
+    "metadata": {
+      "template": "configuration_audit"
+    },
+    "prompt": "Audit services.csv against policy.txt. Exactly one production service violates all three production requirements. Return FINAL[service_id].",
+    "split": "test",
+    "task_id": "cyber-config-test-13"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "component_2.bin",
+    "files": {
+      "criticality.csv": "file,tier\ncomponent_0.bin,critical\ncomponent_1.bin,standard\ncomponent_2.bin,critical\ncomponent_3.bin,standard\ncomponent_4.bin,standard\n",
+      "expected.csv": "file,sha256\ncomponent_0.bin,158676be4241\ncomponent_1.bin,1321d62f7ad0\ncomponent_2.bin,5908eca8f668\ncomponent_3.bin,324705b96730\ncomponent_4.bin,1d8609b8c255\n",
+      "observed.csv": "file,sha256\ncomponent_0.bin,158676be4241\ncomponent_1.bin,1321d62f7ad0\ncomponent_2.bin,1cc01db93c99\ncomponent_3.bin,324705b96730\ncomponent_4.bin,1d8609b8c255\n"
+    },
+    "metadata": {
+      "template": "integrity_join"
+    },
+    "prompt": "Compare expected and observed integrity records, then use criticality.csv. Return the critical file whose observed digest does not match as FINAL[filename].",
+    "split": "test",
+    "task_id": "cyber-integrity-test-14"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "alert-15-1",
+    "files": {
+      "alerts.csv": "alert_id,asset_id,severity\nalert-15-0,asset-15-0,10\nalert-15-1,asset-15-1,1000\nalert-15-2,asset-15-2,1\nalert-15-3,asset-15-3,100\n",
+      "assets.csv": "asset_id,criticality\nasset-15-0,1\nasset-15-1,2\nasset-15-2,3\nasset-15-3,4\n"
+    },
+    "metadata": {
+      "template": "risk_triage"
+    },
+    "prompt": "Prioritize alerts using priority = severity multiplied by asset criticality. Join the two CSV files and return the highest-priority alert as FINAL[alert_id].",
+    "split": "test",
+    "task_id": "cyber-triage-test-15"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "user-16-1|ws-16-0|203.0.113.36",
+    "files": {
+      "auth.csv": "time,user,host,status\n09:01,user-16-0,ws-16-0,failure\n09:04,user-16-1,ws-16-1,success\n09:10,user-16-1,ws-16-0,success\n09:22,user-16-2,ws-16-2,success\n",
+      "blocked.txt": "203.0.113.36\n198.51.100.56\n",
+      "network.csv": "time,host,destination,bytes\n09:08,ws-16-1,192.0.2.5,120\n09:13,ws-16-0,203.0.113.36,9400\n09:30,ws-16-2,203.0.113.36,100\n",
+      "policy.txt": "A confirmed case is a successful login followed within five minutes by an outbound connection from the same host to an address in blocked.txt. Return user|host|destination.\n"
+    },
+    "metadata": {
+      "template": "incident_correlation"
+    },
+    "prompt": "Investigate the local authentication and network records using policy.txt. Identify the single confirmed case and return FINAL[user|host|destination].",
+    "split": "test",
+    "task_id": "cyber-incident-test-16"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "svc-17-0",
+    "files": {
+      "policy.txt": "Production requires tls_version at least 1.3, admin_scope private, and encrypted_backup true. Staging rows are outside this decision.\n",
+      "services.csv": "service_id,environment,tls_version,admin_scope,encrypted_backup\nsvc-17-0,production,1.1,public,false\nsvc-17-1,production,1.3,private,true\nsvc-17-2,staging,1.2,private,false\nsvc-17-3,production,1.3,private,true\n"
+    },
+    "metadata": {
+      "template": "configuration_audit"
+    },
+    "prompt": "Audit services.csv against policy.txt. Exactly one production service violates all three production requirements. Return FINAL[service_id].",
+    "split": "test",
+    "task_id": "cyber-config-test-17"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "component_3.bin",
+    "files": {
+      "criticality.csv": "file,tier\ncomponent_0.bin,critical\ncomponent_1.bin,standard\ncomponent_2.bin,standard\ncomponent_3.bin,critical\ncomponent_4.bin,standard\n",
+      "expected.csv": "file,sha256\ncomponent_0.bin,24099860cede\ncomponent_1.bin,9f14596c20f6\ncomponent_2.bin,1db7c871b9de\ncomponent_3.bin,360f7fb247cf\ncomponent_4.bin,c21db7a0921d\n",
+      "observed.csv": "file,sha256\ncomponent_0.bin,24099860cede\ncomponent_1.bin,9f14596c20f6\ncomponent_2.bin,1db7c871b9de\ncomponent_3.bin,d2047d4f5efa\ncomponent_4.bin,c21db7a0921d\n"
+    },
+    "metadata": {
+      "template": "integrity_join"
+    },
+    "prompt": "Compare expected and observed integrity records, then use criticality.csv. Return the critical file whose observed digest does not match as FINAL[filename].",
+    "split": "test",
+    "task_id": "cyber-integrity-test-18"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "alert-19-0",
+    "files": {
+      "alerts.csv": "alert_id,asset_id,severity\nalert-19-0,asset-19-0,1000\nalert-19-1,asset-19-1,100\nalert-19-2,asset-19-2,1\nalert-19-3,asset-19-3,10\n",
+      "assets.csv": "asset_id,criticality\nasset-19-0,1\nasset-19-1,2\nasset-19-2,3\nasset-19-3,4\n"
+    },
+    "metadata": {
+      "template": "risk_triage"
+    },
+    "prompt": "Prioritize alerts using priority = severity multiplied by asset criticality. Join the two CSV files and return the highest-priority alert as FINAL[alert_id].",
+    "split": "test",
+    "task_id": "cyber-triage-test-19"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "user-20-2|ws-20-1|203.0.113.40",
+    "files": {
+      "auth.csv": "time,user,host,status\n09:01,user-20-0,ws-20-0,failure\n09:04,user-20-1,ws-20-1,success\n09:10,user-20-2,ws-20-1,success\n09:22,user-20-2,ws-20-2,success\n",
+      "blocked.txt": "203.0.113.40\n198.51.100.60\n",
+      "network.csv": "time,host,destination,bytes\n09:08,ws-20-1,192.0.2.5,120\n09:13,ws-20-1,203.0.113.40,9400\n09:30,ws-20-2,203.0.113.40,100\n",
+      "policy.txt": "A confirmed case is a successful login followed within five minutes by an outbound connection from the same host to an address in blocked.txt. Return user|host|destination.\n"
+    },
+    "metadata": {
+      "template": "incident_correlation"
+    },
+    "prompt": "Investigate the local authentication and network records using policy.txt. Identify the single confirmed case and return FINAL[user|host|destination].",
+    "split": "test",
+    "task_id": "cyber-incident-test-20"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "svc-21-3",
+    "files": {
+      "policy.txt": "Production requires tls_version at least 1.3, admin_scope private, and encrypted_backup true. Staging rows are outside this decision.\n",
+      "services.csv": "service_id,environment,tls_version,admin_scope,encrypted_backup\nsvc-21-0,staging,1.2,private,false\nsvc-21-1,production,1.3,private,true\nsvc-21-2,staging,1.2,private,false\nsvc-21-3,production,1.1,public,false\n"
+    },
+    "metadata": {
+      "template": "configuration_audit"
+    },
+    "prompt": "Audit services.csv against policy.txt. Exactly one production service violates all three production requirements. Return FINAL[service_id].",
+    "split": "test",
+    "task_id": "cyber-config-test-21"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "component_2.bin",
+    "files": {
+      "criticality.csv": "file,tier\ncomponent_0.bin,critical\ncomponent_1.bin,standard\ncomponent_2.bin,critical\ncomponent_3.bin,standard\ncomponent_4.bin,standard\n",
+      "expected.csv": "file,sha256\ncomponent_0.bin,c0f890355426\ncomponent_1.bin,8a618aa2f7d9\ncomponent_2.bin,b12eab16a60a\ncomponent_3.bin,c014c325bc64\ncomponent_4.bin,fdc0d1a43962\n",
+      "observed.csv": "file,sha256\ncomponent_0.bin,c0f890355426\ncomponent_1.bin,8a618aa2f7d9\ncomponent_2.bin,eedc2957f317\ncomponent_3.bin,c014c325bc64\ncomponent_4.bin,fdc0d1a43962\n"
+    },
+    "metadata": {
+      "template": "integrity_join"
+    },
+    "prompt": "Compare expected and observed integrity records, then use criticality.csv. Return the critical file whose observed digest does not match as FINAL[filename].",
+    "split": "test",
+    "task_id": "cyber-integrity-test-22"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "cyber",
+    "expected_answer": "alert-23-1",
+    "files": {
+      "alerts.csv": "alert_id,asset_id,severity\nalert-23-0,asset-23-0,1\nalert-23-1,asset-23-1,1000\nalert-23-2,asset-23-2,10\nalert-23-3,asset-23-3,100\n",
+      "assets.csv": "asset_id,criticality\nasset-23-0,1\nasset-23-1,2\nasset-23-2,3\nasset-23-3,4\n"
+    },
+    "metadata": {
+      "template": "risk_triage"
+    },
+    "prompt": "Prioritize alerts using priority = severity multiplied by asset criticality. Join the two CSV files and return the highest-priority alert as FINAL[alert_id].",
+    "split": "test",
+    "task_id": "cyber-triage-test-23"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "var-0-1",
+    "files": {
+      "criteria.txt": "Candidate requirements: impact HIGH, population_af below 0.01, both affected samples genotype 1/1, and unaffected sample not 1/1.\n",
+      "variants.csv": "variant_id,impact,population_af,affected_a,affected_b,unaffected\nvar-0-0,HIGH,0.12,0/1,1/1,1/1\nvar-0-1,HIGH,0.002,1/1,1/1,0/1\nvar-0-2,HIGH,0.12,0/1,1/1,1/1\nvar-0-3,LOW,0.001,1/1,1/1,0/1\nvar-0-4,HIGH,0.12,0/1,1/1,1/1\n"
+    },
+    "metadata": {
+      "template": "variant_prioritization"
+    },
+    "prompt": "Apply criteria.txt to variants.csv and identify the only compatible synthetic recessive candidate. Return FINAL[variant_id].",
+    "split": "test",
+    "task_id": "bio-variant-test-0"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "GENE1_3",
+    "files": {
+      "expression.csv": "gene,control_a,control_b,treated_a,treated_b,treated_bad\nGENE1_0,20,22,20,22,9999\nGENE1_1,25,27,50,54,9999\nGENE1_2,30,32,30,32,9999\nGENE1_3,35,37,175,185,9999\nGENE1_4,40,42,40,42,9999\n",
+      "qc.txt": "Samples control_a, control_b, treated_a, treated_b passed. treated_bad failed.\n"
+    },
+    "metadata": {
+      "template": "expression_analysis"
+    },
+    "prompt": "Use qc.txt and expression.csv. Ignore the failed sample treated_bad. Compute the mean treated to mean control ratio and return the gene with the largest ratio as FINAL[gene].",
+    "split": "test",
+    "task_id": "bio-expression-test-1"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "sample-2-1",
+    "files": {
+      "qc_policy.txt": "Pass requires coverage >= 20, contamination <= 0.05, mapping_rate >= 0.90.\n",
+      "sample_metrics.csv": "sample_id,coverage,contamination,mapping_rate\nsample-2-0,18,0.02,0.91\nsample-2-1,12,0.12,0.61\nsample-2-2,18,0.02,0.91\nsample-2-3,35,0.01,0.95\nsample-2-4,18,0.02,0.91\n"
+    },
+    "metadata": {
+      "template": "quality_control"
+    },
+    "prompt": "Audit sample_metrics.csv using qc_policy.txt. One sample fails every criterion. Return FINAL[sample_id].",
+    "split": "test",
+    "task_id": "bio-qc-test-2"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "Species_2",
+    "files": {
+      "observed.csv": "isolate,m1,m2,m3,m4\niso-3,43,41,41,41\n",
+      "references.csv": "species,m1,m2,m3,m4\nSpecies_0,3,0,0,1\nSpecies_1,22,23,21,21\nSpecies_2,43,40,41,41\nSpecies_3,63,62,62,63\n"
+    },
+    "metadata": {
+      "template": "profile_classification"
+    },
+    "prompt": "Classify the synthetic isolate by the smallest Manhattan distance between its four marker counts and the reference profiles. Return FINAL[species].",
+    "split": "test",
+    "task_id": "bio-classification-test-3"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "var-4-3",
+    "files": {
+      "criteria.txt": "Candidate requirements: impact HIGH, population_af below 0.01, both affected samples genotype 1/1, and unaffected sample not 1/1.\n",
+      "variants.csv": "variant_id,impact,population_af,affected_a,affected_b,unaffected\nvar-4-0,HIGH,0.12,0/1,1/1,1/1\nvar-4-1,LOW,0.001,1/1,1/1,0/1\nvar-4-2,HIGH,0.12,0/1,1/1,1/1\nvar-4-3,HIGH,0.002,1/1,1/1,0/1\nvar-4-4,HIGH,0.12,0/1,1/1,1/1\n"
+    },
+    "metadata": {
+      "template": "variant_prioritization"
+    },
+    "prompt": "Apply criteria.txt to variants.csv and identify the only compatible synthetic recessive candidate. Return FINAL[variant_id].",
+    "split": "test",
+    "task_id": "bio-variant-test-4"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "GENE5_4",
+    "files": {
+      "expression.csv": "gene,control_a,control_b,treated_a,treated_b,treated_bad\nGENE5_0,20,22,20,22,9999\nGENE5_1,25,27,50,54,9999\nGENE5_2,30,32,30,32,9999\nGENE5_3,35,37,70,74,9999\nGENE5_4,40,42,200,210,9999\n",
+      "qc.txt": "Samples control_a, control_b, treated_a, treated_b passed. treated_bad failed.\n"
+    },
+    "metadata": {
+      "template": "expression_analysis"
+    },
+    "prompt": "Use qc.txt and expression.csv. Ignore the failed sample treated_bad. Compute the mean treated to mean control ratio and return the gene with the largest ratio as FINAL[gene].",
+    "split": "test",
+    "task_id": "bio-expression-test-5"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "sample-6-1",
+    "files": {
+      "qc_policy.txt": "Pass requires coverage >= 20, contamination <= 0.05, mapping_rate >= 0.90.\n",
+      "sample_metrics.csv": "sample_id,coverage,contamination,mapping_rate\nsample-6-0,18,0.02,0.91\nsample-6-1,12,0.12,0.61\nsample-6-2,18,0.02,0.91\nsample-6-3,35,0.01,0.95\nsample-6-4,18,0.02,0.91\n"
+    },
+    "metadata": {
+      "template": "quality_control"
+    },
+    "prompt": "Audit sample_metrics.csv using qc_policy.txt. One sample fails every criterion. Return FINAL[sample_id].",
+    "split": "test",
+    "task_id": "bio-qc-test-6"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "Species_3",
+    "files": {
+      "observed.csv": "isolate,m1,m2,m3,m4\niso-7,61,62,63,61\n",
+      "references.csv": "species,m1,m2,m3,m4\nSpecies_0,2,3,0,0\nSpecies_1,23,21,21,23\nSpecies_2,42,40,40,41\nSpecies_3,61,62,63,61\n"
+    },
+    "metadata": {
+      "template": "profile_classification"
+    },
+    "prompt": "Classify the synthetic isolate by the smallest Manhattan distance between its four marker counts and the reference profiles. Return FINAL[species].",
+    "split": "test",
+    "task_id": "bio-classification-test-7"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "var-8-2",
+    "files": {
+      "criteria.txt": "Candidate requirements: impact HIGH, population_af below 0.01, both affected samples genotype 1/1, and unaffected sample not 1/1.\n",
+      "variants.csv": "variant_id,impact,population_af,affected_a,affected_b,unaffected\nvar-8-0,HIGH,0.12,0/1,1/1,1/1\nvar-8-1,LOW,0.001,1/1,1/1,0/1\nvar-8-2,HIGH,0.002,1/1,1/1,0/1\nvar-8-3,LOW,0.001,1/1,1/1,0/1\nvar-8-4,HIGH,0.12,0/1,1/1,1/1\n"
+    },
+    "metadata": {
+      "template": "variant_prioritization"
+    },
+    "prompt": "Apply criteria.txt to variants.csv and identify the only compatible synthetic recessive candidate. Return FINAL[variant_id].",
+    "split": "test",
+    "task_id": "bio-variant-test-8"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "GENE9_4",
+    "files": {
+      "expression.csv": "gene,control_a,control_b,treated_a,treated_b,treated_bad\nGENE9_0,20,22,20,22,9999\nGENE9_1,25,27,50,54,9999\nGENE9_2,30,32,30,32,9999\nGENE9_3,35,37,70,74,9999\nGENE9_4,40,42,200,210,9999\n",
+      "qc.txt": "Samples control_a, control_b, treated_a, treated_b passed. treated_bad failed.\n"
+    },
+    "metadata": {
+      "template": "expression_analysis"
+    },
+    "prompt": "Use qc.txt and expression.csv. Ignore the failed sample treated_bad. Compute the mean treated to mean control ratio and return the gene with the largest ratio as FINAL[gene].",
+    "split": "test",
+    "task_id": "bio-expression-test-9"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "sample-10-1",
+    "files": {
+      "qc_policy.txt": "Pass requires coverage >= 20, contamination <= 0.05, mapping_rate >= 0.90.\n",
+      "sample_metrics.csv": "sample_id,coverage,contamination,mapping_rate\nsample-10-0,18,0.02,0.91\nsample-10-1,12,0.12,0.61\nsample-10-2,18,0.02,0.91\nsample-10-3,35,0.01,0.95\nsample-10-4,18,0.02,0.91\n"
+    },
+    "metadata": {
+      "template": "quality_control"
+    },
+    "prompt": "Audit sample_metrics.csv using qc_policy.txt. One sample fails every criterion. Return FINAL[sample_id].",
+    "split": "test",
+    "task_id": "bio-qc-test-10"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "Species_0",
+    "files": {
+      "observed.csv": "isolate,m1,m2,m3,m4\niso-11,1,2,2,2\n",
+      "references.csv": "species,m1,m2,m3,m4\nSpecies_0,1,2,2,2\nSpecies_1,23,21,20,23\nSpecies_2,40,41,40,40\nSpecies_3,62,60,61,61\n"
+    },
+    "metadata": {
+      "template": "profile_classification"
+    },
+    "prompt": "Classify the synthetic isolate by the smallest Manhattan distance between its four marker counts and the reference profiles. Return FINAL[species].",
+    "split": "test",
+    "task_id": "bio-classification-test-11"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "var-12-4",
+    "files": {
+      "criteria.txt": "Candidate requirements: impact HIGH, population_af below 0.01, both affected samples genotype 1/1, and unaffected sample not 1/1.\n",
+      "variants.csv": "variant_id,impact,population_af,affected_a,affected_b,unaffected\nvar-12-0,HIGH,0.12,0/1,1/1,1/1\nvar-12-1,LOW,0.001,1/1,1/1,0/1\nvar-12-2,HIGH,0.12,0/1,1/1,1/1\nvar-12-3,LOW,0.001,1/1,1/1,0/1\nvar-12-4,HIGH,0.002,1/1,1/1,0/1\n"
+    },
+    "metadata": {
+      "template": "variant_prioritization"
+    },
+    "prompt": "Apply criteria.txt to variants.csv and identify the only compatible synthetic recessive candidate. Return FINAL[variant_id].",
+    "split": "test",
+    "task_id": "bio-variant-test-12"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "GENE13_1",
+    "files": {
+      "expression.csv": "gene,control_a,control_b,treated_a,treated_b,treated_bad\nGENE13_0,20,22,20,22,9999\nGENE13_1,25,27,125,135,9999\nGENE13_2,30,32,30,32,9999\nGENE13_3,35,37,70,74,9999\nGENE13_4,40,42,40,42,9999\n",
+      "qc.txt": "Samples control_a, control_b, treated_a, treated_b passed. treated_bad failed.\n"
+    },
+    "metadata": {
+      "template": "expression_analysis"
+    },
+    "prompt": "Use qc.txt and expression.csv. Ignore the failed sample treated_bad. Compute the mean treated to mean control ratio and return the gene with the largest ratio as FINAL[gene].",
+    "split": "test",
+    "task_id": "bio-expression-test-13"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "sample-14-2",
+    "files": {
+      "qc_policy.txt": "Pass requires coverage >= 20, contamination <= 0.05, mapping_rate >= 0.90.\n",
+      "sample_metrics.csv": "sample_id,coverage,contamination,mapping_rate\nsample-14-0,18,0.02,0.91\nsample-14-1,35,0.01,0.95\nsample-14-2,12,0.12,0.61\nsample-14-3,35,0.01,0.95\nsample-14-4,18,0.02,0.91\n"
+    },
+    "metadata": {
+      "template": "quality_control"
+    },
+    "prompt": "Audit sample_metrics.csv using qc_policy.txt. One sample fails every criterion. Return FINAL[sample_id].",
+    "split": "test",
+    "task_id": "bio-qc-test-14"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "Species_2",
+    "files": {
+      "observed.csv": "isolate,m1,m2,m3,m4\niso-15,43,43,42,40\n",
+      "references.csv": "species,m1,m2,m3,m4\nSpecies_0,0,1,2,2\nSpecies_1,23,20,22,20\nSpecies_2,43,43,42,40\nSpecies_3,63,63,63,61\n"
+    },
+    "metadata": {
+      "template": "profile_classification"
+    },
+    "prompt": "Classify the synthetic isolate by the smallest Manhattan distance between its four marker counts and the reference profiles. Return FINAL[species].",
+    "split": "test",
+    "task_id": "bio-classification-test-15"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "var-16-4",
+    "files": {
+      "criteria.txt": "Candidate requirements: impact HIGH, population_af below 0.01, both affected samples genotype 1/1, and unaffected sample not 1/1.\n",
+      "variants.csv": "variant_id,impact,population_af,affected_a,affected_b,unaffected\nvar-16-0,HIGH,0.12,0/1,1/1,1/1\nvar-16-1,LOW,0.001,1/1,1/1,0/1\nvar-16-2,HIGH,0.12,0/1,1/1,1/1\nvar-16-3,LOW,0.001,1/1,1/1,0/1\nvar-16-4,HIGH,0.002,1/1,1/1,0/1\n"
+    },
+    "metadata": {
+      "template": "variant_prioritization"
+    },
+    "prompt": "Apply criteria.txt to variants.csv and identify the only compatible synthetic recessive candidate. Return FINAL[variant_id].",
+    "split": "test",
+    "task_id": "bio-variant-test-16"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "GENE17_1",
+    "files": {
+      "expression.csv": "gene,control_a,control_b,treated_a,treated_b,treated_bad\nGENE17_0,20,22,20,22,9999\nGENE17_1,25,27,125,135,9999\nGENE17_2,30,32,30,32,9999\nGENE17_3,35,37,70,74,9999\nGENE17_4,40,42,40,42,9999\n",
+      "qc.txt": "Samples control_a, control_b, treated_a, treated_b passed. treated_bad failed.\n"
+    },
+    "metadata": {
+      "template": "expression_analysis"
+    },
+    "prompt": "Use qc.txt and expression.csv. Ignore the failed sample treated_bad. Compute the mean treated to mean control ratio and return the gene with the largest ratio as FINAL[gene].",
+    "split": "test",
+    "task_id": "bio-expression-test-17"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "sample-18-2",
+    "files": {
+      "qc_policy.txt": "Pass requires coverage >= 20, contamination <= 0.05, mapping_rate >= 0.90.\n",
+      "sample_metrics.csv": "sample_id,coverage,contamination,mapping_rate\nsample-18-0,18,0.02,0.91\nsample-18-1,35,0.01,0.95\nsample-18-2,12,0.12,0.61\nsample-18-3,35,0.01,0.95\nsample-18-4,18,0.02,0.91\n"
+    },
+    "metadata": {
+      "template": "quality_control"
+    },
+    "prompt": "Audit sample_metrics.csv using qc_policy.txt. One sample fails every criterion. Return FINAL[sample_id].",
+    "split": "test",
+    "task_id": "bio-qc-test-18"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "Species_1",
+    "files": {
+      "observed.csv": "isolate,m1,m2,m3,m4\niso-19,21,23,24,22\n",
+      "references.csv": "species,m1,m2,m3,m4\nSpecies_0,2,1,3,0\nSpecies_1,21,23,23,22\nSpecies_2,41,43,43,40\nSpecies_3,63,61,60,60\n"
+    },
+    "metadata": {
+      "template": "profile_classification"
+    },
+    "prompt": "Classify the synthetic isolate by the smallest Manhattan distance between its four marker counts and the reference profiles. Return FINAL[species].",
+    "split": "test",
+    "task_id": "bio-classification-test-19"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "var-20-0",
+    "files": {
+      "criteria.txt": "Candidate requirements: impact HIGH, population_af below 0.01, both affected samples genotype 1/1, and unaffected sample not 1/1.\n",
+      "variants.csv": "variant_id,impact,population_af,affected_a,affected_b,unaffected\nvar-20-0,HIGH,0.002,1/1,1/1,0/1\nvar-20-1,LOW,0.001,1/1,1/1,0/1\nvar-20-2,HIGH,0.12,0/1,1/1,1/1\nvar-20-3,LOW,0.001,1/1,1/1,0/1\nvar-20-4,HIGH,0.12,0/1,1/1,1/1\n"
+    },
+    "metadata": {
+      "template": "variant_prioritization"
+    },
+    "prompt": "Apply criteria.txt to variants.csv and identify the only compatible synthetic recessive candidate. Return FINAL[variant_id].",
+    "split": "test",
+    "task_id": "bio-variant-test-20"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "GENE21_1",
+    "files": {
+      "expression.csv": "gene,control_a,control_b,treated_a,treated_b,treated_bad\nGENE21_0,20,22,20,22,9999\nGENE21_1,25,27,125,135,9999\nGENE21_2,30,32,30,32,9999\nGENE21_3,35,37,70,74,9999\nGENE21_4,40,42,40,42,9999\n",
+      "qc.txt": "Samples control_a, control_b, treated_a, treated_b passed. treated_bad failed.\n"
+    },
+    "metadata": {
+      "template": "expression_analysis"
+    },
+    "prompt": "Use qc.txt and expression.csv. Ignore the failed sample treated_bad. Compute the mean treated to mean control ratio and return the gene with the largest ratio as FINAL[gene].",
+    "split": "test",
+    "task_id": "bio-expression-test-21"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "sample-22-3",
+    "files": {
+      "qc_policy.txt": "Pass requires coverage >= 20, contamination <= 0.05, mapping_rate >= 0.90.\n",
+      "sample_metrics.csv": "sample_id,coverage,contamination,mapping_rate\nsample-22-0,18,0.02,0.91\nsample-22-1,35,0.01,0.95\nsample-22-2,18,0.02,0.91\nsample-22-3,12,0.12,0.61\nsample-22-4,18,0.02,0.91\n"
+    },
+    "metadata": {
+      "template": "quality_control"
+    },
+    "prompt": "Audit sample_metrics.csv using qc_policy.txt. One sample fails every criterion. Return FINAL[sample_id].",
+    "split": "test",
+    "task_id": "bio-qc-test-22"
+  },
+  {
+    "dataset_source": "evalbracket-agentic-v22-controlled-fixtures",
+    "domain": "bio",
+    "expected_answer": "Species_1",
+    "files": {
+      "observed.csv": "isolate,m1,m2,m3,m4\niso-23,21,21,23,20\n",
+      "references.csv": "species,m1,m2,m3,m4\nSpecies_0,1,0,0,0\nSpecies_1,21,21,23,20\nSpecies_2,41,43,40,42\nSpecies_3,61,60,62,62\n"
+    },
+    "metadata": {
+      "template": "profile_classification"
+    },
+    "prompt": "Classify the synthetic isolate by the smallest Manhattan distance between its four marker counts and the reference profiles. Return FINAL[species].",
+    "split": "test",
+    "task_id": "bio-classification-test-23"
+  }
+]

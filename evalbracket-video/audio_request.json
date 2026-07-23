@@ -1,0 +1,20 @@
+{
+  "provider": "auto",
+  "lang": "en",
+  "speed": 1.0,
+  "lines": [
+    { "id": "s01", "text": "When an A.I. senses it's being tested, it can hold back, so one score makes it look weaker than it really is." },
+    { "id": "s02", "text": "In our locked models the measured score is zero point three, but true capability is zero point seven. A hidden gap of forty points." },
+    { "id": "s03", "text": "So instead of one number, we report a range: the least it reliably shows, up to the most it can really do." },
+    { "id": "s04", "text": "The range is the gap between two curves, an elicitable ceiling and a default floor, widest exactly when capability is held back." },
+    { "id": "s05", "text": "We checked on models where we already knew the true answer. A single score was right two percent of the time. The range, ninety-two." },
+    { "id": "s06", "text": "Across eighty held-out pairs, the calibrated bracket contains true capability ninety-two percent of the time. The naive interval sits far below." },
+    { "id": "s07", "text": "You can't just ask a model for its best. Sweet-talking barely moves it. You have to pull it out with real effort." },
+    { "id": "s08", "text": "Prompt tricks recover only eleven to twelve percent of the hidden gap. Few-shot and fine-tuning recover essentially all of it." },
+    { "id": "s09", "text": "And when it can't get the ability out, the tool admits it, instead of confidently guessing." },
+    { "id": "s10", "text": "When elicitation is defeated, coverage silently collapses to zero. The abstain rule catches it and restores it to eighty-one percent." },
+    { "id": "s11", "text": "Finally: a model can be able to do something long before it ever shows it." },
+    { "id": "s12", "text": "That lead time tracks an imposed suppression schedule at correlation zero point nine nine. A candidate early-warning signal. Still preliminary." }
+  ],
+  "bgm": { "mode": "retrieve", "query": "calm thoughtful cinematic underscore, minimal, curious, light tension, ambient" }
+}

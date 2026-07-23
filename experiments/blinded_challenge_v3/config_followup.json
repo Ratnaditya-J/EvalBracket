@@ -1,0 +1,29 @@
+{
+  "protocol_version": "3.0-blind-1",
+  "experiment_id": "evalbracket-blinded-challenge-v3-control-repair-2026-07-20",
+  "model": {
+    "id": "Qwen/Qwen2.5-1.5B-Instruct",
+    "family": "qwen2.5",
+    "train_batch_size": 4,
+    "eval_batch_size": 24
+  },
+  "tasks": [
+    "mmlu:computer_security",
+    "mmlu:college_biology",
+    "sciq"
+  ],
+  "seeds": [17, 29],
+  "n_eval": 96,
+  "n_train": 128,
+  "n_demos": 32,
+  "effective_train_batch_size": 8,
+  "adapter_rank": 16,
+  "learning_rate": 0.0001,
+  "public_challenge_count_per_seed": 1,
+  "target_results": "experiments/unified_v22/results/jobs",
+  "compute_separation": {
+    "organizer_environment": "dedicated GPU pod",
+    "evaluator_environment": "separate clean GPU pod",
+    "replacement_rule": "replace only the failed minimal_random_gate family"
+  }
+}

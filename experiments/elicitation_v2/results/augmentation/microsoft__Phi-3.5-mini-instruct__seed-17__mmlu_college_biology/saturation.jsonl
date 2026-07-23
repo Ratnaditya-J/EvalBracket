@@ -1,0 +1,4 @@
+{"effort": 1.0, "eligible_controls": 15, "label": "v2_union_small", "recovered_controls": 14, "tested_to_declared_maximum": true}
+{"effort": 2.0, "eligible_controls": 15, "label": "v2_union_medium", "recovered_controls": 14, "tested_to_declared_maximum": true}
+{"effort": 3.0, "eligible_controls": 15, "label": "v2_union_large", "recovered_controls": 14, "tested_to_declared_maximum": true}
+{"effort": 4.0, "eligible_controls": 15, "label": "v2_union_declared_maximum", "recovered_controls": 14, "tested_to_declared_maximum": true}
